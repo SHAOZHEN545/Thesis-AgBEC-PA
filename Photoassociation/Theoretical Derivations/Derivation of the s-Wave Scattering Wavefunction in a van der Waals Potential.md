@@ -319,13 +319,16 @@ $$
 Multiplying Eq. (13) by $\mathcal{N}$ from Eq. (17):
 
 $$
-\boxed{
+{
 \psi_g^{(+)}(R, E) = \frac{1}{\sqrt{2\pi}}\;\frac{1}{\sqrt{\mathcal{E}_6\,\beta_6}}\;\sqrt{k\,\beta_6}\;\sqrt{x}\left\{\Gamma\!\left(\tfrac{3}{4}\right)\,J_{-1/4}\!\left(\tfrac{1}{2x^2}\right) - \frac{2a}{\beta_6}\;\Gamma\!\left(\tfrac{5}{4}\right)\,J_{1/4}\!\left(\tfrac{1}{2x^2}\right)\right\}.
 }
 \tag{18}
 $$
 
-This is exactly the expression in Tiesinga & Kotochigova's paper.
+This is exactly the expression in Tiesinga & Kotochigova's paper. The prefactor can be simplified as
+$$
+\frac{1}{\sqrt{2\pi}} \frac{1}{\sqrt{\mathcal{E}_6 \beta_6}} \sqrt{k \beta_6} = \sqrt{\frac{k \beta_6}{2 \pi \mathcal{E}_6 \beta_6}} = \sqrt{\frac{k}{2 \pi \mathcal{E}_6}}
+$$
 
 ---
 
