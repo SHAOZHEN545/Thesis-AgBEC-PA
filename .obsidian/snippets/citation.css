@@ -1,0 +1,8 @@
+/* 仅在“编辑模式正文区”生效 */
+.markdown-source-view .data-link-text[data-link-path*="References"],
+/* 仅在“阅读模式正文区”生效 */
+.markdown-preview-view a.internal-link[data-link-path*="References"] {
+    vertical-align: super !important;
+    font-size: 0.75em !important;
+    line-height: 0; /* 防止上标把行距撑得太大 */
+}

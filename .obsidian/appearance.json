@@ -1,0 +1,11 @@
+{
+  "enabledCssSnippets": [
+    "math-scroll",
+    "image-custom",
+    "custom-callout",
+    "supercharged-links-gen",
+    "citation",
+    "bold-math",
+    "bold-script"
+  ]
+}

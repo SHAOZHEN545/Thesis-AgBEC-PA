@@ -1,0 +1,22 @@
+{
+  "callouts": {
+    "custom": [
+      "mythoughts"
+    ],
+    "settings": {
+      "mythoughts": [
+        {
+          "changes": {
+            "icon": "lucide-bird",
+            "color": "227, 107, 167"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

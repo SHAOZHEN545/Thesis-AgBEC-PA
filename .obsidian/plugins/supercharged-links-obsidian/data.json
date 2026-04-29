@@ -1,0 +1,27 @@
+{
+  "targetAttributes": [],
+  "targetTags": true,
+  "getFromInlineField": false,
+  "enableTabHeader": false,
+  "activateSnippet": true,
+  "enableEditor": true,
+  "enableFileList": false,
+  "enableBacklinks": true,
+  "enableQuickSwitcher": true,
+  "enableSuggestor": true,
+  "enableBases": true,
+  "selectors": [
+    {
+      "type": "path",
+      "name": "",
+      "value": "References",
+      "matchCaseSensitive": false,
+      "match": "contains",
+      "uid": "32bc-1131",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    }
+  ]
+}
