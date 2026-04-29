@@ -329,41 +329,41 @@ This is exactly the expression in Tiesinga & Kotochigova's paper.
 
 ---
 
-## 8. Why $\gamma_v(E) \propto \sqrt{E}$
+## 8. Consequences: $\gamma_v(E) \propto \sqrt{E}$ and $K_v$ Independent of $E$
 
-In the reflection approximation, the stimulated width is
+### 8.1 Stimulated width
 
-$$
-\gamma_v(E) \propto |\psi_g^{(+)}(R_C, E)|^2,
-$$
-
-evaluated at the Condon point $R_C$, which is determined by the excited-state binding energy and is independent of $E$. From Eq. (18), all the $E$-dependence sits in the prefactor $\sqrt{k\,\beta_6}$. Since $k = \sqrt{2\mu E}/\hbar \propto \sqrt{E}$, the prefactor scales as $E^{1/4}$, so
+In the reflection approximation, the stimulated width is proportional to the squared wavefunction at the Condon point:
 
 $$
-|\psi_g^{(+)}(R_C, E)|^2 \propto k\,\beta_6 \propto \sqrt{E}.
+\gamma_v(E) \propto |\psi_g^{(+)}(R_C, E)|^2.
 $$
 
-Therefore $\gamma_v(E) \propto I\,\sqrt{E}$, confirming the Wigner threshold law for the stimulated width.
-
-Since $K_v \propto \gamma_v / k^2 \propto \sqrt{E} / E = 1/\sqrt{E}$ and $\pi/k^2 \propto 1/E$, one finds $K_v \propto (1/E)\cdot\sqrt{E} = 1/\sqrt{E}$. But wait — we must be more careful: for on-resonance ($E + \hbar\omega = E_\infty + E_v$) and $\gamma_v \ll \gamma_{0_u^+}$, one has $K_v \propto \gamma_v/k^2 \propto \sqrt{E}/E = E^{-1/2} \cdot \sqrt{E}/1$... Let us just directly check the rate coefficient formula:
+The Condon point $R_C$ is fixed by the excited-state binding energy and does not depend on $E$. In Eq. (18), the Bessel functions and $\sqrt{x}$ are evaluated at $x = R_C/\beta_6$, which is $E$-independent. All the $E$-dependence therefore sits in the prefactor $\sqrt{k\beta_6}$, and squaring gives
 
 $$
-K_v \sim \frac{\pi}{k^2}\;\frac{\gamma_{0_u^+}\,\gamma_v}{\gamma_{0_u^+}^2/4} \propto \frac{1}{k^2}\;\gamma_v \propto \frac{1}{E}\;\sqrt{E} = \frac{1}{\sqrt{E}}.
+|\psi_g^{(+)}(R_C, E)|^2 \propto k \propto \sqrt{E}.
 $$
 
-But this diverges as $E \to 0$! The resolution is that the $1/k^2$ factor in $K_v$ exactly cancels with $k^2$ from the incident flux in the cross section. The *event rate coefficient* is $K_v = v_{\rm rel}\,\sigma_v$, and $v_{\rm rel} \propto \sqrt{E}$, so $\sigma_v \propto 1/E$ (Wigner threshold for $s$-wave), and $K_v = v_{\rm rel}\,\sigma_v \propto \sqrt{E}/E = 1/\sqrt{E}$. Hmm — actually let's be precise: on resonance,
+This confirms $\gamma_v(E) \propto I\sqrt{E}$, the Wigner threshold law for the stimulated width.
+
+### 8.2 Event rate coefficient
+
+The paper states that $K_v(\hbar\omega, E)$ is independent of $E$ as $E \to 0$. To see this, note that $K_v$ is a *rate coefficient*, not a cross section. The relationship is $K_v = v_{\rm rel}\,\sigma_v$, where $v_{\rm rel} = \hbar k/\mu \propto \sqrt{E}$.
+
+On resonance in the weak-field limit ($\gamma_v \ll \gamma_{0_u^+}$), the Breit–Wigner cross section from the paper's rate coefficient formula gives
 
 $$
-K_v \propto \frac{\pi}{k^2}\,\gamma_v \propto \frac{1}{E}\cdot\sqrt{E} = E^{-1/2}.
+\sigma_v \propto \frac{\pi}{k^2}\;\frac{\gamma_{0_u^+}\,\gamma_v}{\gamma_{0_u^+}^2/4} \propto \frac{\gamma_v}{k^2} \propto \frac{k}{k^2} = \frac{1}{k}.
 $$
 
-This still diverges, but in a thermal average $\langle K_v \rangle \propto \int_0^\infty E^{-1/2}\,e^{-E/kT}\,\sqrt{E}\,dE \propto \int_0^\infty e^{-E/kT}\,dE = kT$, which is finite. (The $\sqrt{E}$ from the Boltzmann density of states exactly compensates the $1/\sqrt{E}$ from $K_v$.) The authors' statement that "$K_v$ is independent of $E$ for $E \to 0$" refers to the regime where both $\gamma_v(E)$ and $k$ appear together: indeed $K_v \propto \gamma_v/k^2 \propto k/k^2 = 1/k \propto 1/\sqrt{E}$... 
+Therefore the rate coefficient is
 
-Actually, re-reading the paper more carefully: "implies that $K_v(\hbar\omega, E)$ is independent of $E$ for $E \to 0$." This is the standard ultracold result. The key is in the *full* Breit–Wigner formula: on resonance, $K_v \propto (\pi/k^2)\cdot\gamma_v \cdot \gamma_{0_u^+}/[(\gamma_{0_u^+}+\gamma_v)^2/4]$. When $\gamma_v \ll \gamma_{0_u^+}$ (weak-field limit), $K_v \propto \gamma_v/k^2 \propto k/k^2 = 1/k$. But the *rate coefficient* is defined as $K = v_{\rm rel}\,\sigma$, and $\sigma = \pi\,\gamma_{0_u^+}\gamma_v/[k^2\,(\gamma^2/4)]$, so $K = (\hbar k/\mu)\,\sigma \propto k \cdot (k/k^2) = \text{const}$. So $K_v$ is indeed independent of $E$, as stated. The factor of $\hbar k/\mu = v_{\rm rel}$ provides the extra power of $k$ needed.
+$$
+K_v = v_{\rm rel}\,\sigma_v \propto k \cdot \frac{1}{k} = \text{const},
+$$
 
-More explicitly: $K_v = v_{\rm rel}\,\sigma = (\hbar k/\mu)\cdot(\pi/k^2)\cdot[\gamma_{0_u^+}\gamma_v/(\gamma_{0_u^+}^2/4)]$. Since $\gamma_v \propto k$, we get $K_v \propto k \cdot k^{-2} \cdot k = k^0 = \text{const}$.
-
->[!mythoughts] This is some AI bullshit.... we may need to rewrite this later.
+independent of $E$, as claimed. The $\sqrt{E}$ growth of $\gamma_v$ exactly compensates one power of $k$ in the $1/k^2$ factor, and the remaining $1/k$ is cancelled by $v_{\rm rel} \propto k$.
 
 ---
 
