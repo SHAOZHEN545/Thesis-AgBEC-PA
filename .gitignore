@@ -1,0 +1,14 @@
+# 屏蔽 Obsidian 运行时产生的临时工作区状态（最占空间且没用的部分）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+
+# 屏蔽插件生成的临时数据
+.obsidian/plugins/obsidian-git/data.json
+
+# 如果你未来有超大 PDF 不想传，可以取消下面这行的注释
+# *.pdf
+
+# 屏蔽系统缓存
+.DS_Store
+Thumbs.db
