@@ -90,11 +90,7 @@ We have also measured the rate $n_{at}/\beta_{\text{PA}}(0^-_g, 55 \, \text{W} \
 The perturbative approach adapted to the weak laser-field regime, developed in [31], is fully adapted to the calculation of PA rates of Cs$_2$ molecules, as long as the saturation regime is not reached. Starting from a continuum state $\alpha$ with energy $E$ of a lower electronic state $g$, the PA laser with wavelength $\lambda_{\text{PA}}$ and intensity $I$ populates a vibrational level $v$ of an excited electronic state $e$. Only resonant continuum states with energy $E = E(v) - hc / \lambda_{\text{PA}}$ are considered. We will assume $E = k_B T$ in the following. Centrifugal distortion is neglected here, and both states correspond to the s-wave condition ($\ell = 0$) reached at low temperatures. The $R$-variation of the electronic transition dipole moment is ignored as PA is expected to occur most often at large distances ($R \geq 40 \, a_0$). The PA rate $R_{\text{PA}}$ per atom (in s$^{-1}$) is defined according to
 
 $$
-R_{\text{PA}} = A(g, e, \vec{\epsilon}_{\text{PA}}) \left( \frac{3}{2\pi} \right)^{3/2} \frac{h}{2} n_{at} \lambda_{th}^3
-$$
-
-$$
-\times \exp(-E_r / k_B T) K^2 S^2 (\alpha, v) \tag{7}
+R_{\text{PA}} = A(g, e, \vec{\epsilon}_{\text{PA}}) \left( \frac{3}{2\pi} \right)^{3/2} \frac{h}{2} n_{at} \lambda_{th}^3\times \exp(-E_r / k_B T) K^2 S^2 (\alpha, v) \tag{7}
 $$
 
 where
