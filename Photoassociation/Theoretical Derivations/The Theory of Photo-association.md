@@ -701,13 +701,114 @@ This is the familiar factor from the Wigner–Eckart theorem: for any rank-1 ope
 
 This is the nontrivial part. It involves the body-frame structure of the $0_g^-$ state and the hyperfine recoupling algebra.
 
-**The $0_g^-$ molecular state in the body frame.** In Hund's case (c), the quantum number $\Omega$ (projection of total electronic angular momentum on the internuclear axis) is good. For $\Omega = 0$ with two atoms carrying $j_g = 1/2$ (ground) and $j_e = 3/2$ (excited), the body-frame state is built from pairs $(\omega_e, \omega_g)$ where $\omega_e + \omega_g = 0$:
+**The $0_g^-$ molecular state in the body frame.** In Hund's case (c), the natural quantization axis is the internuclear axis. Therefore the relevant electronic quantum number is
 
 $$
-|0^-; j_e = 3/2\rangle \propto \alpha\Big[|{+}\tfrac{1}{2}\rangle_e|{-}\tfrac{1}{2}\rangle_g - |{-}\tfrac{1}{2}\rangle_e|{+}\tfrac{1}{2}\rangle_g\Big] + \beta\Big[|{+}\tfrac{3}{2}\rangle_e|{-}\tfrac{3}{2}\rangle_g - |{-}\tfrac{3}{2}\rangle_e|{+}\tfrac{3}{2}\rangle_g\Big],
+\Omega = \omega_e + \omega_g,
 $$
 
-where the minus signs implement the antisymmetric reflection character of $0^-$. The coefficients $\alpha$ and $\beta$ are determined by the Hund's case (c) coupling. For the $0_g^-(6s+6p_{3/2})$ state, expanding in terms of the possible $j_{12}$ values ($j_{12} = 1$ or $2$), the $0^-$ symmetry selects $j_{12} = 2$ only.
+where $\omega_e$ and $\omega_g$ are the projections of the excited-atom and ground-atom angular momenta on the molecular axis.
+
+For the asymptote $6s_{1/2}+6p_{3/2}$,
+
+$$
+j_g = \frac{1}{2}, \qquad j_e = \frac{3}{2}.
+$$
+
+Since the ground atom has $j_g=1/2$, its projection can only be
+
+$$
+\omega_g = \pm \frac{1}{2}.
+$$
+
+Therefore, for $\Omega=0$, the only allowed projection pairs are
+
+$$
+\omega_e = +\frac{1}{2}, \qquad \omega_g = -\frac{1}{2},
+$$
+
+and
+
+$$
+\omega_e = -\frac{1}{2}, \qquad \omega_g = +\frac{1}{2}.
+$$
+
+Terms such as
+
+$$
+\left|+\frac{3}{2}\right\rangle_e
+\left|-\frac{3}{2}\right\rangle_g
+$$
+
+are not allowed here, because a $6s_{1/2}$ ground atom cannot have projection $\omega_g=-3/2$.
+
+Anyway, the $\Omega=0$ body-frame projection basis is thus only
+
+$$
+|A\rangle =
+\left|+\frac{1}{2}\right\rangle_e
+\left|-\frac{1}{2}\right\rangle_g,
+\qquad
+|B\rangle =
+\left|-\frac{1}{2}\right\rangle_e
+\left|+\frac{1}{2}\right\rangle_g.
+$$
+
+Under reflection through a plane containing the internuclear axis, the body-frame projections change sign. With the conventional phase choice for the $6p$ orbital, this reflection (an operation $|\omega\rangle\to|-\omega\rangle$ acts as
+
+$$
+\sigma_v |A\rangle = - |B\rangle,
+\qquad
+\sigma_v |B\rangle = - |A\rangle.
+$$
+
+Therefore the plus and minus combinations have opposite reflection character:
+
+$$
+\sigma_v \frac{|A\rangle + |B\rangle}{\sqrt{2}}
+=
+-\frac{|A\rangle + |B\rangle}{\sqrt{2}},
+$$
+
+while
+
+$$
+\sigma_v \frac{|A\rangle - |B\rangle}{\sqrt{2}}
+=
++\frac{|A\rangle - |B\rangle}{\sqrt{2}}.
+$$
+
+So, in this phase convention,
+
+$$
+0^-:
+\qquad
+\frac{1}{\sqrt{2}}
+\left[
+\left|+\frac{1}{2}\right\rangle_e
+\left|-\frac{1}{2}\right\rangle_g
++
+\left|-\frac{1}{2}\right\rangle_e
+\left|+\frac{1}{2}\right\rangle_g
+\right],
+$$
+
+and
+
+$$
+0^+:
+\qquad
+\frac{1}{\sqrt{2}}
+\left[
+\left|+\frac{1}{2}\right\rangle_e
+\left|-\frac{1}{2}\right\rangle_g
+-
+\left|-\frac{1}{2}\right\rangle_e
+\left|+\frac{1}{2}\right\rangle_g
+\right].
+$$
+
+This is reflection symmetry, not particle exchange. Reflection $\sigma_v$ flips the body-frame projections; exchange symmetry is a separate operation that swaps the two identical nuclei.
 
 **The transition dipole.** The PA laser excites one atom from $6s_{1/2}$ to $6p_{3/2}$. The one-atom transition dipole matrix element in the body frame is:
 
