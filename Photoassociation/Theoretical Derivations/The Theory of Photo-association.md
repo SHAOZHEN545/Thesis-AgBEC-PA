@@ -810,6 +810,67 @@ $$
 
 This is reflection symmetry, not particle exchange. Reflection $\sigma_v$ flips the body-frame projections; exchange symmetry is a separate operation that swaps the two identical nuclei.
 
+Now couple the two atomic angular momenta
+
+$$
+j_e=\frac{3}{2}, \qquad j_g=\frac{1}{2}.
+$$
+
+The possible resultant angular momenta are
+
+$$
+j_{12}=1,2.
+$$
+
+For $\Omega=0$, the Clebsch--Gordan expansion gives
+
+$$
+|j_{12}=2,\Omega=0\rangle
+=
+\frac{1}{\sqrt{2}}
+\left[
+\left|+\frac{1}{2}\right\rangle_e
+\left|-\frac{1}{2}\right\rangle_g
++
+\left|-\frac{1}{2}\right\rangle_e
+\left|+\frac{1}{2}\right\rangle_g
+\right],
+$$
+
+whereas
+
+$$
+|j_{12}=1,\Omega=0\rangle
+=
+\frac{1}{\sqrt{2}}
+\left[
+\left|+\frac{1}{2}\right\rangle_e
+\left|-\frac{1}{2}\right\rangle_g
+-
+\left|-\frac{1}{2}\right\rangle_e
+\left|+\frac{1}{2}\right\rangle_g
+\right].
+$$
+
+Comparing this with the reflection result above, the $0^-$ body-frame state for the $6s_{1/2}+6p_{3/2}$ asymptote is the $j_{12}=2$, $\Omega=0$ state:
+
+$$
+|0_g^-\rangle
+\equiv
+|j_{12}=2,\Omega=0\rangle
+=
+\frac{1}{\sqrt{2}}
+\left[
+\left|+\frac{1}{2}\right\rangle_e
+\left|-\frac{1}{2}\right\rangle_g
++
+\left|-\frac{1}{2}\right\rangle_e
+\left|+\frac{1}{2}\right\rangle_g
+\right].
+$$
+
+The orthogonal $j_{12}=1$, $\Omega=0$ combination has the opposite reflection character and is not the $0_g^-$ channel considered here.
+
 **The transition dipole.** The PA laser excites one atom from $6s_{1/2}$ to $6p_{3/2}$. The one-atom transition dipole matrix element in the body frame is:
 
 $$
