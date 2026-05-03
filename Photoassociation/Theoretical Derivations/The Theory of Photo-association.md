@@ -87,7 +87,7 @@ $$
 \tag{$\star$}
 $$
 
-C. Drag et al.[^1] (Eq. 8) defines the "half Rabi frequency" $K = \Omega_{\text{at}}/2$, so $K^2 = \Omega_{\text{at}}^2/4$. From ($\star$), this gives $K^2 = \tfrac{\Gamma^2}{8}\tfrac{I}{I_0}$ with their $I_0 = I_{\text{sat}}$. (Note: the printed formula in C. Drag et at.[^1] Eq. (8) reads $K^2 = (\Gamma/8)(I/I_0)$ with a single power of $\Gamma$, but this is a typographical error in the original paper — the correct expression must have $\Gamma^2$ for dimensional consistency, since $K$ has dimensions of frequency.)
+C. Drag et al.[^1] (Eq. 8) define the "half Rabi frequency" $K = \Omega_{\text{at}}/2$, so $K^2 = \Omega_{\text{at}}^2/4$. From ($\star$), this gives $K^2 = \tfrac{\Gamma^2}{8}\tfrac{I}{I_0}$ with their $I_0 = I_{\text{sat}}$. (Note: the printed formula in C. Drag et al.[^1] Eq. (8) reads $K^2 = (\Gamma/8)(I/I_0)$ with a single power of $\Gamma$, but this is a typographical error in the source article — the correct expression must have $\Gamma^2$ for dimensional consistency, since $K$ has dimensions of frequency.)
 
 ### 1.4 Dimensions of the Franck–Condon overlap
 
@@ -188,7 +188,7 @@ $$
 \tag{3}
 $$
 
-For the cesium $0_g^-(6s+6p_{3/2})$ state with both atoms in $f=4$ and even partial waves, Drag et al. tabulate $A = 125/3888 \approx 0.032$ (see Appendix B for a detailed derivation of this value). The smallness of $A$ reflects the fact that only a fraction of the full atomic dipole coupling survives the angular momentum algebra: the molecular $\Omega = 0$ projection, exchange symmetry, and hyperfine structure all reduce the effective coupling.
+For the cesium $0_g^-(6s+6p_{3/2})$ state with both atoms in $f=4$ and even partial waves, C. Drag et al.[^1] tabulate $A = 125/3888 \approx 0.032$ (see Appendix B for a detailed derivation of this value). The smallness of $A$ reflects the fact that only a fraction of the full atomic dipole coupling survives the angular momentum algebra: the molecular $\Omega = 0$ projection, exchange symmetry, and hyperfine structure all reduce the effective coupling.
 
 ### 2.4 Physical meaning of $\Gamma_b$
 
@@ -237,9 +237,9 @@ and the FC factor is $|S|^2$ (with dimensions $1/\text{energy}$). Computing $S$ 
 
 For quantitative work, you compute these numerically. But the **reflection approximation** gives a closed-form result that captures the essential physics.
 
-### 4.2 The reflection approximation (summary)
+### 4.2 The reflection approximation: general form and explicit long-range results
 
-Your "Reflection Approximation" note derives this in full detail. The key result is:
+The reflection approximation is summarized by P. S. Julienne's light-field collision treatment[^2] and is written explicitly for long-range photoassociation by H. Wang and W. C. Stwalley.[^4] The generic result is:
 
 $$
 |S(E,v)|^2 = \frac{dE_v}{dv}\;\frac{1}{D_C}\;|\chi_{E,\ell}(R_C)|^2,
@@ -247,14 +247,63 @@ $$
 $$
 
 where:
-- $R_C \approx R_{v+}$ is the Condon point (≈ outer turning point of $|v\rangle$),
-- $D_C = |dV_e/dR|_{R_C}$ is the slope of the excited potential at $R_C$,
+- $R_C \approx R_{v+}$ is the Condon point, approximately the outer classical turning point of $|v\rangle$,
+- $D_C = |d[V_e(R)-V_g(R)]/dR|_{R_C}$ is the difference in slopes of the excited and ground potentials at $R_C$,
 - $dE_v/dv$ is the vibrational level spacing of the excited state.
 
-The physics behind this: the overlap integral is dominated by a narrow region around $R_C$ where the excited-state wave function has its outermost peak (an Airy-function-like feature near the classical turning point). The stationary-phase analysis collapses the integral into the value of the ground-state wave function at that single point, times $1/D_C$, which sets the width of the "window." The excited state merely acts as a probe of $\chi_{E,\ell}(R_C)$.
+The physics behind this is simple: the overlap integral is dominated by a narrow region around the outer turning point of the excited vibrational state, where the bound wave function has an Airy-function-like peak. The reflection approximation collapses the full integral into the value of the ground-state scattering wave function at this one point, multiplied by the local vibrational level spacing and divided by the local slope difference.
+
+For long-range excited potentials of the form
+
+$$
+V_e(R)=D-\frac{C_n'}{R^n},
+$$
+
+Wang and Stwalley write the free-bound Franck--Condon factor as
+
+$$
+F_{v,J;E,J}\equiv |\langle \chi_{v,J}|\chi_{E,J}\rangle|^2
+\approx \frac{dE_v}{dv}\,\frac{1}{d_v}\,|\chi_{E,J}(R_{v+})|^2,
+$$
+
+with
+
+$$
+d_v=\left|\frac{d}{dR}\left[V_e(R)-V_g(R)\right]\right|_{R_{v+}}
+\approx \left|\frac{dV_e}{dR}\right|_{R_{v+}}
+=\frac{nC_n'}{R_{v+}^{n+1}}.
+$$
+
+Here the last approximation uses the fact that the excited long-range potential is much steeper than the ground-state van der Waals potential in the relevant PA region.
+
+For the **homonuclear alkali case**, where the excited long-range potential is dominated by the resonant dipole--dipole interaction $-C_3'/R^3$, Wang and Stwalley's explicit result is:
+
+$$
+\boxed{
+F_{v;E,J}(n=3) = (2\pi\hbar^2)^{1/2}\frac{\Gamma(4/3)}{\Gamma(5/6)}\;\mu^{-1/2}
+\left(\frac{C_3'}{R_v^3}\right)^{-1/2}
+|\chi_{E,J}(R_v)|^2.
+}
+\tag{WS-9}
+$$
+
+This is the most relevant form for the homonuclear PA problem considered here. It says that, once the excited-state long-range coefficient and the outer turning point are fixed, the FC factor is essentially a local measurement of the entrance-channel scattering probability density at $R_v$.
+
+For completeness, for the **heteronuclear alkali case**, where the excited long-range potential is usually van der Waals-like, $-C_6'/R^6$, the corresponding expression is:
+
+$$
+\boxed{
+F_{v;E,J}(n=6) = (2\pi\hbar^2)^{1/2}\frac{\Gamma(7/6)}{\Gamma(2/3)}\;\mu^{-1/2}
+\left(\frac{C_6'}{R_{v+}^6}\right)^{-1/2}
+|\chi_{E,J}(R_{v+})|^2.
+}
+\tag{WS-8}
+$$
+
+The heteronuclear expression can be larger at very long range because the difference in slopes between ground and excited potentials is smaller than in the homonuclear resonant-dipole case. In both formulas, however, the central message is the same: the PA line strength tracks $|\chi_{E,J}(R_C)|^2$.
 
 >[!NOTE]
-> In C. Drag et al.[^1] (Eq. 7), the FC overlap appears as $S(\alpha,v) = \langle\alpha|v\rangle$ — they compute it **numerically** by solving the coupled Schrödinger equations for the Cs$_2$ potentials and evaluating the integral directly. They don't use the reflection approximation explicitly, but the physics is the same. For cesium, the potentials are well-known from spectroscopy, so a direct numerical computation is feasible and more accurate than the reflection formula for deeply-bound levels.
+> In C. Drag et al.[^1] (Eq. 7), the FC overlap appears as $S(\alpha,v)=\langle\alpha|v\rangle$ and is evaluated numerically using the relevant Cs$_2$ potentials. That numerical treatment is more accurate for the specific cesium levels studied there, while Eqs. (WS-8) and (WS-9) are the analytic long-range reflection-approximation limits.
 
 ### 4.3 Wigner threshold law from the FC overlap
 
@@ -270,7 +319,7 @@ $$
 \Gamma_b(E, \ell=0) \propto E^{1/2} = E^{\ell+1/2}\big|_{\ell=0}.
 $$
 
-More generally, for partial wave $\ell$, the threshold behavior is $\Gamma_b \propto E^{\ell+1/2}$. This is the energy dependence that shapes the PA line profiles discussed in the Review of Modern Physics note.
+More generally, for partial wave $\ell$, the threshold behavior is $\Gamma_b \propto E^{\ell+1/2}$. This is the energy dependence that shapes the PA line profiles discussed in the review by K. M. Jones et al.[^3].
 
 ---
 
@@ -292,7 +341,7 @@ where:
 - $\Gamma_d$ is the detection channel rate (e.g., $\Gamma_d = \Gamma_{\text{nat}}$ for trap-loss detection),
 - **all widths** ($\Gamma_b$, $\Gamma_d$, $\Gamma_{\text{tot}}$) and the detuning $(E - \tilde{E}_b)$ are in **energy units** throughout this equation.
 
-**Relation to the Review of Modern Physics notation.** The RMP writes the denominator as $(E + h\nu - h\nu_0 - S_b)^2 + (\hbar\Gamma_{\text{tot}}/2)^2$, with $\hbar\Gamma_b$, $\hbar\Gamma_d$ in the numerator. This is the same formula but with widths in **rate units** (s$^{-1}$) multiplied by $\hbar$ to convert back to energy. Their $S_b(E) = \Delta(E)$ is the light shift. In the weak-field limit ($I \to 0$), the light shift vanishes and $E - \tilde{E}_b \to E - E_{\text{res}}$, where $E_{\text{res}} = h\nu_0 - h\nu$ is the resonant collision energy.
+**Relation to the K. M. Jones et al. review notation.[^3]** The review writes the denominator as $(E + h\nu - h\nu_0 - S_b)^2 + (\hbar\Gamma_{\text{tot}}/2)^2$, with $\hbar\Gamma_b$, $\hbar\Gamma_d$ in the numerator. This is the same formula but with widths in **rate units** (s$^{-1}$) multiplied by $\hbar$ to convert back to energy. Their $S_b(E) = \Delta(E)$ is the light shift. In the weak-field limit ($I \to 0$), the light shift vanishes and $E - \tilde{E}_b \to E - E_{\text{res}}$, where $E_{\text{res}} = h\nu_0 - h\nu$ is the resonant collision energy.
 
 ### 5.2 Understanding the structure of $K(E)$
 
@@ -322,13 +371,13 @@ This is the standard saturation function $s/(1+s)^2$, familiar from two-level at
 - $s = 1$: Maximum rate. $K_{\text{max}} = v_{\text{rel}}\pi/k^2$, the unitarity-limited cross-section times velocity. This is the largest rate any single $s$-wave resonance can produce.
 - $s \gg 1$ (oversaturated): $K \propto 1/s \propto 1/I$. The rate *decreases* because power broadening of the line dilutes the resonant cross-section faster than the coupling grows.
 
-This is what C. Drag et al.[^1] observes for the $0_g^-$ state: trap loss plateaus around 100–300 mW.
+This is what C. Drag et al.[^1] observe for the $0_g^-$ state: trap loss plateaus around 100–300 mW.
 
 ---
 
-## Step 6. From Breit–Wigner to Pillet's formula — a derivation
+## Step 6. From Breit–Wigner to the C. Drag et al. rate formula — a derivation
 
-This section shows explicitly that Pillet's Eq. (7) is the weak-field, thermally-averaged limit of the Breit–Wigner result Eq. (5). We restrict to $s$-wave ($\ell = 0$), trap-loss detection ($\Gamma_d = \Gamma_{\text{nat}}$), and the weak-field limit ($\Delta \approx 0$, $\Gamma_b \ll \Gamma_{\text{nat}}$).
+This section shows explicitly that C. Drag et al.[^1] Eq. (7) is the weak-field, thermally-averaged limit of the Breit–Wigner result Eq. (5). We restrict to $s$-wave ($\ell = 0$), trap-loss detection ($\Gamma_d = \Gamma_{\text{nat}}$), and the weak-field limit ($\Delta \approx 0$, $\Gamma_b \ll \Gamma_{\text{nat}}$).
 
 ### 6.1 The thermal rate coefficient
 
@@ -339,7 +388,7 @@ K(T) = \frac{2}{\sqrt{\pi}\,(k_BT)^{3/2}}\int_0^\infty \sqrt{E}\;e^{-E/k_BT}\;K(
 \tag{6}
 $$
 
-The prefactor $2/[\sqrt{\pi}(k_BT)^{3/2}]$ ensures the Maxwell–Boltzmann distribution is normalized: $\int_0^\infty (2/\sqrt{\pi})(k_BT)^{-3/2}\sqrt{E}\,e^{-E/k_BT}\,dE = 1$. (Note: the Review of Modern Physics, Eq. 22, writes this without the $(k_BT)^{3/2}$ factor, which likely means their $K_d(E)$ absorbs a different normalization convention. Our Eq. (6) is the standard textbook form and gives $K(T)$ the correct dimensions of length$^3$/time.)
+The prefactor $2/[\sqrt{\pi}(k_BT)^{3/2}]$ ensures the Maxwell–Boltzmann distribution is normalized: $\int_0^\infty (2/\sqrt{\pi})(k_BT)^{-3/2}\sqrt{E}\,e^{-E/k_BT}\,dE = 1$. (Note: K. M. Jones et al.[^3], Eq. 22, write this without the $(k_BT)^{3/2}$ factor, which likely means their $K_d(E)$ absorbs a different normalization convention. Our Eq. (6) is the standard textbook form and gives $K(T)$ the correct dimensions of length$^3$/time.)
 
 Substituting Eq. (5) for $s$-wave:
 
@@ -394,7 +443,7 @@ K(T) = \frac{4\pi^2\hbar}{\sqrt{\pi}\,\sqrt{2\mu}\,(k_BT)^{3/2}}\;\Gamma_b(E_r)\
 \tag{7}
 $$
 
-### 6.6 Matching to Pillet's formula
+### 6.6 Matching to the C. Drag et al. rate formula
 
 Now substitute the explicit form of $\Gamma_b$ from Eq. (2):
 
@@ -444,16 +493,16 @@ $$
 R_{\text{PA}} = n_{\text{at}}\;\frac{2\pi\mu}{\hbar}\;\lambda_{\text{th}}^3\;A\,K^2\,S^2\;e^{-E_r/k_BT}.
 $$
 
-This is the exact result (for $s$-wave, unsaturated, narrow resonance) with the standard thermal de Broglie wavelength $\lambda_{\text{th}} = h/\sqrt{2\pi\mu k_BT}$. Pillet defines $\lambda_{\text{th}} = h/\sqrt{3\mu k_BT}$ instead, which differs by a factor of $\sqrt{2\pi/3}$; this reshuffles the numerical prefactor but does not change the physics. The result has the structure:
+This is the exact result (for $s$-wave, unsaturated, narrow resonance) with the standard thermal de Broglie wavelength $\lambda_{\text{th}} = h/\sqrt{2\pi\mu k_BT}$. C. Drag et al.[^1] define $\lambda_{\text{th}} = h/\sqrt{3\mu k_BT}$ instead, which differs by a factor of $\sqrt{2\pi/3}$; this reshuffles the numerical prefactor but does not change the physics. The result has the structure:
 
 $$
 \boxed{R_{\text{PA}} \propto n_{\text{at}}\,\lambda_{\text{th}}^3\;A(g,e,\vec{\epsilon})\;K^2\,S^2\;e^{-E_r/k_BT}.}
 \tag{8}
 $$
 
-This matches the structure of Pillet's Eq. (7) exactly. The angular factor $A(g,e,\vec{\epsilon})$ is not merely a numerical prefactor — it determines which molecular symmetry ($0_g^-$, $0_u^+$, etc.), which hyperfine channel ($f+f'$), and which partial-wave parity (even/odd $\ell$) the formula applies to. Drag et al.'s Table I tabulates $A$ for all relevant channels of Cs$_2$; see Appendix B for the detailed derivation.
+This matches the structure of C. Drag et al.[^1] Eq. (7) exactly. The angular factor $A(g,e,\vec{\epsilon})$ is not merely a numerical prefactor — it determines which molecular symmetry ($0_g^-$, $0_u^+$, etc.), which hyperfine channel ($f+f'$), and which partial-wave parity (even/odd $\ell$) the formula applies to. C. Drag et al.[^1] Table I tabulates $A$ for all relevant channels of Cs$_2$; see Appendix B for the detailed derivation.
 
-**Bottom line**: Pillet's formula is the Breit–Wigner event rate coefficient, thermally averaged, in the limits (i) $s$-wave only, (ii) $\Gamma_b \ll \Gamma_{\text{nat}}$ (unsaturated), and (iii) $\Gamma_{\text{tot}} \ll k_BT$ (narrow resonance). The physics is in $A \times K^2 S^2 \propto A \times I \times |S|^2 \propto \Gamma_b$.
+**Bottom line**: the C. Drag et al.[^1] formula is the Breit–Wigner event rate coefficient, thermally averaged, in the limits (i) $s$-wave only, (ii) $\Gamma_b \ll \Gamma_{\text{nat}}$ (unsaturated), and (iii) $\Gamma_{\text{tot}} \ll k_BT$ (narrow resonance). The physics is in $A \times K^2 S^2 \propto A \times I \times |S|^2 \propto \Gamma_b$.
 
 ---
 
@@ -540,7 +589,7 @@ $$
 I_{\text{sat}}^{\text{PA}} \sim \frac{4}{\pi\times 1.1\times10^{-10}}\times 1.1\times10^{-3}\;\text{W/cm}^2 \sim 13{,}000\;\text{W/cm}^2.
 $$
 
-This is substantially larger than the estimate without the angular factor ($\sim 400$ W/cm$^2$), by the expected factor of $1/A \approx 31$. The estimate is sensitive to $R_C$, $a_s$, and the specific vibrational level; the order-of-magnitude range of $\sim 10^3$–$10^4$ W/cm$^2$ is consistent with Pillet's observation that the $0_g^-$ state saturates around $55$–$200$ W/cm$^2$, once the uncertainties in the Franck–Condon factor are accounted for. (Different vibrational levels can have $|S|^2$ values differing by orders of magnitude.)
+This is substantially larger than the estimate without the angular factor ($\sim 400$ W/cm$^2$), by the expected factor of $1/A \approx 31$. The estimate is sensitive to $R_C$, $a_s$, and the specific vibrational level; the order-of-magnitude range of $\sim 10^3$–$10^4$ W/cm$^2$ is consistent with C. Drag et al.[^1], who observed that the $0_g^-$ state saturates around $55$–$200$ W/cm$^2$, once the uncertainties in the Franck–Condon factor are accounted for. (Different vibrational levels can have $|S|^2$ values differing by orders of magnitude.)
 
 ### 7.4 Physical intuition
 
@@ -580,9 +629,9 @@ $$
 \dot{N}_{\text{PA}} = -K(T)\int n(\vec{r})^2\,d^3r.
 $$
 
-(Each PA event removes **two** atoms from the trap, so the atom loss rate is actually $2K(T)\int n^2 d^3r$. Whether the factor of 2 is absorbed into $K$ or written explicitly is a convention — Pillet absorbs it into $\beta_{\text{PA}}$.)
+(Each PA event removes **two** atoms from the trap, so the atom loss rate is actually $2K(T)\int n^2 d^3r$. Whether the factor of 2 is absorbed into $K$ or written explicitly is a convention — C. Drag et al.[^1] absorb it into $\beta_{\text{PA}}$.)
 
-This is exactly the $\beta_{\text{PA}}$ term in Pillet's rate equation:
+This is exactly the $\beta_{\text{PA}}$ term in the C. Drag et al.[^1] rate equation:
 
 $$
 \frac{dN_{\text{at}}}{dt} = L - \gamma N_{\text{at}} - (\beta + \beta_{\text{PA}})\int n_{\text{at}}^2(\vec{r})\,d^3r.
@@ -609,7 +658,7 @@ $$
 L = \gamma N_{\text{at}} + (\beta + \beta_{\text{PA}})\int n^2\,d^3r.
 $$
 
-Pillet measures the ratio $N_{\text{PA}}/N_{\text{at}}$ (atom number with/without the PA laser) and uses Eq. (5) of his paper:
+C. Drag et al.[^1] measure the ratio $N_{\text{PA}}/N_{\text{at}}$ (atom number with/without the PA laser) and use their Eq. (5):
 
 $$
 \frac{N_{\text{PA}}}{N_{\text{at}}} \approx \frac{\gamma + \beta\bar{n}}{\gamma + (\beta+\beta_{\text{PA}})\bar{n}},
@@ -619,7 +668,7 @@ where $\bar{n}$ is the average density. Combined with the known loading time $\t
 
 ### 8.4 The quantity $n_{\text{at}}\beta_{\text{PA}}$ — the PA rate per atom
 
-C. Drag et al.[^1] reports $n_{\text{at}}\beta_{\text{PA}} = n_{\text{at}}K(T)$ in units of s$^{-1}$. This is the PA collision rate per atom: each atom suffers PA collisions at a rate proportional to the local density of collision partners. This is also equal to $R_{\text{PA}}$ from Eq. (8) in that paper -- it gives the rate per atom directly.
+C. Drag et al.[^1] report $n_{\text{at}}\beta_{\text{PA}} = n_{\text{at}}K(T)$ in units of s$^{-1}$. This is the PA collision rate per atom: each atom suffers PA collisions at a rate proportional to the local density of collision partners. This is also equal to $R_{\text{PA}}$ from C. Drag et al.[^1] Eq. (8) — it gives the rate per atom directly.
 
 ### 8.5 Summary of the chain: laser intensity → experimental signal
 
@@ -631,20 +680,21 @@ $$
 
 ## Appendix A. Dictionary of equivalent notations
 
-| This note | Reflection note | Pillet | Review of Mod. Phys. |
-|-----------|----------------|--------|---------------------|
-| $V_{b,\nu}(E,\ell)$ | — | — | $V_b(E,\ell)$ |
-| $a_\nu$ (amplitude angular factor) | — | — | contained in $\mathcal{A}$ |
-| $A(g,e,\vec{\epsilon})$ (line-strength angular factor) | — | $A(g,e,\vec{\epsilon}_{\text{PA}})$ (Table I) | $|\mathcal{A}|^2$ summed/averaged |
-| $S(E,v) = \langle\psi_v\|\chi_E\rangle$ | $\langle\Psi_e(v)\|\Psi_g^+(E)\rangle$ | $S(\alpha,v)$ | $\langle b\|E,\ell\rangle$ (nuclear part) |
-| $\Gamma_b$ (energy) | $\gamma_s$ (energy) | (implicit in $A\,K^2 S^2$) | $\hbar\Gamma_b$ (energy) |
-| $\Gamma_{\text{nat}}$ (energy) | — | $\hbar\Gamma$ (energy) | $\hbar\Gamma_{\text{nat}}$ (energy) |
-| $I_{\text{sat}}$ | — | $I_0$ | — |
-| $D_C$ (slope) | $D_C$, $d_v$ | — | — |
-| $R_C$ (Condon pt.) | $R_C \approx R_{v+}$ | — | — |
-| $K(T) = \beta_{\text{PA}}$ | — | $\beta_{\text{PA}}$ | $K_d(T)$ |
-| $K(E)$ | — | — | $K_d(E)$ |
-| $\Delta(E)$ (light shift) | — | — | $S_b(E)$ |
+| This note                                              | Julienne (1996)[^2] / reflection approximation | C. Drag et al.[^1]                            | Jones et al. RMP[^3]                      |
+| ------------------------------------------------------ | ---------------------------------------------- | --------------------------------------------- | ----------------------------------------- |
+| $V_{b,\nu}(E,\ell)$                                    | —                                              | —                                             | $V_b(E,\ell)$                             |
+| $a_\nu$ (amplitude angular factor)                     | —                                              | —                                             | contained in $\mathcal{A}$                |
+| $A(g,e,\vec{\epsilon})$ (line-strength angular factor) | —                                              | $A(g,e,\vec{\epsilon}_{\text{PA}})$ (Table I) | —                                         |
+| $S(E,v) = \langle\psi_v\|\chi_E\rangle$                | $\langle\Psi_e(v)\|\Psi_g^+(E)\rangle$         | $S(\alpha,v)$                                 | $\langle b\|E,\ell\rangle$ (nuclear part) |
+| $\Gamma_b$ (energy)                                    | $\gamma_s$ (energy)                            | (implicit in $A\,K^2 S^2$)                    | $\hbar\Gamma_b$ (energy)                  |
+| $\Gamma_{\text{nat}}$ (energy)                         | —                                              | $\hbar\Gamma$ (energy)                        | $\hbar\Gamma_{\text{nat}}$ (energy)       |
+| $I_{\text{sat}}$                                       | —                                              | $I_0$                                         | —                                         |
+| $D_C$ (slope)                                          | $D_C$, $d_v$                                   | —                                             | —                                         |
+| $R_C$ (Condon pt.)                                     | $R_C \approx R_{v+}$                           | —                                             | —                                         |
+| $K(T) = \beta_{\text{PA}}$                             | —                                              | $\beta_{\text{PA}}$                           | $K_d(T)$                                  |
+| $K(E)$                                                 | —                                              | —                                             | $K_d(E)$                                  |
+| $\Delta(E)$ (light shift)                              | —                                              | —                                             | $S_b(E)$                                  |
+
 
 ---
 
@@ -652,10 +702,7 @@ $$
 
 To avoid making this note tremendously long, the derivation details of the angular factor are moved to a standalone tutorial: [[Angular factor in photoassociation - a tutorial]].
 
-
-
-
-
-
-
-[^1]: C. Drag _et al._, "Experimental versus theoretical rates for photoassociation and for formation of ultracold molecules," _IEEE J. Quantum Electron._, vol. 36, no. 12, pp. 1378-1388, Dec. 2000, doi: 10.1109/3.892556.
+[^1]: C. Drag _et al._, "Experimental versus theoretical rates for photoassociation and for formation of ultracold molecules," _IEEE J. Quantum Electron._, vol. 36, no. 12, pp. 1378–1388, Dec. 2000, doi: 10.1109/3.892556.
+[^2]: P. S. Julienne, "Cold Binary Atomic Collisions in a Light Field," _J. Res. Natl. Inst. Stand. Technol._, vol. 101, no. 4, pp. 487–503, Jul.–Aug. 1996, doi: 10.6028/jres.101.050.
+[^3]: K. M. Jones, E. Tiesinga, P. D. Lett, and P. S. Julienne, "Ultracold photoassociation spectroscopy: Long-range molecules and atomic scattering," _Rev. Mod. Phys._, vol. 78, no. 2, pp. 483–535, May 2006, doi: 10.1103/RevModPhys.78.483.
+[^4]: H. Wang and W. C. Stwalley, "Ultracold photoassociative spectroscopy of heteronuclear alkali-metal diatomic molecules," _J. Chem. Phys._, vol. 108, no. 14, pp. 5767–5771, Apr. 1998, doi: 10.1063/1.475987.
