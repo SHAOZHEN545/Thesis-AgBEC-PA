@@ -87,7 +87,7 @@ $$
 \tag{$\star$}
 $$
 
-Pillet's paper (Eq. 8) defines the "half Rabi frequency" $K = \Omega_{\text{at}}/2$, so $K^2 = \Omega_{\text{at}}^2/4$. From ($\star$), this gives $K^2 = \tfrac{\Gamma^2}{8}\tfrac{I}{I_0}$ with their $I_0 = I_{\text{sat}}$. (Note: the printed formula in Pillet's Eq. (8) reads $K^2 = (\Gamma/8)(I/I_0)$ with a single power of $\Gamma$, but this is a typographical error in the original paper — the correct expression must have $\Gamma^2$ for dimensional consistency, since $K$ has dimensions of frequency.)
+C. Drag et al.[^1] (Eq. 8) defines the "half Rabi frequency" $K = \Omega_{\text{at}}/2$, so $K^2 = \Omega_{\text{at}}^2/4$. From ($\star$), this gives $K^2 = \tfrac{\Gamma^2}{8}\tfrac{I}{I_0}$ with their $I_0 = I_{\text{sat}}$. (Note: the printed formula in C. Drag et at.[^1] Eq. (8) reads $K^2 = (\Gamma/8)(I/I_0)$ with a single power of $\Gamma$, but this is a typographical error in the original paper — the correct expression must have $\Gamma^2$ for dimensional consistency, since $K$ has dimensions of frequency.)
 
 ### 1.4 Dimensions of the Franck–Condon overlap
 
@@ -253,11 +253,10 @@ where:
 
 The physics behind this: the overlap integral is dominated by a narrow region around $R_C$ where the excited-state wave function has its outermost peak (an Airy-function-like feature near the classical turning point). The stationary-phase analysis collapses the integral into the value of the ground-state wave function at that single point, times $1/D_C$, which sets the width of the "window." The excited state merely acts as a probe of $\chi_{E,\ell}(R_C)$.
 
-### 4.3 How Pillet handles the FC overlap
+>[!NOTE]
+> In C. Drag et al.[^1] (Eq. 7), the FC overlap appears as $S(\alpha,v) = \langle\alpha|v\rangle$ — they compute it **numerically** by solving the coupled Schrödinger equations for the Cs$_2$ potentials and evaluating the integral directly. They don't use the reflection approximation explicitly, but the physics is the same. For cesium, the potentials are well-known from spectroscopy, so a direct numerical computation is feasible and more accurate than the reflection formula for deeply-bound levels.
 
-In Pillet's IEEE 2000 paper (Eq. 7), the FC overlap appears as $S(\alpha,v) = \langle\alpha|v\rangle$ — they compute it **numerically** by solving the coupled Schrödinger equations for the Cs$_2$ potentials and evaluating the integral directly. They don't use the reflection approximation explicitly, but the physics is the same. For cesium, the potentials are well-known from spectroscopy, so a direct numerical computation is feasible and more accurate than the reflection formula for deeply-bound levels.
-
-### 4.4 Wigner threshold law from the FC overlap
+### 4.3 Wigner threshold law from the FC overlap
 
 At ultracold energies, the $s$-wave scattering wave function at moderate range behaves as $\chi_{E,0}(R) \propto \sqrt{k}(R - a_s)$ where $k = \sqrt{2\mu E/\hbar^2}$ and $a_s$ is the scattering length. Therefore:
 
@@ -323,7 +322,7 @@ This is the standard saturation function $s/(1+s)^2$, familiar from two-level at
 - $s = 1$: Maximum rate. $K_{\text{max}} = v_{\text{rel}}\pi/k^2$, the unitarity-limited cross-section times velocity. This is the largest rate any single $s$-wave resonance can produce.
 - $s \gg 1$ (oversaturated): $K \propto 1/s \propto 1/I$. The rate *decreases* because power broadening of the line dilutes the resonant cross-section faster than the coupling grows.
 
-This is what Pillet observes for the $0_g^-$ state in the IEEE paper: trap loss plateaus around 100–300 mW.
+This is what C. Drag et al.[^1] observes for the $0_g^-$ state: trap loss plateaus around 100–300 mW.
 
 ---
 
@@ -620,7 +619,7 @@ where $\bar{n}$ is the average density. Combined with the known loading time $\t
 
 ### 8.4 The quantity $n_{\text{at}}\beta_{\text{PA}}$ — the PA rate per atom
 
-Pillet reports $n_{\text{at}}\beta_{\text{PA}} = n_{\text{at}}K(T)$ in units of s$^{-1}$. This is the PA collision rate per atom: each atom suffers PA collisions at a rate proportional to the local density of collision partners. This is also equal to $R_{\text{PA}}$ from Eq. (8) — the Pillet formula gives the rate per atom directly.
+C. Drag et al.[^1] reports $n_{\text{at}}\beta_{\text{PA}} = n_{\text{at}}K(T)$ in units of s$^{-1}$. This is the PA collision rate per atom: each atom suffers PA collisions at a rate proportional to the local density of collision partners. This is also equal to $R_{\text{PA}}$ from Eq. (8) in that paper -- it gives the rate per atom directly.
 
 ### 8.5 Summary of the chain: laser intensity → experimental signal
 
@@ -651,288 +650,12 @@ $$
 
 ## Appendix B. The angular factor $A(g,e,\vec{\epsilon})$ — detailed derivation
 
-This appendix derives the angular factor $A = 125/3888$ for the entry $0_g^-(6s+6p_{3/2})$, $f+f = 4+4$, even $\ell$ in Drag et al.'s Table I. The same method applies to all other entries.
+To avoid making this note tremendously long, the derivation details of the angular factor are moved to a standalone tutorial: [[Angular factor in photoassociation - a tutorial]].
 
-### B.1 What $A$ is and is not
 
-The table entry $A = 125/3888$ is **not** a single squared amplitude. It is a **line-strength coefficient**: a weighted sum of squared angular amplitudes, after summing over unresolved final quantum numbers and averaging over a statistical mixture of initial quantum numbers. It takes the compact factored form:
 
-$$
-A = \underbrace{\frac{1}{3}}_{\text{(i) rotational/polarization}} \;\times\; \underbrace{\frac{45}{81}}_{\text{(ii) bosonic symmetry}} \;\times\; \underbrace{\frac{25}{144}}_{\text{(iii) body-fixed line strength}} \;=\; \frac{125}{3888}.
-$$
 
-We now explain each factor.
 
-### B.2 Factor (ii): bosonic symmetry weight — $45/81$
 
-We start with factor (ii) because it is the easiest and provides context for the others.
 
-Two cesium atoms in hyperfine state $f = 4$ have $(2f+1)^2 = 81$ product states $|m_{f_1}, m_{f_2}\rangle$. These can be recoupled into states of definite total hyperfine angular momentum $F_t$ (where $\vec{F}_t = \vec{f}_1 + \vec{f}_2$), with $F_t$ ranging from 0 to 8. Under particle exchange, the state $|f,f; F_t, M_F\rangle$ picks up a phase $(-1)^{2f - F_t} = (-1)^{8 - F_t} = (-1)^{F_t}$, since $f = 4$ is integer. Since $^{133}$Cs is a boson, the total wave function must be symmetric under exchange. The total symmetry is the product of the hyperfine, spatial (partial-wave), and electronic parts:
-
-$$
-(-1)^{F_t} \times (-1)^\ell \times (\text{electronic exchange}) = +1.
-$$
-
-For $0_g^-$ states (gerade), the electronic part is symmetric under nuclear exchange. Therefore we need $(-1)^{F_t + \ell} = +1$, so:
-
-$$
-\text{even }\ell \implies \text{even }F_t, \qquad \text{odd }\ell \implies \text{odd }F_t.
-$$
-
-For even $\ell$, the allowed values are $F_t = 0, 2, 4, 6, 8$, with total degeneracy:
-
-$$
-\sum_{F_t = 0,2,4,6,8}(2F_t + 1) = 1 + 5 + 9 + 13 + 17 = 45.
-$$
-
-The fraction of initial pair states contributing is $45/81$. Physically, only 45 out of 81 hyperfine pair states have the correct exchange symmetry for the given partial-wave and molecular-state parity.
-
-### B.3 Factor (i): rotational/polarization average — $1/3$
-
-For an $s$-wave entrance channel ($\ell = 0$), the rotational angular momentum of the nuclei is $R_f = 0$. The total angular momentum of the molecule is $J = j_{12} + R_f = j_{12}$, where $j_{12}$ is the resultant of the two electronic angular momenta $j_g = 1/2$ and $j_e = 3/2$. For $0_g^-$, the body-frame analysis restricts the accessible $J$ value to $J = 2$ only (see B.4 below). Therefore there is a single final $J$, and the sum over $M_J = -2, \ldots, +2$ for linear polarization ($q = 0$ in the lab frame, but $q = \pm 1$ body-frame components contribute — see B.4) gives the standard isotropic result:
-
-$$
-\frac{1}{2J+1}\sum_{M_J} |\langle J, M_J | \hat{\epsilon} \cdot \hat{d} | \text{initial}\rangle|^2 \;\propto\; \frac{1}{3}.
-$$
-
-This is the familiar factor from the Wigner–Eckart theorem: for any rank-1 operator acting isotropically, the sum over final $M$ and average over polarization directions gives $1/3$. It is independent of $J$ and appears universally for linearly polarized light on an isotropic sample.
-
-### B.4 Factor (iii): body-fixed electronic + hyperfine line strength — $25/144$
-
-This is the nontrivial part. It involves the body-frame structure of the $0_g^-$ state and the hyperfine recoupling algebra.
-
-**The $0_g^-$ molecular state in the body frame.** In Hund's case (c), the natural quantization axis is the internuclear axis. Therefore the relevant electronic quantum number is
-
-$$
-\Omega = \omega_e + \omega_g,
-$$
-
-where $\omega_e$ and $\omega_g$ are the projections of the excited-atom and ground-atom angular momenta on the molecular axis.
-
-For the asymptote $6s_{1/2}+6p_{3/2}$,
-
-$$
-j_g = \frac{1}{2}, \qquad j_e = \frac{3}{2}.
-$$
-
-Since the ground atom has $j_g=1/2$, its projection can only be
-
-$$
-\omega_g = \pm \frac{1}{2}.
-$$
-
-Therefore, for $\Omega=0$, the only allowed projection pairs are
-
-$$
-\omega_e = +\frac{1}{2}, \qquad \omega_g = -\frac{1}{2},
-$$
-
-and
-
-$$
-\omega_e = -\frac{1}{2}, \qquad \omega_g = +\frac{1}{2}.
-$$
-
-Terms such as
-
-$$
-\left|+\frac{3}{2}\right\rangle_e
-\left|-\frac{3}{2}\right\rangle_g
-$$
-
-are not allowed here, because a $6s_{1/2}$ ground atom cannot have projection $\omega_g=-3/2$.
-
-Anyway, the $\Omega=0$ body-frame projection basis is thus only
-
-$$
-|A\rangle =
-\left|+\frac{1}{2}\right\rangle_e
-\left|-\frac{1}{2}\right\rangle_g,
-\qquad
-|B\rangle =
-\left|-\frac{1}{2}\right\rangle_e
-\left|+\frac{1}{2}\right\rangle_g.
-$$
-
-Under reflection through a plane containing the internuclear axis, the body-frame projections change sign. With the conventional phase choice for the $6p$ orbital, this reflection (an operation $|\omega\rangle\to|-\omega\rangle$ acts as
-
-$$
-\sigma_v |A\rangle = - |B\rangle,
-\qquad
-\sigma_v |B\rangle = - |A\rangle.
-$$
-
-Therefore the plus and minus combinations have opposite reflection character:
-
-$$
-\sigma_v \frac{|A\rangle + |B\rangle}{\sqrt{2}}
-=
--\frac{|A\rangle + |B\rangle}{\sqrt{2}},
-$$
-
-while
-
-$$
-\sigma_v \frac{|A\rangle - |B\rangle}{\sqrt{2}}
-=
-+\frac{|A\rangle - |B\rangle}{\sqrt{2}}.
-$$
-
-So, in this phase convention,
-
-$$
-0^-:
-\qquad
-\frac{1}{\sqrt{2}}
-\left[
-\left|+\frac{1}{2}\right\rangle_e
-\left|-\frac{1}{2}\right\rangle_g
-+
-\left|-\frac{1}{2}\right\rangle_e
-\left|+\frac{1}{2}\right\rangle_g
-\right],
-$$
-
-and
-
-$$
-0^+:
-\qquad
-\frac{1}{\sqrt{2}}
-\left[
-\left|+\frac{1}{2}\right\rangle_e
-\left|-\frac{1}{2}\right\rangle_g
--
-\left|-\frac{1}{2}\right\rangle_e
-\left|+\frac{1}{2}\right\rangle_g
-\right].
-$$
-
-This is reflection symmetry, not particle exchange. Reflection $\sigma_v$ flips the body-frame projections; exchange symmetry is a separate operation that swaps the two identical nuclei.
-
-Now couple the two atomic angular momenta
-
-$$
-j_e=\frac{3}{2}, \qquad j_g=\frac{1}{2}.
-$$
-
-The possible resultant angular momenta are
-
-$$
-j_{12}=1,2.
-$$
-
-For $\Omega=0$, the Clebsch--Gordan expansion gives
-
-$$
-|j_{12}=2,\Omega=0\rangle
-=
-\frac{1}{\sqrt{2}}
-\left[
-\left|+\frac{1}{2}\right\rangle_e
-\left|-\frac{1}{2}\right\rangle_g
-+
-\left|-\frac{1}{2}\right\rangle_e
-\left|+\frac{1}{2}\right\rangle_g
-\right],
-$$
-
-whereas
-
-$$
-|j_{12}=1,\Omega=0\rangle
-=
-\frac{1}{\sqrt{2}}
-\left[
-\left|+\frac{1}{2}\right\rangle_e
-\left|-\frac{1}{2}\right\rangle_g
--
-\left|-\frac{1}{2}\right\rangle_e
-\left|+\frac{1}{2}\right\rangle_g
-\right].
-$$
-
-Comparing this with the reflection result above, the $0^-$ body-frame state for the $6s_{1/2}+6p_{3/2}$ asymptote is the $j_{12}=2$, $\Omega=0$ state:
-
-$$
-|0_g^-\rangle
-\equiv
-|j_{12}=2,\Omega=0\rangle
-=
-\frac{1}{\sqrt{2}}
-\left[
-\left|+\frac{1}{2}\right\rangle_e
-\left|-\frac{1}{2}\right\rangle_g
-+
-\left|-\frac{1}{2}\right\rangle_e
-\left|+\frac{1}{2}\right\rangle_g
-\right].
-$$
-
-The orthogonal $j_{12}=1$, $\Omega=0$ combination has the opposite reflection character and is not the $0_g^-$ channel considered here.
-
-**The transition dipole.** The PA laser excites one atom from $6s_{1/2}$ to $6p_{3/2}$. The one-atom transition dipole matrix element in the body frame is:
-
-$$
-\frac{\langle 6p_{3/2}, \omega' | d_q | 6s_{1/2}, \omega \rangle}{D} = \langle 1\,q;\;\tfrac{1}{2}\,\omega\,|\,\tfrac{3}{2}\,\omega'\rangle,
-$$
-
-where $D$ is the reduced atomic dipole matrix element (already factored out), $q$ labels the spherical component of the dipole operator in the body frame, and the right-hand side is a Clebsch–Gordan coefficient. For $\Omega = 0$ states, the contributing body-frame components are $q = \pm 1$ (perpendicular transitions in the body frame).
-
-**The squared amplitude, summed and averaged.** The body-fixed line strength $B$ is defined by squaring the transition amplitude from a symmetrized initial ground-state hyperfine pair $|(is)f, (is)f; F_t, M_F\rangle$ to the $0_g^-$ excited state, summing over all final nuclear-spin projections (the nuclear spins are spectators in the electronic transition), and averaging over the allowed $F_t$ and $M_F$ with equal statistical weight:
-
-$$
-B_{0_g^-, p_{3/2}}^{f=4,\;\text{even }\ell} \;=\; \frac{1}{45}\sum_{F_t = 0,2,4,6,8}\sum_{M_F = -F_t}^{F_t}\sum_{\text{final nuc.}} |\mathcal{M}|^2 \;=\; \frac{25}{144}.
-$$
-
-The amplitude $\mathcal{M}$ involves: (a) decomposing each $|f, m_f\rangle = |I = 7/2, s = 1/2; f, m_f\rangle$ into $|m_I, m_s\rangle$ components via CG coefficients, (b) applying the body-frame dipole operator (with $q = \pm 1$) to excite one atom's electron from $s_{1/2}$ to $p_{3/2}$, (c) projecting onto the $0_g^-$ state using the body-frame coefficients from above, and (d) including the gerade symmetrization (the dipole can act on either atom, and both amplitudes are added coherently).
-
-The resulting fraction $25/144$ is not a perfect square because it is a sum of squared CG coefficients weighted by the hyperfine decomposition. Different $F_t$ values contribute different amounts, and the sum produces a rational number whose numerator and denominator reflect the angular momentum quantum numbers involved ($j_e = 3/2$, $j_g = 1/2$, $I = 7/2$, $f = 4$).
-
-### B.5 Assembling the result
-
-Multiplying the three factors:
-
-$$
-A = \frac{1}{3} \times \frac{45}{81} \times \frac{25}{144} = \frac{1 \times 45 \times 25}{3 \times 81 \times 144} = \frac{1125}{34992} = \frac{125}{3888} \approx 0.03215.
-$$
-
-### B.6 Sanity checks and other entries
-
-The same decomposition recovers other entries in Drag et al.'s Table I for $0_g^-(6s+6p_{3/2})$:
-
-$$
-f = 3,\;\text{even }\ell:\quad A = \frac{1}{3}\times\frac{28}{49}\times\frac{11}{64} = \frac{11}{336} \approx 0.03274,
-$$
-
-$$
-f = 3,\;\text{odd }\ell:\quad A = \frac{1}{3}\times\frac{21}{49}\times\frac{23}{144} = \frac{23}{1008} \approx 0.02282,
-$$
-
-$$
-f = 4,\;\text{odd }\ell:\quad A = \frac{1}{3}\times\frac{36}{81}\times\frac{91}{576} = \frac{91}{3888} \approx 0.02341.
-$$
-
-In each case, the bosonic symmetry factor changes (because the allowed $F_t$ values change between even and odd $\ell$, and between $f = 3$ and $f = 4$), and the body-fixed line strength changes (because the hyperfine decomposition of $|f, m_f\rangle$ into $|m_I, m_s\rangle$ differs for $f = 3$ vs. $f = 4$, and because the sum over $F_t$ runs over a different set).
-
-A useful consistency check: for fixed $f$ and fixed molecular state, summing the even-$\ell$ and odd-$\ell$ entries should account for all $(2f+1)^2$ initial states with appropriate weights. For $f = 4$, $0_g^-$:
-
-$$
-A_{\text{even}} + A_{\text{odd}} = \frac{125}{3888} + \frac{91}{3888} = \frac{216}{3888} = \frac{1}{18},
-$$
-
-and $1/18 = (1/3) \times (81/81) \times (25/144 + 91/576 \times 81/36)$... The point is that the sum over even and odd $\ell$ amounts to summing over all $F_t = 0, 1, 2, \ldots, 8$, recovering the full $(2f+1)^2 = 81$ states in the denominator.
-
-### B.7 How to compute $A$ for other atomic species
-
-The procedure is entirely general and applies to any homonuclear alkali PA experiment. For a different species (e.g., $^{87}$Rb with $I = 3/2$, $f = 1$ or $f = 2$; or $^{85}$Rb with $I = 5/2$, $f = 2$ or $f = 3$), one:
-
-1. **Identifies the allowed $F_t$ values** for the given partial-wave parity and molecular-state exchange symmetry (gerade/ungerade). For fermions (e.g., $^{40}$K), the overall wave function must be antisymmetric, reversing the $F_t$ selection.
-
-2. **Computes the bosonic (or fermionic) symmetry weight**: $\sum_{\text{allowed }F_t}(2F_t+1) / (2f+1)^2$.
-
-3. **Computes the body-fixed line strength** by decomposing the hyperfine pair states into electronic-spin components, applying the one-atom dipole operator with the appropriate CG coefficients for the given $j_g \to j_e$ transition, projecting onto the target Hund's case (c) molecular state, and summing/averaging.
-
-4. **Multiplies by $1/3$** for linear polarization (or the appropriate factor for circular polarization).
-
-The nuclear spin $I$ enters only through step 3 (the hyperfine decomposition of $|f, m_f\rangle$) and step 1–2 (the number of allowed $F_t$ values). The electronic part — the CG coefficients for $s_{1/2} \to p_{j_e}$ and the body-frame projection coefficients for the specific $\Omega$ state — is the same for all isotopes of the same element.
+[^1]: C. Drag _et al._, "Experimental versus theoretical rates for photoassociation and for formation of ultracold molecules," _IEEE J. Quantum Electron._, vol. 36, no. 12, pp. 1378-1388, Dec. 2000, doi: 10.1109/3.892556.
