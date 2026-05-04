@@ -323,358 +323,793 @@ More generally, for partial wave $\ell$, the threshold behavior is $\Gamma_b \pr
 
 ---
 
-## Step 5. The event rate coefficient — the full scattering theory result
+## Step 5. The Breit--Wigner two-body PA rate coefficient with the laser frequency explicit
 
-### 5.1 The Breit–Wigner line shape
+The free-bound Franck--Condon factor and stimulated width from the previous sections tell us how strongly the PA laser couples an entrance-channel scattering state to one excited molecular bound state. The next question is: given that coupling, what is the two-body loss coefficient for a pair of atoms colliding at a definite relative collision energy?
 
-The event rate coefficient for transferring atom pairs from the entrance channel to a detection channel (with rate $\Gamma_d$) is derived from the Fano model of a discrete state coupled to multiple continua — see the companion note *"Derivation of the Breit–Wigner Event Rate Coefficient for Photoassociation"* for the full derivation. The result is:
+The detailed Fano/Breit--Wigner derivation is best kept in the standalone note *Breit--Wigner Event Rate for Photoassociation*. Here we quote the result in the notation most useful for PA spectroscopy.
+
+For one entrance partial wave $\ell$, the rate coefficient for transfer from the entrance channel into a detection/loss channel $d$ is
 
 $$
-{K(E) = \frac{v_{\text{rel}}\,\pi}{k^2}\sum_\ell (2\ell+1)\;\frac{\Gamma_d\;\Gamma_b(E,\ell)}{(E - \tilde{E}_b)^2 + (\Gamma_{\text{tot}}/2)^2},}
+\boxed{
+K_d(E;\nu_L,I)
+=
+\frac{\pi v_{\rm rel}}{k^2}
+\sum_\ell(2\ell+1)
+\frac{\hbar\Gamma_b(E,\ell;I)\,\hbar\Gamma_d}
+{\left[E+h\nu_L-h\nu_0-S_b(E,I)\right]^2
++\left[\hbar\Gamma_{\rm tot}(E,I)/2\right]^2}.
+}
 \tag{5}
 $$
 
-where:
-- $v_{\text{rel}} = \hbar k/\mu$ is the relative velocity,
-- $k = \sqrt{2\mu E/\hbar^2}$,
-- $\tilde{E}_b = E_b + \Delta(E)$ is the shifted resonance position, with the light shift $\Delta(E) = \mathcal{P}\int|V_b(E')|^2/(E-E')\,dE'$ (see BW note, Eq. 3),
-- $\Gamma_d$ is the detection channel rate (e.g., $\Gamma_d = \Gamma_{\text{nat}}$ for trap-loss detection),
-- **all widths** ($\Gamma_b$, $\Gamma_d$, $\Gamma_{\text{tot}}$) and the detuning $(E - \tilde{E}_b)$ are in **energy units** throughout this equation.
-
-**Relation to the K. M. Jones et al. review notation.[^3]** The review writes the denominator as $(E + h\nu - h\nu_0 - S_b)^2 + (\hbar\Gamma_{\text{tot}}/2)^2$, with $\hbar\Gamma_b$, $\hbar\Gamma_d$ in the numerator. This is the same formula but with widths in **rate units** (s$^{-1}$) multiplied by $\hbar$ to convert back to energy. Their $S_b(E) = \Delta(E)$ is the light shift. In the weak-field limit ($I \to 0$), the light shift vanishes and $E - \tilde{E}_b \to E - E_{\text{res}}$, where $E_{\text{res}} = h\nu_0 - h\nu$ is the resonant collision energy.
-
-### 5.2 Understanding the structure of $K(E)$
-
-The key is the numerator: $\Gamma_d \times \Gamma_b$. This product appears because the process involves two steps: (1) the laser must drive the pair into $|b\rangle$ (rate $\Gamma_b$), and (2) the molecule must decay into the detection channel (rate $\Gamma_d$). The resonance denominator gives the familiar Lorentzian line shape.
-
-The prefactor $v_{\text{rel}}\pi/k^2$ comes from scattering theory: it converts the dimensionless Breit–Wigner formula into a rate coefficient with dimensions of length$^3$/time.
-
-### 5.3 Saturation — the explicit intensity dependence
-
-To make saturation transparent, define the **PA saturation intensity** $I_{\text{sat}}^{\text{PA}}$ as the intensity at which $\Gamma_b = \Gamma_{\text{nat}}$ (we will derive the explicit formula in Step 7). Then $\Gamma_b = \Gamma_{\text{nat}}\times(I/I_{\text{sat}}^{\text{PA}})$, and for $s$-wave, on resonance ($E = \tilde{E}_b$), with trap-loss detection ($\Gamma_d = \Gamma_{\text{nat}}$) and $\Gamma_o = 0$:
+Here
 
 $$
-K_{\text{on-res}}(E) = \frac{v_{\text{rel}}\pi}{k^2}\;\frac{4\,\Gamma_d\,\Gamma_b}{\Gamma_{\text{tot}}^2}.
+E=\frac{\hbar^2k^2}{2\mu}
+=\frac12\mu v_{\rm rel}^2
 $$
 
-Writing $s \equiv I/I_{\text{sat}}^{\text{PA}}$, so $\Gamma_b = s\,\Gamma_{\text{nat}}$ and $\Gamma_{\text{tot}} = (1+s)\Gamma_{\text{nat}}$:
+is the **relative collision energy** of the atom pair, not the single-atom kinetic energy. The relative velocity is
 
 $$
-{K_{\text{on-res}}(E) = \frac{v_{\text{rel}}\pi}{k^2}\;\frac{4\,\Gamma_{\text{nat}}^2\;s}{(1+s)^2\,\Gamma_{\text{nat}}^2} = \frac{4\pi v_{\text{rel}}}{k^2}\;\frac{s}{(1+s)^2}.}
+v_{\rm rel}=\frac{\hbar k}{\mu}.
+$$
+
+The laser-frequency-dependent detuning in the Breit--Wigner denominator is
+
+$$
+\Delta_E(E;\nu_L,I)
+=
+E+h\nu_L-h\nu_0-S_b(E,I).
+$$
+
+The resonance condition is therefore
+
+$$
+\Delta_E(E;\nu_L,I)=0.
+$$
+
+In the weak-light-shift limit, $S_b\approx0$, this means that for a fixed PA laser frequency $\nu_L$, the resonant collision energy is
+
+$$
+\boxed{
+E_r(\nu_L)=h\nu_0-h\nu_L.
+}
 \tag{5a}
 $$
 
-This is the standard saturation function $s/(1+s)^2$, familiar from two-level atomic physics but now with $s = I/I_{\text{sat}}^{\text{PA}}$ instead of $I/I_{\text{sat}}$.
+This is the clean meaning of $E_r$: it is the collision-energy class selected by the PA laser frequency. When the PA laser is scanned, $E_r$ is scanned through the thermal distribution of relative collision energies.
 
-**Limiting behaviors:**
-- $s \ll 1$ (unsaturated): $K \propto s \propto I$. Linear in intensity.
-- $s = 1$: Maximum rate. $K_{\text{max}} = v_{\text{rel}}\pi/k^2$, the unitarity-limited cross-section times velocity. This is the largest rate any single $s$-wave resonance can produce.
-- $s \gg 1$ (oversaturated): $K \propto 1/s \propto 1/I$. The rate *decreases* because power broadening of the line dilutes the resonant cross-section faster than the coupling grows.
+The widths are:
 
-This is what C. Drag et al.[^1] observe for the $0_g^-$ state: trap loss plateaus around 100–300 mW.
+- $\Gamma_b(E,\ell;I)$: laser-induced stimulated width back to the entrance continuum;
+- $\Gamma_d$: width into the detected/loss channel, often approximated by the natural radiative width $\Gamma_{\rm nat}$ for trap-loss detection;
+- $\Gamma_o$: any additional predissociation, quenching, or other loss width;
+- $\Gamma_{\rm tot}=\Gamma_b+\Gamma_d+\Gamma_o$.
+
+In Eq. (5), the widths $\Gamma$ are rates in s$^{-1}$, and the factors $\hbar\Gamma$ convert them into energies in the Lorentzian. This is the notation used by the PA review literature.[^3]
+
+The stimulated width is connected to the PA laser intensity by
+
+$$
+\Gamma_b(E,\ell;I)
+=
+\frac{\pi\hbar\Gamma_{\rm at}^2}{4}
+\frac{I}{I_{\rm sat}}
+A\,|S(E,v)|^2,
+\tag{5b}
+$$
+
+where $A$ is the angular line-strength factor and $|S(E,v)|^2$ is the energy-normalized free-bound Franck--Condon factor. This is the same object that appears in the C. Drag et al. formula.[^1]
+
+### 5.1 What does $K_d(E;\nu_L,I)$ mean?
+
+$K_d(E;\nu_L,I)$ is a **two-body rate coefficient at one relative collision energy**. Its units are volume/time, e.g. cm$^3$/s. It is not yet a trap-loss rate and not yet a thermal average.
+
+It is the cross section times relative velocity:
+
+$$
+K_d(E;\nu_L,I)=v_{\rm rel}\,\sigma_d(E;\nu_L,I).
+$$
+
+The prefactor
+
+$$
+\frac{\pi v_{\rm rel}}{k^2}
+$$
+
+is the single-partial-wave unitarity scale for an inelastic two-body process. The Lorentzian factor tells us what fraction of the incoming pair flux is transferred into the detected/loss channel.
+
+### 5.2 The on-resonance saturation law for a monoenergetic collision
+
+For the simplest case, take:
+
+- one $s$-wave entrance channel;
+- exact resonance, $\Delta_E=0$;
+- trap-loss detection, $\Gamma_d=\Gamma_{\rm nat}\equiv\gamma$;
+- no other decay, $\Gamma_o=0$.
+
+Define the PA saturation parameter
+
+$$
+s\equiv\frac{I}{I_{\rm sat}^{\rm PA}}
+=\frac{\Gamma_b}{\gamma}.
+$$
+
+Then
+
+$$
+\Gamma_{\rm tot}=\gamma+\Gamma_b=\gamma(1+s).
+$$
+
+The on-resonance coefficient becomes
+
+$$
+\boxed{
+K_{\rm on-res}(E;I)
+=
+\frac{\pi v_{\rm rel}}{k^2}
+\frac{4\Gamma_b\gamma}{(\gamma+\Gamma_b)^2}
+=
+\frac{\pi v_{\rm rel}}{k^2}
+\frac{4s}{(1+s)^2}.
+}
+\tag{5c}
+$$
+
+This is the same saturation factor written in several PA saturation papers:
+
+$$
+\frac{4s}{(1+s)^2}
+=\frac{4\gamma\Gamma_b}{(\gamma+\Gamma_b)^2}.
+$$
+
+It has three important limits:
+
+$$
+s\ll1:\quad K_{\rm on-res}\propto s\propto I,
+$$
+
+$$
+s=1:\quad K_{\rm on-res}=\frac{\pi v_{\rm rel}}{k^2},
+$$
+
+$$
+s\gg1:\quad K_{\rm on-res}\propto \frac1s\propto \frac1I.
+$$
+
+Thus for a **monoenergetic** collision, or for a line whose observed peak behaves like a monoenergetic resonance, PA can be oversaturated: the peak height can decrease at high intensity because power broadening makes the resonant scattering probability smaller at the exact line center.
 
 ---
 
-## Step 6. From Breit–Wigner to the C. Drag et al. rate formula — a derivation
+## Step 6. Relative collision energy and the thermal distribution
 
-This section shows explicitly that C. Drag et al.[^1] Eq. (7) is the weak-field, thermally-averaged limit of the Breit–Wigner result Eq. (5). We restrict to $s$-wave ($\ell = 0$), trap-loss detection ($\Gamma_d = \Gamma_{\text{nat}}$), and the weak-field limit ($\Delta \approx 0$, $\Gamma_b \ll \Gamma_{\text{nat}}$).
+A real MOT or ODT is not monoenergetic. The atoms have a thermal velocity distribution, and PA depends on the **relative** collision energy of an atom pair.
 
-### 6.1 The thermal rate coefficient
-
-The thermally averaged rate coefficient is:
+For two atoms at the same temperature $T$, the relative velocity is
 
 $$
-K(T) = \frac{2}{\sqrt{\pi}\,(k_BT)^{3/2}}\int_0^\infty \sqrt{E}\;e^{-E/k_BT}\;K(E)\;dE.
+\mathbf v_{\rm rel}=\mathbf v_1-\mathbf v_2.
+$$
+
+The relative motion is described by the reduced mass
+
+$$
+\mu=\frac{m_1m_2}{m_1+m_2}.
+$$
+
+The relative collision energy is
+
+$$
+E=\frac12\mu v_{\rm rel}^2.
+$$
+
+For equal masses $m_1=m_2=m$, the reduced mass is $\mu=m/2$. The relative velocity distribution is broader than the one-particle velocity distribution, but the reduced mass is smaller by the corresponding factor. As a result, the relative-motion energy distribution has the **same temperature parameter** $T$:
+
+$$
+\boxed{
+P_T(E)dE
+=
+\frac{2}{\sqrt\pi}
+\frac{\sqrt E}{(k_BT)^{3/2}}
+\exp\left(-\frac{E}{k_BT}\right)dE.
+}
 \tag{6}
 $$
 
-The prefactor $2/[\sqrt{\pi}(k_BT)^{3/2}]$ ensures the Maxwell–Boltzmann distribution is normalized: $\int_0^\infty (2/\sqrt{\pi})(k_BT)^{-3/2}\sqrt{E}\,e^{-E/k_BT}\,dE = 1$. (Note: K. M. Jones et al.[^3], Eq. 22, write this without the $(k_BT)^{3/2}$ factor, which likely means their $K_d(E)$ absorbs a different normalization convention. Our Eq. (6) is the standard textbook form and gives $K(T)$ the correct dimensions of length$^3$/time.)
-
-Substituting Eq. (5) for $s$-wave:
+This distribution is normalized:
 
 $$
-K(T) = \frac{2}{\sqrt{\pi}(k_BT)^{3/2}}\int_0^\infty \sqrt{E}\;e^{-E/k_BT}\;\frac{v_{\text{rel}}\pi}{k^2}\;\frac{\Gamma_{\text{nat}}\;\Gamma_b(E)}{(E - E_r)^2 + (\Gamma_{\text{tot}}/2)^2}\;dE,
+\int_0^\infty P_T(E)dE=1.
 $$
 
-where $E_r = h\nu_0 - h\nu$ is the resonant collision energy.
-
-### 6.2 Simplifying the prefactor
-
-The scattering prefactor is:
+Its mean is
 
 $$
-\frac{v_{\text{rel}}\pi}{k^2} = \frac{\hbar k}{\mu}\;\frac{\pi}{k^2} = \frac{\pi\hbar}{\mu k} = \frac{\pi\hbar}{\sqrt{2\mu E}}.
+\langle E\rangle=\frac32k_BT,
 $$
 
-Combined with $\sqrt{E}$ from the Boltzmann measure:
+and its most probable value is
 
 $$
-\sqrt{E}\;\times\;\frac{\pi\hbar}{\sqrt{2\mu E}} = \frac{\pi\hbar}{\sqrt{2\mu}}.
+E_{\rm mode}=\frac12k_BT.
 $$
 
-This is **energy-independent**. The $\sqrt{E}$ from the thermal weight exactly cancels the $1/\sqrt{E}$ from the scattering prefactor. (This cancellation is specific to $s$-waves.)
-
-### 6.3 Pulling out $\Gamma_b$ from the integral
-
-The remaining $E$-dependence inside the integral comes from $\Gamma_b(E)$, the Lorentzian denominator, and the Boltzmann factor. Since the Lorentzian is extremely narrow ($\Gamma_{\text{tot}} \ll k_BT$: for Cs, $\Gamma_{\text{tot}} \sim h\times 5$ MHz $\sim k_B \times 0.2\;\mu$K, while $T \sim 100\;\mu$K), the Lorentzian acts like a delta function compared to the slowly-varying $\Gamma_b(E)$ and $e^{-E/k_BT}$. We can therefore evaluate both $\Gamma_b$ and the Boltzmann factor at $E = E_r$:
-
-$$
-K(T) = \frac{2}{\sqrt{\pi}(k_BT)^{3/2}}\;\frac{\pi\hbar}{\sqrt{2\mu}}\;\Gamma_{\text{nat}}\;\Gamma_b(E_r)\;\;e^{-E_r/k_BT}\int_{-\infty}^{\infty}\frac{dE}{(E-E_r)^2 + (\Gamma_{\text{tot}}/2)^2}.
-$$
-
-### 6.4 Evaluating the Lorentzian integral
-
-$$
-\int_{-\infty}^{\infty}\frac{dE}{(E-E_r)^2 + (\Gamma_{\text{tot}}/2)^2} = \frac{2\pi}{\Gamma_{\text{tot}}}.
-$$
-
-### 6.5 Assembling the result — weak-field limit
-
-In the unsaturated regime, $\Gamma_b \ll \Gamma_{\text{nat}}$, so $\Gamma_{\text{tot}} \approx \Gamma_{\text{nat}}$ (assuming $\Gamma_o$ small). The $\Gamma_{\text{nat}}$ in the numerator cancels with $\Gamma_{\text{tot}} \approx \Gamma_{\text{nat}}$ in the denominator:
-
-$$
-K(T) = \frac{2}{\sqrt{\pi}(k_BT)^{3/2}}\;\frac{\pi\hbar}{\sqrt{2\mu}}\;\Gamma_b(E_r)\;2\pi\;e^{-E_r/k_BT}.
-$$
-
-Collecting numerical factors:
-
-$$
-K(T) = \frac{4\pi^2\hbar}{\sqrt{\pi}\,\sqrt{2\mu}\,(k_BT)^{3/2}}\;\Gamma_b(E_r)\;e^{-E_r/k_BT}.
-\tag{7}
-$$
-
-### 6.6 Matching to the C. Drag et al. rate formula
-
-Now substitute the explicit form of $\Gamma_b$ from Eq. (2):
-
-$$
-\Gamma_b(E_r) = \frac{2\pi}{\hbar}|V_b(E_r)|^2 = \frac{2\pi}{\hbar}\left(\frac{\hbar\Omega_{\text{at}}}{2}\right)^2|S(E_r,v)|^2\,A = \frac{\pi\hbar\Omega_{\text{at}}^2}{2}|S|^2\,A.
-$$
-
-Using $K = \Omega_{\text{at}}/2$, so $\Omega_{\text{at}}^2 = 4K^2$:
-
-$$
-\Gamma_b(E_r) = 2\pi\hbar\,K^2\,S^2\,A.
-$$
-
-Substituting into Eq. (7):
-
-$$
-K(T) = \frac{4\pi^2\hbar}{\sqrt{\pi}\,\sqrt{2\mu}\,(k_BT)^{3/2}}\;\times\;2\pi\hbar\,K^2\,S^2\,A\;\times\;e^{-E_r/k_BT}.
-$$
-
-$$
-K(T) = \frac{8\pi^3\hbar^2}{\sqrt{\pi}\,\sqrt{2\mu}\,(k_BT)^{3/2}}\;A\,K^2\,S^2\;e^{-E_r/k_BT}.
-\tag{7'}
-$$
-
-The PA rate per atom is $R_{\text{PA}} = n_{\text{at}}K(T)$:
-
-$$
-R_{\text{PA}} = n_{\text{at}}\;\frac{8\pi^3\hbar^2}{\sqrt{2\pi\mu}\,(k_BT)^{3/2}}\;A\,K^2\,S^2\;e^{-E_r/k_BT}.
-\tag{8a}
-$$
-
-Now, the thermal de Broglie wavelength (for the reduced mass) is $\lambda_{\text{th}} = h/\sqrt{2\pi\mu k_BT}$, so $\lambda_{\text{th}}^3 = h^3/(2\pi\mu k_BT)^{3/2}$. Using $h = 2\pi\hbar$:
-
-$$
-\lambda_{\text{th}}^3 = \frac{8\pi^3\hbar^3}{(2\pi\mu k_BT)^{3/2}}.
-$$
-
-This lets us rewrite the prefactor in Eq. (8a). Multiplying numerator and denominator by $(2\pi\mu)$:
-
-$$
-\frac{8\pi^3\hbar^2}{\sqrt{2\pi\mu}(k_BT)^{3/2}} = \frac{8\pi^3\hbar^2\cdot 2\pi\mu}{(2\pi\mu k_BT)^{3/2}} = \frac{16\pi^4\mu\hbar^2}{(2\pi\mu k_BT)^{3/2}} = \frac{2\pi\mu}{\hbar}\;\lambda_{\text{th}}^3.
-$$
-
-So the PA rate per atom (Eq. 8a) becomes:
-
-$$
-R_{\text{PA}} = n_{\text{at}}\;\frac{2\pi\mu}{\hbar}\;\lambda_{\text{th}}^3\;A\,K^2\,S^2\;e^{-E_r/k_BT}.
-$$
-
-This is the exact result (for $s$-wave, unsaturated, narrow resonance) with the standard thermal de Broglie wavelength $\lambda_{\text{th}} = h/\sqrt{2\pi\mu k_BT}$. C. Drag et al.[^1] define $\lambda_{\text{th}} = h/\sqrt{3\mu k_BT}$ instead, which differs by a factor of $\sqrt{2\pi/3}$; this reshuffles the numerical prefactor but does not change the physics. The result has the structure:
-
-$$
-\boxed{R_{\text{PA}} \propto n_{\text{at}}\,\lambda_{\text{th}}^3\;A(g,e,\vec{\epsilon})\;K^2\,S^2\;e^{-E_r/k_BT}.}
-\tag{8}
-$$
-
-This matches the structure of C. Drag et al.[^1] Eq. (7) exactly. The angular factor $A(g,e,\vec{\epsilon})$ is not merely a numerical prefactor — it determines which molecular symmetry ($0_g^-$, $0_u^+$, etc.), which hyperfine channel ($f+f'$), and which partial-wave parity (even/odd $\ell$) the formula applies to. C. Drag et al.[^1] Table I tabulates $A$ for all relevant channels of Cs$_2$; see Appendix B for the detailed derivation.
-
-**Bottom line**: the C. Drag et al.[^1] formula is the Breit–Wigner event rate coefficient, thermally averaged, in the limits (i) $s$-wave only, (ii) $\Gamma_b \ll \Gamma_{\text{nat}}$ (unsaturated), and (iii) $\Gamma_{\text{tot}} \ll k_BT$ (narrow resonance). The physics is in $A \times K^2 S^2 \propto A \times I \times |S|^2 \propto \Gamma_b$.
+Therefore, setting $E_r=k_BT$ in an order-of-magnitude PA estimate can be a **benchmark convention**, but not a law. It means: choose a representative collision energy of order the thermal energy.
 
 ---
 
-## Step 7. How much laser intensity do you need? — the PA saturation intensity
+## Step 7. The thermal PA coefficient at a scanned laser frequency
 
-### 7.1 Defining $I_{\text{sat}}^{\text{PA}}$ from the Breit–Wigner formula
-
-We derived in Eq. (5a) that the on-resonance rate coefficient has the form:
+The physically useful local two-body PA coefficient at laser frequency $\nu_L$, temperature $T$, and intensity $I$ is obtained by thermal averaging the Breit--Wigner coefficient:
 
 $$
-K_{\text{on-res}} = \frac{4\pi v_{\text{rel}}}{k^2}\;\frac{s}{(1+s)^2},
+\boxed{
+\beta_{\rm PA}(\nu_L,T,I)
+=
+\int_0^\infty P_T(E)\,K_d(E;\nu_L,I)\,dE.
+}
+\tag{7}
 $$
 
-where $s \equiv I/I_{\text{sat}}^{\text{PA}}$ and $I_{\text{sat}}^{\text{PA}}$ is defined by the condition $\Gamma_b(I_{\text{sat}}^{\text{PA}}) = \Gamma_{\text{nat}}$. Taking the derivative with respect to $s$:
+For one $s$-wave entrance channel this is
 
 $$
-\frac{d}{ds}\frac{s}{(1+s)^2} = \frac{(1+s)^2 - 2s(1+s)}{(1+s)^4} = \frac{1-s}{(1+s)^3}.
+\boxed{
+\beta_{\rm PA}(\nu_L,T,I)
+=
+\int_0^\infty
+P_T(E)
+\frac{\pi v_{\rm rel}}{k^2}
+\frac{\hbar\Gamma_b(E,I)\,\hbar\Gamma_d}
+{\left[E+h\nu_L-h\nu_0-S_b(E,I)\right]^2
++\left[\hbar\Gamma_{\rm tot}(E,I)/2\right]^2}
+\,dE.
+}
+\tag{7a}
 $$
 
-This vanishes at $s = 1$, confirming that the maximum rate occurs at $I = I_{\text{sat}}^{\text{PA}}$, where:
+This is the master formula for a PA frequency scan. As $\nu_L$ is scanned, the resonant collision energy
 
 $$
-K_{\text{max}} = \frac{4\pi v_{\text{rel}}}{k^2}\;\frac{1}{4} = \frac{\pi v_{\text{rel}}}{k^2}.
+E_r(\nu_L)\approx h\nu_0-h\nu_L
 $$
 
-This is the **unitarity limit**: the largest event rate any single $s$-wave resonance can produce, set by the de Broglie wavelength of the collision. No amount of laser power can exceed it.
+moves through the thermal distribution. The measured PA spectrum is a convolution of:
 
-### 7.2 Explicit formula for $I_{\text{sat}}^{\text{PA}}$
+1. the Lorentzian Breit--Wigner resonance;
+2. the thermal relative-energy distribution;
+3. the Wigner-threshold energy dependence of $\Gamma_b(E)$;
+4. the laser-induced light shift $S_b(E,I)$;
+5. the intensity-dependent linewidth $\Gamma_{\rm tot}(E,I)$.
 
-From Eq. (3), setting $\Gamma_b = \Gamma_{\text{nat}} \equiv \Gamma$:
+This is why a realistic PA scan is more complicated than simply evaluating a single FC factor.
 
-$$
-\Gamma = \frac{\pi\hbar\Gamma^2}{4}\;\frac{I_{\text{sat}}^{\text{PA}}}{I_{\text{sat}}}\;|S|^2\;A.
-$$
+### 7.1 Weak-field, narrow-resonance limit: C. Drag et al. Eq. (7)
 
-Solving:
+Now impose the approximations used in the C. Drag et al. estimate:[^1]
 
-$$
-\boxed{I_{\text{sat}}^{\text{PA}} = \frac{4}{\pi\hbar\Gamma\,|S|^2\,A(g,e,\vec{\epsilon})}\;I_{\text{sat}}.}
-\tag{9}
-$$
+1. $s$-wave only;
+2. weak PA laser, $\Gamma_b\ll\Gamma_d$;
+3. no important extra decay, $\Gamma_o\approx0$;
+4. weak light shift, $S_b\approx0$;
+5. the Lorentzian is narrow compared with the energy scale over which $P_T(E)$, $\Gamma_b(E)$, and $v/k^2$ vary.
 
-The product $\hbar\Gamma\,|S|^2\,A$ is dimensionless: $\hbar\Gamma$ has dimensions of energy, $|S|^2$ has dimensions of $1/\text{energy}$, and $A$ is a pure number.
-
-The angular factor $A < 1$ appears in the **denominator**, making $I_{\text{sat}}^{\text{PA}}$ larger. This is physically intuitive: the angular factor represents the fraction of the full atomic dipole coupling that survives the molecular angular momentum algebra; a smaller fraction means the laser–molecule coupling is weaker, and more intensity is needed to saturate the transition.
-
-### 7.3 Numerical estimate for cesium
-
-Let us estimate $|S|^2$ carefully. From the reflection approximation (Eq. 4):
+Then
 
 $$
-|S|^2 = \frac{dE_v}{dv}\;\frac{|\chi_E(R_C)|^2}{D_C}.
+\Gamma_{\rm tot}\approx\Gamma_d\equiv\gamma,
 $$
 
-For the energy-normalized $s$-wave scattering function at ultracold energies (Milne form, intermediate range):
+and the Lorentzian selects
 
 $$
-|\chi_E(R_C)|^2 \approx \frac{2\mu}{\pi\hbar^2}\;k\;(R_C - a_s)^2,
+E=E_r=h\nu_0-h\nu_L.
 $$
 
-where $k = \sqrt{2\mu E/\hbar^2}$. At $T = 140\;\mu$K for Cs ($\mu \approx 1.1\times10^{-25}$ kg):
-- $E = k_BT \approx 1.9\times 10^{-30}$ J,
-- $k \approx 2.0\times 10^6$ m$^{-1}$,
-- $(2\mu/\pi\hbar^2) \approx 6.4\times 10^{33}$ J$^{-1}$m$^{-2}$,
-- For $R_C \sim 80\,a_0 \approx 4.2$ nm and $a_s \sim 100\,a_0$, take $(R_C - a_s)^2 \sim (1\;\text{nm})^2 = 10^{-18}$ m$^2$.
+Using
 
-This gives $|\chi_E(R_C)|^2 \sim 6.4\times10^{33}\times 2\times10^6\times10^{-18} \approx 1.3\times 10^{22}$ J$^{-1}$m$^{-1}$.
+$$
+\int_{-\infty}^{+\infty}
+\frac{dE}{(E-E_r)^2+(\hbar\gamma/2)^2}
+=
+\frac{2\pi}{\hbar\gamma},
+$$
 
-For the excited-state quantities at $R_C \sim 80\,a_0$:
-- $D_C = |dV_e/dR|_{R_C} \sim$ a few $\times 10^{-19}$ J/m (for a $-C_3/R^3$ potential with $C_3 \sim 10$ a.u.),
-- $dE_v/dv \sim$ a few cm$^{-1} \sim 10^{-23}$ J for levels a few cm$^{-1}$ below dissociation.
+Eq. (7a) becomes, schematically,
 
-Then: $|S|^2 \sim 10^{-23}\times 1.3\times10^{22}/10^{-19} \sim 10^{18}$ J$^{-1}$.
+$$
+\beta_{\rm PA}^{\rm weak}(\nu_L,T,I)
+\propto
+P_T(E_r)
+\frac{\pi v_r}{k_r^2}
+\hbar\Gamma_b(E_r,I).
+$$
 
-Now we need the dimensionless product $\hbar\Gamma\,|S|^2\,A$:
-- $\hbar\Gamma = 1.05\times10^{-34}\;\text{J}\cdot\text{s}\;\times\; 3.3\times10^7\;\text{s}^{-1} \approx 3.5\times10^{-27}$ J,
-- $\hbar\Gamma\,|S|^2 \sim 3.5\times10^{-27}\;\text{J}\;\times\; 10^{18}\;\text{J}^{-1} \sim 3.5\times10^{-9}$ (dimensionless),
-- For $0_g^-(6s+6p_{3/2})$, $f=4+4$, even $\ell$: $A = 125/3888 \approx 0.032$,
-- $\hbar\Gamma\,|S|^2\,A \sim 3.5\times10^{-9}\times 0.032 \sim 1.1\times10^{-10}$.
+More explicitly, for $s$-wave,
+
+$$
+\frac{\pi v_{\rm rel}}{k^2}
+=
+\frac{\pi\hbar}{\mu k}
+=
+\frac{\pi\hbar^2}{\sqrt{2}\,\mu^{3/2}\sqrt E}.
+$$
+
+The factor $\sqrt E$ in the thermal distribution cancels the $1/\sqrt E$ in $v/k^2$. This cancellation is the reason the final C. Drag et al. expression has a simple Boltzmann factor.
+
+The stimulated width is
+
+$$
+\Gamma_b(E_r,I)
+=
+2\pi\hbar\,A\,K^2\,S^2(E_r,v),
+$$
+
+where $K=\Omega_{\rm at}/2$ is the half atomic Rabi frequency and
+
+$$
+K^2=\frac{\Gamma_{\rm at}^2}{8}\frac{I}{I_0}.
+$$
+
+With the C. Drag et al. thermal-wavelength convention
+
+$$
+\lambda_{\rm th}=\frac{h}{\sqrt{3\mu k_BT}},
+$$
+
+the weak-field local per-atom PA rate is written as
+
+$$
+\boxed{
+R_{\rm PA}^{\rm weak}
+=n_{\rm at}\beta_{\rm PA}^{\rm weak}
+=
+A\left(\frac{3}{2\pi}\right)^{3/2}
+\frac{h}{2}
+\,n_{\rm at}\lambda_{\rm th}^3
+\,e^{-E_r/k_BT}
+\,K^2S^2(E_r,v).
+}
+\tag{7b}
+$$
+
+Equivalently, using the same convention in a more explicit prefactor form,
+
+$$
+\boxed{
+R_{\rm PA}^{\rm weak}
+=
+n_{\rm at}\;
+\frac{8\pi^3\hbar^2}{\sqrt{2\pi\mu}\,(k_BT)^{3/2}}
+\;A\,K^2S^2(E_r,v)\;e^{-E_r/k_BT},
+}
+\tag{7c}
+$$
+
+up to the chosen convention for thermal wavelength and identical-pair normalization. The important invariant structure is
+
+$$
+\boxed{
+R_{\rm PA}^{\rm weak}
+\propto
+n_{\rm at}\,A\,I\,S^2(E_r,v)\,T^{-3/2}\,e^{-E_r/k_BT}.
+}
+$$
+
+This is the C. Drag et al. formula. It is a **weak-field thermal approximation**, not a saturated line-shape formula.
+
+### 7.2 Why people sometimes set $E_r=k_BT$
+
+The exact theory keeps $E_r$ as a laser-frequency-dependent variable:
+
+$$
+E_r=h\nu_0-h\nu_L.
+$$
+
+Setting
+
+$$
+E_r=k_BT
+$$
+
+is only a benchmark convention. It means the laser is assumed to address a representative collision-energy class of order the thermal energy, giving
+
+$$
+e^{-E_r/k_BT}=e^{-1}.
+$$
+
+For a full spectrum, do not set $E_r=k_BT$. Instead compute $\beta_{\rm PA}(\nu_L,T,I)$ as a function of $\nu_L$.
+
+### 7.3 Saturation of a PA scan: peak height versus integrated area
+
+The most common confusion is that different saturation factors describe different observables.
+
+At exact resonance for one collision energy,
+
+$$
+K_{\rm on-res}(E;I)
+=
+\frac{\pi v_{\rm rel}}{k^2}\frac{4s}{(1+s)^2}.
+$$
+
+This is a **peak-height** statement. It says that a monoenergetic resonant cross section is maximal at $s=1$ and decreases for $s\gg1$.
+
+But the **area** under a Lorentzian behaves differently. The Lorentzian part of Eq. (7a) has area
+
+$$
+\int dE\,
+\frac{\hbar\Gamma_b\,\hbar\Gamma_d}
+{(E-E_r)^2+[\hbar\Gamma_{\rm tot}/2]^2}
+\propto
+\frac{\Gamma_b\Gamma_d}{\Gamma_{\rm tot}}.
+$$
+
+For $\Gamma_d=\gamma$, $\Gamma_b=s\gamma$, and $\Gamma_{\rm tot}=\gamma(1+s)$, this gives
+
+$$
+\boxed{
+\text{Lorentzian area}\propto\frac{s}{1+s}.
+}
+\tag{7d}
+$$
 
 Therefore:
 
 $$
-I_{\text{sat}}^{\text{PA}} \sim \frac{4}{\pi\times 1.1\times10^{-10}}\times 1.1\times10^{-3}\;\text{W/cm}^2 \sim 13{,}000\;\text{W/cm}^2.
+\boxed{
+\text{line-center peak height}\propto\frac{s}{(1+s)^2},
+}
 $$
 
-This is substantially larger than the estimate without the angular factor ($\sim 400$ W/cm$^2$), by the expected factor of $1/A \approx 31$. The estimate is sensitive to $R_C$, $a_s$, and the specific vibrational level; the order-of-magnitude range of $\sim 10^3$–$10^4$ W/cm$^2$ is consistent with C. Drag et al.[^1], who observed that the $0_g^-$ state saturates around $55$–$200$ W/cm$^2$, once the uncertainties in the Franck–Condon factor are accounted for. (Different vibrational levels can have $|S|^2$ values differing by orders of magnitude.)
-
-### 7.4 Physical intuition
-
-Why is $I_{\text{sat}}^{\text{PA}}$ so much larger than $I_{\text{sat}}$? The ratio is:
+but
 
 $$
-\frac{I_{\text{sat}}^{\text{PA}}}{I_{\text{sat}}} = \frac{4}{\pi\hbar\Gamma\,|S|^2\,A} \sim \frac{10^8}{A} \sim 10^{9}\text{--}10^{10}.
+\boxed{
+\text{integrated line area}\propto\frac{s}{1+s}.
+}
 $$
 
-There are two suppression mechanisms, both in the denominator:
+These are not contradictory. At high intensity, the peak gets lower but the line gets broader. The area can saturate even while the peak height decreases.
 
-1. **The Franck–Condon overlap** ($\hbar\Gamma|S|^2 \sim 10^{-9}$): the scattering wave function and the bound vibrational wave function overlap only in a narrow window near $R_C$, and the scattering amplitude is suppressed by $\sqrt{k} \propto T^{1/4}$ at ultracold temperatures.
+### 7.4 Which saturation limit applies to an experiment?
 
-2. **The angular factor** ($A \sim 0.01$–$0.05$): only a fraction of the atomic dipole coupling survives projection onto the specific molecular symmetry. The dominant suppressions are (a) projection onto $\Omega = 0$ from a full $m_j$ distribution, (b) Hönl–London/rotational selection rules restricting which $J$ values contribute, (c) exchange symmetry for identical nuclei selecting only even or odd $F_t$, and (d) averaging over the statistical mixture of $(2f+1)^2$ initial hyperfine substates.
+The answer depends on the comparison between the power-broadened linewidth and the thermal energy width.
 
-The PA laser must compensate both penalties with brute-force intensity.
+#### Regime A: monoenergetic or very cold sample
+
+If the thermal distribution is narrow compared with the optical PA linewidth, the sample behaves nearly monoenergetically. The observed line-center signal follows approximately
+
+$$
+\frac{4s}{(1+s)^2}.
+$$
+
+Oversaturation reduces the peak height.
+
+#### Regime B: broad thermal distribution and narrow Lorentzian
+
+If
+
+$$
+\hbar\Gamma_{\rm tot}\ll k_BT,
+$$
+
+then the Lorentzian samples only a narrow slice of the thermal distribution. The thermal convolution near the peak is controlled more by the Lorentzian area, giving a saturation trend closer to
+
+$$
+\frac{s}{1+s}
+$$
+
+relative to a fixed thermal weight.
+
+#### Regime C: power-broadened linewidth comparable to or larger than the thermal width
+
+If
+
+$$
+\hbar\Gamma_{\rm tot}\gtrsim k_BT,
+$$
+
+then neither simple law is reliable. One must evaluate the full integral Eq. (7a). At very high intensity, the denominator is large over much of the thermal distribution, and the peak signal can again decrease.
+
+Therefore the safe computational rule is:
+
+$$
+\boxed{
+\text{For a real PA frequency scan, compute }\beta_{\rm PA}(\nu_L,T,I)
+\text{ from Eq. (7a).}
+}
+$$
+
+The simple factors $1/(1+s)^2$ or $1/(1+s)$ are useful diagnostics, not universal saturation corrections.
 
 ---
 
-## Step 8. Connection to rate equations and $\beta_{\text{PA}}$
+## Step 8. Mapping $\beta_{\rm PA}$ to MOT or ODT atom-number loss
 
-### 8.1 From the event rate coefficient to the loss rate
-
-The event rate coefficient $K(T)$ from Eq. (6) (or its weak-field form, Eq. (8)) is a **two-body rate coefficient**: it has dimensions of length$^3$/time (like a cross-section times velocity). This is because PA requires two atoms to collide — it is a binary process. For a gas of density $n(\vec{r})$, the number of PA events per unit volume per unit time is:
+After the thermal average, the output of the PA theory is a local two-body coefficient
 
 $$
-\dot{n}_{\text{PA}}(\vec{r}) = K(T)\;n(\vec{r})^2.
+\beta_{\rm PA}(\nu_L,T,I),
 $$
 
-The $n^2$ dependence arises because the collision rate between pairs of atoms scales as the square of the density (each atom can collide with every other atom).
+with units of volume/time. This is the coefficient to use in density or atom-number rate equations.
 
-### 8.2 The rate equation for the trapped atom number
+### 8.1 Uniform-density intuition
 
-The total number of atoms lost from the trap per unit time due to PA is obtained by integrating over the trap volume:
-
-$$
-\dot{N}_{\text{PA}} = -K(T)\int n(\vec{r})^2\,d^3r.
-$$
-
-(Each PA event removes **two** atoms from the trap, so the atom loss rate is actually $2K(T)\int n^2 d^3r$. Whether the factor of 2 is absorbed into $K$ or written explicitly is a convention — C. Drag et al.[^1] absorb it into $\beta_{\text{PA}}$.)
-
-This is exactly the $\beta_{\text{PA}}$ term in the C. Drag et al.[^1] rate equation:
+For a single-species gas with uniform density $n$, the local atom-number loss equation is usually written
 
 $$
-\frac{dN_{\text{at}}}{dt} = L - \gamma N_{\text{at}} - (\beta + \beta_{\text{PA}})\int n_{\text{at}}^2(\vec{r})\,d^3r.
-\tag{10}
+\boxed{
+\frac{dn}{dt}=-\beta_{\rm PA}n^2.
+}
+\tag{8}
 $$
 
-The identification is:
+The corresponding local per-atom loss rate is
 
 $$
-\boxed{\beta_{\text{PA}} = K(T) \quad (\text{up to the factor of 2 convention}).}
+\boxed{
+R_{\rm PA}=n\beta_{\rm PA}.
+}
+\tag{8a}
 $$
 
-The other terms in the rate equation:
-- $L$: loading rate from the background vapor (atoms captured by the MOT).
-- $\gamma N_{\text{at}}$: one-body losses (background gas collisions knock atoms out). This is proportional to $N_{\text{at}}$, not $n^2$, because a single background-gas atom hitting a single trapped atom suffices.
-- $\beta\int n^2\,d^3r$: two-body losses from other cold collisions (light-assisted collisions other than PA, hyperfine-changing collisions, etc.).
-- $\beta_{\text{PA}}\int n^2\,d^3r$: two-body losses from PA specifically.
+This is the quantity reported in many PA papers in units of s$^{-1}$.
 
-### 8.3 How experimentalists extract $\beta_{\text{PA}}$
+### 8.2 There is a factor $1/2$ for identical pairs
 
-In steady state ($dN_{\text{at}}/dt = 0$):
+For identical atoms, the number of **unique unordered pairs** in a sample of $N$ atoms is
 
 $$
-L = \gamma N_{\text{at}} + (\beta + \beta_{\text{PA}})\int n^2\,d^3r.
+\frac{N(N-1)}{2}\approx\frac{N^2}{2}.
 $$
 
-C. Drag et al.[^1] measure the ratio $N_{\text{PA}}/N_{\text{at}}$ (atom number with/without the PA laser) and use their Eq. (5):
+In a small volume element with density $n$, the number of unique pairs scales as
 
 $$
-\frac{N_{\text{PA}}}{N_{\text{at}}} \approx \frac{\gamma + \beta\bar{n}}{\gamma + (\beta+\beta_{\text{PA}})\bar{n}},
+\frac12 n^2 dV^2.
 $$
 
-where $\bar{n}$ is the average density. Combined with the known loading time $\tau = 1/(\gamma + \beta\bar{n})$, this yields $\beta_{\text{PA}}$.
-
-### 8.4 The quantity $n_{\text{at}}\beta_{\text{PA}}$ — the PA rate per atom
-
-C. Drag et al.[^1] report $n_{\text{at}}\beta_{\text{PA}} = n_{\text{at}}K(T)$ in units of s$^{-1}$. This is the PA collision rate per atom: each atom suffers PA collisions at a rate proportional to the local density of collision partners. This is also equal to $R_{\text{PA}}$ from C. Drag et al.[^1] Eq. (8) — it gives the rate per atom directly.
-
-### 8.5 Summary of the chain: laser intensity → experimental signal
+Therefore, if $K_{\rm event}$ is defined as the pair-event coefficient from cross section times relative velocity, the molecule-formation event rate density is
 
 $$
-I \;\xrightarrow{\;\Omega_{\text{at}}\;}\; V_{b,\nu} = \tfrac{\hbar\Omega_{\text{at}}}{2}\,S\,a_\nu \;\xrightarrow{\;\text{FGR}\;}\;\Gamma_{b,\nu} \;\xrightarrow{\;\sum/\text{avg over }\nu\;}\;\Gamma_b = (\cdots)\,A\,S^2 \;\xrightarrow{\;\text{Breit-Wigner}\;}\; K(E) \;\xrightarrow{\;\text{thermal avg}\;}\; K(T) = \beta_{\text{PA}} \;\xrightarrow{\;\times\,n^2\,\text{vol}\;}\; \dot{N}_{\text{PA}}
+\boxed{
+\dot n_{\rm event}
+=
+\frac12K_{\rm event}n^2.
+}
+\tag{8b}
 $$
+
+But each PA event removes two atoms from the trap. Therefore the atom-loss density is
+
+$$
+\dot n_{\rm atom}
+=
+-2\dot n_{\rm event}
+=
+-2\left(\frac12K_{\rm event}n^2\right)
+=
+-K_{\rm event}n^2.
+$$
+
+Thus the standard one-species atom-loss coefficient is
+
+$$
+\boxed{
+\beta_{\rm PA}^{\rm atom-loss}=K_{\rm event}.
+}
+\tag{8c}
+$$
+
+This is why one should **not** multiply the homonuclear PA coefficient by 2 again when inserting it into an atom-number equation. The factor of 2 from two atoms lost per molecule is exactly canceled by the factor $1/2$ from counting identical pairs.
+
+If instead one wants to report the number of molecules or PA events formed per unit time, then
+
+$$
+\boxed{
+\dot N_{\rm mol/event}
+=
+\frac12\int \beta_{\rm PA}n^2({\bf r})\,d^3r.
+}
+\tag{8d}
+$$
+
+This is a different observable from atom-number loss.
+
+### 8.3 Heteronuclear pairs
+
+For two distinguishable species $a$ and $b$, there is no identical-pair $1/2$ in the number of pairs:
+
+$$
+\text{pair density}\sim n_an_b.
+$$
+
+If one PA event removes one atom of each species, then
+
+$$
+\frac{dn_a}{dt}=-K_{ab}n_an_b,
+\qquad
+\frac{dn_b}{dt}=-K_{ab}n_an_b.
+$$
+
+The total atom number $N_a+N_b$ decreases twice as fast as the molecule-event count, but each individual species decreases at the event rate. Some experimental papers insert factors of $1/2$ depending on whether their quoted coefficient is defined for total atom loss, single-species loss, or molecule-event formation. The coefficient definition must always be checked.
+
+### 8.4 Spatially varying density and PA-beam overlap
+
+In a real MOT or ODT, the density and PA intensity vary in space. The correct atom-number equation is
+
+$$
+\boxed{
+\dot N_{\rm PA}
+=
+-\int \beta_{\rm PA}\bigl(\nu_L,T,I({\bf r})\bigr)
+\,n^2({\bf r})\,d^3r.
+}
+\tag{8e}
+$$
+
+If the PA beam is much smaller than the atom cloud and the rate is still linear in intensity, one often writes an effective overlap factor
+
+$$
+\beta_{\rm PA}^{\rm eff}
+=
+\eta\,\beta_{\rm PA}^{\rm bare},
+$$
+
+where
+
+$$
+\eta
+=
+\frac{\int n^2({\bf r})I({\bf r})/I_0\,d^3r}
+{\int n^2({\bf r})\,d^3r}.
+$$
+
+For a Gaussian PA beam crossing a Gaussian atom cloud, this can reduce to expressions such as
+
+$$
+\eta=\frac{w_0^2}{w_0^2+2\sigma_R^2}.
+$$
+
+Then the MOT equation can be written approximately as
+
+$$
+\dot N
+=
+L-\gamma N-
+(\beta+\beta_{\rm PA}^{\rm eff})
+\int n^2({\bf r})\,d^3r.
+\tag{8f}
+$$
+
+This is the clean version of the convention used in the C. Drag et al. trap-loss extraction.[^1]
+
+### 8.5 Steady-state MOT loss ratio
+
+If the non-PA loss gives an effective per-atom decay rate
+
+$$
+\Gamma_0=\gamma+\beta n_{\rm eff}=\frac1\tau,
+$$
+
+and the PA laser adds an overlap-weighted per-atom loss rate
+
+$$
+\lambda_{\rm PA}^{\rm obs}=\eta\,n_{\rm at}\beta_{\rm PA}^{\rm bare},
+$$
+
+then the steady-state atom-number ratio is approximately
+
+$$
+\boxed{
+\frac{N_{\rm PA}}{N_0}
+\approx
+\frac{\Gamma_0}{\Gamma_0+\lambda_{\rm PA}^{\rm obs}}.
+}
+\tag{8g}
+$$
+
+Equivalently, the observed fractional trap loss is
+
+$$
+\boxed{
+f_{\rm loss}
+=1-\frac{N_{\rm PA}}{N_0}
+=
+\frac{\lambda_{\rm PA}^{\rm obs}}{\Gamma_0+\lambda_{\rm PA}^{\rm obs}}.
+}
+\tag{8h}
+$$
+
+To compare theory to a de-overlapped experimental rate, use
+
+$$
+\boxed{
+R_{\rm PA}^{\rm bare}=n_{\rm at}\beta_{\rm PA}^{\rm bare}.
+}
+$$
+
+To compare theory directly to the observed MOT fluorescence loss, use
+
+$$
+\boxed{
+R_{\rm PA}^{\rm obs}=\eta R_{\rm PA}^{\rm bare}
+}
+$$
+
+inside Eq. (8g) or Eq. (8h).
+
+### 8.6 ODT loss without loading
+
+In an ODT or other conservative trap without continuous loading, the equation is usually closer to
+
+$$
+\boxed{
+\dot N=-\gamma N-\int\beta_{\rm PA}(\nu_L,T,I({\bf r}))n^2({\bf r})d^3r.
+}
+\tag{8i}
+$$
+
+For a thermal gas with a fixed density shape, one often writes
+
+$$
+\dot N=-\gamma N-K_2^{\rm eff}N^2,
+$$
+
+where $K_2^{\rm eff}$ includes the spatial integral over the density distribution and the PA beam profile. In this case, the observable is the difference between laser-on and laser-off decay curves.
+
+---
+
+## Step 9. Practical computational recipe
+
+For a rate-code pipeline, the hierarchy should be:
+
+$$
+S^2(E,v)
+\rightarrow
+\Gamma_b(E,I)
+\rightarrow
+K_d(E;\nu_L,I)
+\rightarrow
+\beta_{\rm PA}(\nu_L,T,I)
+\rightarrow
+\dot N.
+$$
+
+A minimal table can still report the C. Drag et al. weak-field value
+
+$$
+R_{\rm PA}^{\rm weak}
+=n\beta_{\rm PA}^{\rm weak},
+$$
+
+but this should be clearly labeled as a perturbative result.
+
+If one wants to discuss saturation without doing the full convolution, report diagnostic quantities separately:
+
+$$
+s=\frac{I}{I_{\rm sat}^{\rm PA}}
+=\frac{\Gamma_b}{\gamma},
+$$
+
+$$
+\text{monoenergetic peak-height factor:}\quad
+\frac{1}{(1+s)^2}
+\quad\text{relative to weak-field peak height},
+$$
+
+$$
+\text{integrated-area factor:}\quad
+\frac{1}{1+s}
+\quad\text{relative to weak-field integrated area}.
+$$
+
+Neither factor is a universal replacement for the full integral. The full thermal PA scan is Eq. (7a).
+
 
 ---
 
