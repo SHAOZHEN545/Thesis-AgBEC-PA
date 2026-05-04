@@ -303,54 +303,6 @@ $$
 Now we have separated the radial free-bound Franck--Condon factor from the angular/internal matrix element.
 
 ---
-
-## 6. Why the body-frame dipole appears
-
-The laser polarization is specified in the lab frame. Therefore the scalar product is naturally written using lab-frame spherical components:
-
-$$
-\boldsymbol\epsilon\cdot\mathbf d
-=
-\sum_{p=-1}^{1}(-1)^p
-\epsilon_p^{\rm lab}
- d_{-p}^{\rm lab}.
-$$
-
-However, molecular electronic states are naturally labeled in the body frame. Hund-case molecular labels such as $\Omega$, $0_g^-$, and $0_u^+$ refer to projections and symmetries with respect to the internuclear axis.
-
-Therefore, to evaluate the electronic matrix element, we should establish a transformation relation between the dipole operator's lab-frame and body-frame components.
-
-The electric dipole is a rank-1 spherical tensor. Its lab and body components are related by
-
-$$
-d_p^{\rm lab}
-=
-\sum_{q=-1}^{1}
-D^{1*}_{pq}(\hat\eta)
- d_q^{\rm body}.
-$$
-
-This is an operator identity with a useful tensor-product interpretation:
-
-- $D^{1*}_{pq}(\hat\eta)$ acts on $\mathcal H_{\rm orient}$;
-- $d_q^{\rm body}$ acts on $\mathcal H_{\rm int}$.
-
-Substituting this into the scalar product gives
-
-$$
-\boldsymbol\epsilon\cdot\mathbf d
-=
-\sum_{p,q}
-(-1)^p
-\epsilon_p^{\rm lab}
-D^{1*}_{-p,q}(\hat\eta)
- d_q^{\rm body}.
-$$
-
-This is the point where the lab-frame photon polarization is converted into body-frame molecular components.
-
-
-
 ## 6. The body-frame dipole components
 
 The laser polarization is specified in the lab frame. Therefore the scalar product is naturally written using lab-frame spherical components:
