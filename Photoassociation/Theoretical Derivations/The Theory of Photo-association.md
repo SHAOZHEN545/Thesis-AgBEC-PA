@@ -330,7 +330,7 @@ More generally, for partial wave $\ell$, the threshold behavior is $\Gamma_b \pr
 The event rate coefficient for transferring atom pairs from the entrance channel to a detection channel (with rate $\Gamma_d$) is derived from the Fano model of a discrete state coupled to multiple continua — see the companion note *"Derivation of the Breit–Wigner Event Rate Coefficient for Photoassociation"* for the full derivation. The result is:
 
 $$
-\boxed{K(E) = \frac{v_{\text{rel}}\,\pi}{k^2}\sum_\ell (2\ell+1)\;\frac{\Gamma_d\;\Gamma_b(E,\ell)}{(E - \tilde{E}_b)^2 + (\Gamma_{\text{tot}}/2)^2},}
+{K(E) = \frac{v_{\text{rel}}\,\pi}{k^2}\sum_\ell (2\ell+1)\;\frac{\Gamma_d\;\Gamma_b(E,\ell)}{(E - \tilde{E}_b)^2 + (\Gamma_{\text{tot}}/2)^2},}
 \tag{5}
 $$
 
@@ -360,7 +360,7 @@ $$
 Writing $s \equiv I/I_{\text{sat}}^{\text{PA}}$, so $\Gamma_b = s\,\Gamma_{\text{nat}}$ and $\Gamma_{\text{tot}} = (1+s)\Gamma_{\text{nat}}$:
 
 $$
-\boxed{K_{\text{on-res}}(E) = \frac{v_{\text{rel}}\pi}{k^2}\;\frac{4\,\Gamma_{\text{nat}}^2\;s}{(1+s)^2\,\Gamma_{\text{nat}}^2} = \frac{4\pi v_{\text{rel}}}{k^2}\;\frac{s}{(1+s)^2}.}
+{K_{\text{on-res}}(E) = \frac{v_{\text{rel}}\pi}{k^2}\;\frac{4\,\Gamma_{\text{nat}}^2\;s}{(1+s)^2\,\Gamma_{\text{nat}}^2} = \frac{4\pi v_{\text{rel}}}{k^2}\;\frac{s}{(1+s)^2}.}
 \tag{5a}
 $$
 
