@@ -507,11 +507,7 @@ $$
 Then
 
 $$
-V_{b,\nu}
-=
-\frac{\mathcal E_0 d_{\rm at}}{2}
-\langle \psi_v|\chi_{E\ell}\rangle
- a_\nu,
+V_{b,\nu}=\frac{\mathcal E_0 d_{\rm at}}{2}\langle \psi_v|\chi_{E\ell}\rangle a_\nu,
 $$
 
 with
