@@ -25,7 +25,6 @@ tags:
   - correlations
   - three-body-recombination
 ---
-
 # Coherence, Correlations, and Collisions: What One Learns about Bose-Einstein Condensates from Their Decay
 
 **E. A. Burt, R. W. Ghrist, C. J. Myatt, M. J. Holland, E. A. Cornell, and C. E. Wieman**  
