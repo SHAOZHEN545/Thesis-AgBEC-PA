@@ -1,5 +1,3 @@
-# Scattering Theory I: Asymptotic Dynamics and the Lippmann--Schwinger Equation
-
 This note develops the operator structure behind elementary scattering theory in a form that does not rely on a single incident plane wave plus an outgoing scattered wave. The basic objects are channel labels, asymptotic comparison maps, resolvents, and the transition operator. This is the language one needs before specializing to coordinate-space amplitudes, partial waves, cross sections, or particular multichannel models.
 
 The guiding physical experiment is simple:
