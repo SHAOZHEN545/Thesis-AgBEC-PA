@@ -509,60 +509,62 @@ away from the singular point $\mathbf r=\mathbf r'$. This is why closed channels
 
 ## 10. Channel-resolved Lippmann--Schwinger equation
 
-Let the incoming asymptotic channel be $(\mathbf k_i,a)$, with total energy
+Let the incoming asymptotic channel be $a$, with incident relative momentum $\mathbf k_a$. The total energy is
 
 $$
-E=\epsilon_a+\frac{\hbar^2k_i^2}{2\mu_a}.
+E=\epsilon_a+\frac{\hbar^2k_a^2}{2\mu_a}.
 $$
 
 The exact outgoing scattering vector is denoted
 
 $$
-|\psi_{\mathbf k_i a}^{(+)}\rangle.
+|\psi_{\mathbf k_a a}^{(+)}\rangle.
 $$
 
 It satisfies the abstract Lippmann--Schwinger equation
 
 $$
-|\psi_{\mathbf k_i a}^{(+)}\rangle
+|\psi_{\mathbf k_a a}^{(+)}\rangle
 =
-|\mathbf k_i,a\rangle
+|\mathbf k_a,a\rangle
 +
-G_0^{(+)}(E)V|\psi_{\mathbf k_i a}^{(+)}\rangle.
+G_0^{(+)}(E)V|\psi_{\mathbf k_a a}^{(+)}\rangle.
 $$
 
 Project with $\langle \mathbf r,b|$. Define
 
 $$
-\psi_{b}^{(+;a,\mathbf k_i)}(\mathbf r)
-=
-\langle \mathbf r,b|\psi_{\mathbf k_i a}^{(+)}\rangle.
+\psi_{ba}^{(+)}(\mathbf r;\mathbf k_a)
+\equiv
+\langle \mathbf r,b|\psi_{\mathbf k_a a}^{(+)}\rangle.
 $$
+
+The first subscript $b$ labels the observed coordinate-space component. The second subscript $a$ records the prepared incoming channel. The argument after the semicolon, $\mathbf k_a$, records the incident momentum in channel $a$.
 
 Then
 
 $$
-\psi_{b}^{(+;a,\mathbf k_i)}(\mathbf r)
+\psi_{ba}^{(+)}(\mathbf r;\mathbf k_a)
 =
-\delta_{ba}\frac{1}{(2\pi)^{3/2}}e^{i\mathbf k_i\cdot\mathbf r}
+\delta_{ba}\frac{1}{(2\pi)^{3/2}}e^{i\mathbf k_a\cdot\mathbf r}
 +
 \sum_c\int d^3r'\int d^3r''\,
 G_{0,b}^{(+)}(E;\mathbf r,\mathbf r')
 V_{bc}(\mathbf r',\mathbf r'')
-\psi_{c}^{(+;a,\mathbf k_i)}(\mathbf r'').
+\psi_{ca}^{(+)}(\mathbf r'';\mathbf k_a).
 $$
 
 For a local coupled-channel potential,
 
 $$
-\psi_{b}^{(+;a,\mathbf k_i)}(\mathbf r)
+\psi_{ba}^{(+)}(\mathbf r;\mathbf k_a)
 =
-\delta_{ba}\frac{1}{(2\pi)^{3/2}}e^{i\mathbf k_i\cdot\mathbf r}
+\delta_{ba}\frac{1}{(2\pi)^{3/2}}e^{i\mathbf k_a\cdot\mathbf r}
 +
 \sum_c\int d^3r'\,
 G_{0,b}^{(+)}(E;\mathbf r,\mathbf r')
 V_{bc}(\mathbf r')
-\psi_{c}^{(+;a,\mathbf k_i)}(\mathbf r').
+\psi_{ca}^{(+)}(\mathbf r';\mathbf k_a).
 $$
 
 This is the channel-resolved Lippmann--Schwinger equation in coordinate representation. It says the following:
@@ -575,16 +577,15 @@ This is the channel-resolved Lippmann--Schwinger equation in coordinate represen
 The same equation in momentum representation follows by projecting with $\langle \mathbf p,b|$:
 
 $$
-\psi_{b}^{(+;a,\mathbf k_i)}(\mathbf p)
+\psi_{ba}^{(+)}(\mathbf p;\mathbf k_a)
 =
-\delta_{ba}\delta^{(3)}(\mathbf p-\mathbf k_i)
+\delta_{ba}\delta^{(3)}(\mathbf p-\mathbf k_a)
 +
 \frac{1}{E-\epsilon_b-\hbar^2p^2/(2\mu_b)+i0}
 \sum_c\int d^3q\,
 V_{bc}(\mathbf p,\mathbf q)
-\psi_c^{(+;a,\mathbf k_i)}(\mathbf q).
+\psi_{ca}^{(+)}(\mathbf q;\mathbf k_a).
 $$
-
 This is the same abstract equation in a different basis.
 
 ---
@@ -644,7 +645,7 @@ T_{ba}(\mathbf k_b,\mathbf k_a;E)
 \sum_c\int d^3r\int d^3r'\,
 \langle \mathbf k_b,b|\mathbf r,b\rangle
 V_{bc}(\mathbf r,\mathbf r')
-\psi_c^{(+;a,\mathbf k_a)}(\mathbf r').
+\psi_{ca}^{(+)}(\mathbf r';\mathbf k_a).
 $$
 
 For a local interaction,
@@ -655,7 +656,7 @@ T_{ba}(\mathbf k_b,\mathbf k_a;E)
 \frac{1}{(2\pi)^{3/2}}\sum_c\int d^3r\,
 e^{-i\mathbf k_b\cdot\mathbf r}
 V_{bc}(\mathbf r)
-\psi_c^{(+;a,\mathbf k_a)}(\mathbf r).
+\psi_{ca}^{(+)}(\mathbf r;\mathbf k_a).
 $$
 
 In the first Born approximation, one replaces the exact scattering vector by the incident free state. Then only the component $c=a$ appears:
@@ -726,7 +727,7 @@ In the elementary single-channel discussion, one writes states such as $|\mathbf
 In channel-resolved notation, the analogous object is not a single function $\psi^{(+)}(\mathbf r)$ but a collection
 
 $$
-\left\{\psi_b^{(+;a,\mathbf k_a)}(\mathbf r)\right\}_b.
+\left\{\psi_{ba}^{(+)}(\mathbf r;\mathbf k_a)\right\}_b.
 $$
 
 The incident term is present only in the prepared channel $a$:
@@ -828,14 +829,14 @@ $$
 The channel-resolved Lippmann--Schwinger equation is
 
 $$
-\psi_{b}^{(+;a,\mathbf k_a)}(\mathbf r)
+\psi_{ba}^{(+)}(\mathbf r;\mathbf k_a)
 =
 \delta_{ba}\frac{1}{(2\pi)^{3/2}}e^{i\mathbf k_a\cdot\mathbf r}
 +
 \sum_c\int d^3r'\int d^3r''\,
 G_{0,b}^{(+)}(E;\mathbf r,\mathbf r')
 V_{bc}(\mathbf r',\mathbf r'')
-\psi_c^{(+;a,\mathbf k_a)}(\mathbf r'').
+\psi_{ca}^{(+)}(\mathbf r'';\mathbf k_a).
 $$
 
 At fixed total energy $E$, open channels satisfy $E>\epsilon_a$ and carry asymptotic flux. Closed channels satisfy $E<\epsilon_a$ and decay asymptotically, but they may still enter virtually through the resolvent and modify the open-channel scattering.
