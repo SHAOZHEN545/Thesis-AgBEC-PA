@@ -406,12 +406,15 @@ $$
 then $k_b=i\kappa_b$, and the asymptotic kernel is exponentially decaying:
 
 $$
-G_{0,b}^{(+)}(E;\mathbf r,\mathbf r')
+G_{0,b}^{(+)}(E;\mathbf{r},\mathbf{r}')
 \sim
 -\frac{2\mu_b}{\hbar^2}
 \frac{e^{-\kappa_b r}}{4\pi r}
-e^{+\kappa_b\hat{\mathbf r}\cdot\mathbf r'}.
+e^{+\kappa_b\hat{\mathbf{r}}\cdot\mathbf{r}'},\quad r \to \infty, \boldsymbol{r}' \,\text{fixed in the interaction region}
 $$
+
+>[!mythoughts] This form is a little surprising at first glance but is totally correct.
+>The $e^{+\kappa_b\hat{\mathbf r}\cdot\mathbf r'}$ exponential factor won't blow up because $\boldsymbol r'$ is limited in the small interaction region.
 
 The corresponding component has the schematic asymptotic form
 
