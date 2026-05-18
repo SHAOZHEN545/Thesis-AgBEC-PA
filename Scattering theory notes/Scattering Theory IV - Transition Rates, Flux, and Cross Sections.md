@@ -152,6 +152,7 @@ dW_{ba}
 \delta(E_b(\mathbf k_b)-E)
 d^3k_b,
 $$
+>[!mythoughts] Why is this ????
 
 where
 
@@ -372,6 +373,8 @@ $$
 {\text{incident flux in channel }a}.
 $$
 
+>[!mythoughts] Why is this definition???
+
 Using the continuum-normalized rate and flux,
 
 $$
@@ -414,7 +417,7 @@ This is the channel-resolved cross section written directly in terms of the cont
 
 ## 8. Relation to the channel-resolved scattering amplitude
 
-The previous note found the continuum-normalized relation
+The [[Scattering Theory III - Channel-Resolved Scattering Amplitudes|previous note]] found the continuum-normalized relation
 
 $$
 f_{ba}(\mathbf k_b,\mathbf k_a;E)
