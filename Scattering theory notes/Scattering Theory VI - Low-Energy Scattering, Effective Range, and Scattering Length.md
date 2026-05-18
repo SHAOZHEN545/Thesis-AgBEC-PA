@@ -212,6 +212,8 @@ $$
 
 This is the definition that will generalize most directly to Feshbach resonances.
 
+>[!mythoughts] why can we do this? What's the meaning of scattering length in this definition? Is this definition universally accepted by the community?
+
 Using
 
 $$
