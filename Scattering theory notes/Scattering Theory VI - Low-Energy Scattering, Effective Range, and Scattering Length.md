@@ -1,5 +1,3 @@
-# Scattering Theory VI: Low-Energy Scattering, Effective Range, and Scattering Length
-
 The previous note introduced partial waves as angular-momentum blocks of the scattering matrix. In the single-channel elastic case each block is a number,
 
 $$

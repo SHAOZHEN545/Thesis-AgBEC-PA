@@ -351,6 +351,8 @@ $$
 
 where the rows label outgoing open channels and the columns label incoming open channels.
 
+>[!mythoughts] wait a minute where's the spin
+
 Unitarity of the full $S$ matrix implies, within each independent partial-wave block,
 
 $$
@@ -405,7 +407,7 @@ $$
 \left(\delta^l_1(E),\delta^l_2(E),\ldots,\delta^l_{N_l}(E)\right).
 $$
 
-The numbers $\delta^l_\nu(E)$ are eigenphase shifts. They are phase shifts of eigenchannels, not necessarily of the original physical channels $a,b$. The matrix $U^l(E)$ tells how the physical channel basis is mixed to form the eigenchannel basis.
+The numbers $\delta^l_\nu(E)$ are eigenphase shifts. They are phase shifts of **eigenchannels**, not necessarily of the original physical channels $a,b$. The matrix $U^l(E)$ tells how the physical channel basis is mixed to form the eigenchannel basis.
 
 Thus multichannel scattering does not destroy the phase-shift idea. It relocates it. The phases belong naturally to eigenvalues of the partial-wave $S$ matrix, while the physical channel-to-channel amplitudes are controlled by both the eigenphases and the mixing matrix.
 
@@ -436,6 +438,9 @@ $$
 =
 1.
 $$
+>[!mythoughts] Two questions
+>1. Why is this equation representing conservation of probabilities
+>2. How to define enelasticity
 
 In a genuinely absorptive effective model, where some eliminated channels are not retained in the Hilbert space, the reduced $S$ matrix may be subunitary. But in a complete open-channel description, unitarity is restored by including all open final channels.
 
@@ -456,6 +461,7 @@ $$
 =
 \frac{S^l_{ba}(E)-\delta_{ba}}{2i\sqrt{k_b k_a}},
 $$
+>[!mythoughts] what? Shouldn't this come from derivations instead of straight-up definition?
 
 when the reduced masses are the same or when the states have been normalized to unit flux. More generally, the precise prefactors depend on whether the channel states are momentum-normalized, energy-normalized, or flux-normalized.
 
@@ -498,6 +504,7 @@ E<\epsilon_c,
 \qquad
 k_c=i\kappa_c,
 $$
+>[!mythoughts] can we evaluate S operator onto closed channels?
 
 and its coordinate-space component decays like
 
@@ -521,7 +528,9 @@ $$
 
 For a closed channel, this propagation is virtual rather than asymptotically flux carrying. If the closed-channel Hamiltonian has a bound state near the open-channel scattering energy, coupling between open and closed subspaces can strongly modify the open-channel block $S^l_{oo}(E)$. This is the basic mechanism behind a Feshbach resonance.
 
-From the present viewpoint, the resonance is not fundamentally a resonance of a phase shift. It is a resonance of the open-channel partial-wave $S$ matrix caused by coupling to a closed-channel state. In the special case where only one open elastic channel is observed, the same behavior can be parameterized as a rapid energy dependence of a phase shift $\delta_l(E)$.
+>[!mythoughts] I guess we need to show why that bound state can strongly modify things
+
+From the present viewpoint, **the resonance is not fundamentally a resonance of a phase shift**. It is a resonance of the open-channel partial-wave $S$ matrix caused by coupling to a closed-channel state. In the special case where only one open elastic channel is observed, the same behavior can be parameterized as a rapid energy dependence of a phase shift $\delta_l(E)$.
 
 ---
 
