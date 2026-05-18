@@ -206,6 +206,8 @@ where $\delta_l(E)$ is real. This is the phase shift.
 
 The factor of $2$ is conventional but natural. A radial standing wave outside the range of the potential may be written as a superposition of incoming and outgoing spherical waves. The potential changes the relative phase between the outgoing and incoming pieces. Since the regular free solution already contains both incoming and outgoing parts, the asymptotic radial wave is shifted by $\delta_l$, while the ratio of outgoing to incoming wave coefficients is shifted by $e^{2i\delta_l}$.
 
+>[!mythoughts] what the fuck is this
+
 Thus the phase shift is not a new fundamental dynamical object. It is the angle that parameterizes a one-dimensional unitary partial-wave $S$ matrix.
 
 ---
@@ -246,6 +248,7 @@ e^{ikr}
 (-1)^l e^{-ikr}
 \right].
 $$
+>[!mythoughts] why is there a $\sim$ symbol here? What is not rigorous?
 
 The scattering solution has the large-distance form
 
@@ -281,6 +284,7 @@ S_l(k)
 =
 1+2ik f_l(k).
 $$
+>[!mythoughts] how to see this?
 
 Solving for $f_l$ gives
 
