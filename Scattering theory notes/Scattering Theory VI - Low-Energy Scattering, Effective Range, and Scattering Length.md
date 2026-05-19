@@ -24,7 +24,7 @@ To avoid a notational collision, this note often denotes the entrance open chann
 
 ## 1. Low-energy means long wavelength compared with the interaction range
 
-Let $R$ denote the characteristic range of a short-range interaction. Low-energy scattering means
+Let $R$ denote the **characteristic range** of a short-range interaction. Low-energy scattering means
 
 $$
 kR\ll 1,
@@ -32,7 +32,11 @@ $$
 
 or equivalently that the de Broglie wavelength is much longer than the region where the interaction is appreciable.
 
-In this regime the incoming wave cannot resolve fine angular structure in the potential region. This is why the angular-momentum expansion becomes especially simple. The centrifugal barrier for the $l$th partial wave is
+In this regime the incoming wave cannot resolve fine angular structure in the potential region. 
+
+>[!mythoughts] what is this
+
+This is why the angular-momentum expansion becomes especially simple. The centrifugal barrier for the $l$th partial wave is
 
 $$
 \frac{\hbar^2}{2\mu}\frac{l(l+1)}{r^2}.
@@ -59,6 +63,8 @@ f_l(k)
 \sim
 k^{2l}.
 $$
+
+>[!mythoughts] what is this
 
 For small phase shift,
 
