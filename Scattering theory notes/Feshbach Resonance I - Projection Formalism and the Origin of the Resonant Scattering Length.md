@@ -1,5 +1,3 @@
-# Feshbach Resonance I: Projection Formalism and the Origin of the Resonant Scattering Length
-
 ## 0. What is being specialized
 
 The previous scattering notes built the following hierarchy:
