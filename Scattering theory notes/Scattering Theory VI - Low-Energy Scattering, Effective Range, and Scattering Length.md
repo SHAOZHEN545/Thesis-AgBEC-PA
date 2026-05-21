@@ -64,7 +64,7 @@ f_l(k)
 k^{2l}.
 $$
 
->[!mythoughts] what is this
+>[!mythoughts] what is this? No explanation?
 
 For small phase shift,
 
