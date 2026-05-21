@@ -268,6 +268,8 @@ $$
 
 Here $r_e$ is the effective range. Sakurai writes this parameter as $r_0$; this note uses $r_e$ to avoid confusion with the radial coordinate or the potential range $R$.
 
+>[!mythoughts] Why do we want to do this? Why is r_e called effective range?
+
 Substituting into the s-wave amplitude gives
 
 $$
