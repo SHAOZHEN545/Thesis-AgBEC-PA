@@ -411,18 +411,18 @@ This is the s-wave unitarity limit. A very large scattering length does not make
 ---
 ## 5. Bound states as poles of the s-wave amplitude
 
-The scattering length is not only a parameter in the low-energy cross section. It also knows about the nearest s-wave pole of the analytically continued scattering amplitude. This is the generic reason why scattering length and shallow bound states are connected.
+The relation between scattering length and bound states is not based on a casual substitution $k=i\kappa$. The real reason is that scattering states and bound states are solutions of the same radial Schrödinger equation, with different boundary conditions. The scattering amplitude is built from the coefficients needed to satisfy those boundary conditions. When the bound-state boundary condition can be satisfied without any incoming wave, the denominator of the scattering amplitude vanishes. That is what it means for the bound state to appear as a pole.
 
-For a single-channel central potential, write the s-wave reduced radial equation as
+Work in the single-channel s-wave problem. Define
 
 $$
--\frac{d^2u}{dr^2}
-+
-U(r)u
-=
-k^2u,
-\qquad
-U(r)=\frac{2\mu}{\hbar^2}V(r).
+U(r)=\frac{2\mu}{\hbar^2}V(r),
+$$
+
+so the reduced radial equation is
+
+$$
+-u''(r)+U(r)u(r)=k^2u(r).
 $$
 
 The physical radial wave function is $R_0(r)=u(r)/r$, and regularity at the origin requires
@@ -431,73 +431,228 @@ $$
 u(0)=0.
 $$
 
-For a short-range potential, $U(r)=0$ outside the interaction region. Thus, for $r>R$, the scattering solution is a linear combination of free incoming and outgoing radial waves. In the one-channel elastic case this is equivalently written as
+For each value of $k$, there is a distinguished regular solution $\phi(k,r)$ defined by
 
 $$
-u_k(r)
-\propto
-\sin(kr+\delta_0(k)).
+\phi(k,0)=0,
+\qquad
+\phi'(k,0)=1.
 $$
 
-The s-wave amplitude is
+The normalization is arbitrary; the important point is that $\phi(k,r)$ is the solution selected by regularity at the origin.
+
+Now assume the potential is short range, so that outside some radius $R$,
 
 $$
-f_0(k)
+U(r)=0.
+$$
+
+For $r>R$, the radial equation becomes
+
+$$
+-u''(r)=k^2u(r),
+$$
+
+so the outside solution is a linear combination of incoming and outgoing radial waves:
+
+$$
+\phi(k,r)
 =
-\frac{1}{k\cot\delta_0(k)-ik}.
+A_{\mathrm{out}}(k)e^{ikr}
++
+A_{\mathrm{in}}(k)e^{-ikr},
+\qquad
+r>R.
 $$
 
-For real positive $k$, this formula describes ordinary scattering states. But the expression also has an analytic continuation to complex $k$. The poles of that analytic continuation have physical meaning.
+The coefficients $A_{\mathrm{out}}(k)$ and $A_{\mathrm{in}}(k)$ are not arbitrary. They are fixed by integrating the regular solution from the origin through the potential region and matching it to the outside free form. Therefore they contain the dynamical information of the potential.
 
-A bound state has negative energy relative to the scattering threshold,
+For real positive $k$, both $e^{ikr}$ and $e^{-ikr}$ are oscillatory. They represent outgoing and incoming radial waves. The partial-wave $S$ matrix is the ratio of outgoing to incoming amplitudes, up to a conventional phase normalization. Schematically,
 
 $$
-E
-=
--\frac{\hbar^2\kappa^2}{2\mu},
+S_0(k)\propto \frac{A_{\mathrm{out}}(k)}{A_{\mathrm{in}}(k)}.
+$$
+
+With a standard choice of normalization, one writes this more precisely in terms of the s-wave Jost function $F(k)$ as
+
+$$
+\phi(k,r)
+\underset{r>R}{=}
+\frac{1}{2ik}
+\left[
+F(-k)e^{ikr}
+-
+F(k)e^{-ikr}
+\right].
+$$
+
+The coefficient of the incoming wave is proportional to $F(k)$, and the coefficient of the outgoing wave is proportional to $F(-k)$. Hence
+
+$$
+S_0(k)=\frac{F(-k)}{F(k)}.
+$$
+
+The s-wave amplitude is related to $S_0(k)$ by
+
+$$
+f_0(k)=\frac{S_0(k)-1}{2ik}.
+$$
+
+Therefore $f_0(k)$ has the same possible denominator zeros as $S_0(k)$:
+
+$$
+F(k)=0
+\quad
+\Longrightarrow
+\quad
+S_0(k)\ \text{and}\ f_0(k)\ \text{have a pole}.
+$$
+
+This is the mathematical place where the word "pole" enters. A pole means that the amplitude is behaving like
+
+$$
+f_0(k)\sim \frac{\text{finite numerator}}{k-k_\star}
+$$
+
+near some complex momentum $k_\star$. It is not a new mystical object. It means that the boundary-value problem has become singular because a nonzero solution exists even without a supplied incoming wave.
+
+Now look at a bound state. A bound state has negative energy,
+
+$$
+E=-\frac{\hbar^2\kappa^2}{2\mu},
 \qquad
 \kappa>0.
 $$
 
-This corresponds to
+Since scattering energy is written as
+
+$$
+E=\frac{\hbar^2k^2}{2\mu},
+$$
+
+the same energy corresponds to
 
 $$
 k=i\kappa.
 $$
 
-Outside the potential, the bound-state radial equation is
+This is not an arbitrary replacement. It is the same energy variable written in the momentum plane. Positive-energy scattering states lie on the real $k$ axis; negative-energy bound states lie on the imaginary $k$ axis.
+
+Outside the potential, the two free radial factors become
 
 $$
--u''=-\kappa^2u,
+e^{ikr}=e^{-\kappa r},
 $$
 
-so the outside solution is a combination of
+and
 
 $$
-e^{-\kappa r}
-\qquad
-\text{and}
-\qquad
-e^{+\kappa r}.
+e^{-ikr}=e^{+\kappa r}.
 $$
 
-Normalizability requires the growing piece to vanish. Therefore a bound state is exactly the situation in which the analytically continued scattering solution becomes a purely decaying outside solution,
+Thus, at $k=i\kappa$, the outside regular solution has the form
 
 $$
-u_{\mathrm{bound}}(r)\propto e^{-\kappa r}.
-$$
-
-Since an outgoing scattering wave has outside dependence $e^{ikr}$, the substitution $k=i\kappa$ gives
-
-$$
-e^{ikr}
+\phi(i\kappa,r)
 =
-e^{-\kappa r}.
+A_{\mathrm{out}}(i\kappa)e^{-\kappa r}
++
+A_{\mathrm{in}}(i\kappa)e^{+\kappa r}.
 $$
 
-Thus a bound state appears as a pole of the s-wave amplitude on the positive imaginary $k$ axis.
+A physical bound state must be normalizable, so the growing exponential must be absent. Therefore the bound-state condition is
 
-Using the effective-range expansion,
+$$
+A_{\mathrm{in}}(i\kappa)=0.
+$$
+
+But $A_{\mathrm{in}}(k)$ is precisely the denominator coefficient of the scattering problem. In the Jost-function notation,
+
+$$
+A_{\mathrm{in}}(k)\propto F(k).
+$$
+
+Therefore the bound-state condition is
+
+$$
+F(i\kappa)=0.
+$$
+
+Since
+
+$$
+S_0(k)=\frac{F(-k)}{F(k)},
+$$
+
+this means
+
+$$
+F(i\kappa)=0
+\quad
+\Longrightarrow
+\quad
+S_0(k)\ \text{has a pole at}\ k=i\kappa.
+$$
+
+And since
+
+$$
+f_0(k)=\frac{S_0(k)-1}{2ik},
+$$
+
+the scattering amplitude also has a pole at
+
+$$
+k=i\kappa.
+$$
+
+This is the precise statement behind the phrase:
+
+$$
+\text{bound states are poles of the scattering amplitude}.
+$$
+
+It does not mean that a bound state is itself a scattering experiment. It means that the function extracted from scattering, when analytically continued away from real positive $k$, becomes singular exactly at those complex values of $k$ where the Schrödinger equation admits a normalizable bound-state solution.
+
+The same conclusion can be obtained from the resolvent viewpoint. The full Green operator is
+
+$$
+G(E)=\frac{1}{E-H}.
+$$
+
+If the Hamiltonian has a bound state $|\psi_B\rangle$ with energy $E_B$, then the spectral representation of $G(E)$ contains a term
+
+$$
+G(E)\supset \frac{|\psi_B\rangle\langle \psi_B|}{E-E_B}.
+$$
+
+Thus the resolvent has a pole at $E=E_B$. The transition operator can be written in terms of the full resolvent as
+
+$$
+T(E)=V+VG(E)V.
+$$
+
+Therefore the transition matrix, and hence the scattering amplitude, inherits a pole whenever the bound state couples to the scattering channel. This is the operator version of the same radial-boundary-condition argument.
+
+Now connect this to the effective-range expansion. For physical real $k$, the s-wave amplitude can be written as
+
+$$
+f_0(k)=\frac{1}{k\cot\delta_0(k)-ik}.
+$$
+
+For a short-range potential, the quantity $k\cot\delta_0(k)$ is not merely a numerical trick defined only on the real axis. It is the real-axis restriction of a function that is analytic in $k^2$ near $k=0$, except at special singular cases. That is why it admits the threshold expansion
+
+$$
+k\cot\delta_0(k)
+=
+-\frac{1}{a}
++
+\frac{1}{2}r_e k^2
++
+O(k^4).
+$$
+
+The analytic continuation of the amplitude is therefore
 
 $$
 f_0(k)
@@ -509,10 +664,34 @@ f_0(k)
 -ik
 +
 O(k^4)
-},
+}.
 $$
 
-a pole at $k=i\kappa$ satisfies
+Now we are allowed to evaluate the denominator at $k=i\kappa$ because we are not pretending that $i\kappa$ is a physical scattering momentum. We are using the analytically continued boundary-coefficient function whose denominator also determines the bound-state condition.
+
+At a bound-state pole,
+
+$$
+k=i\kappa,
+\qquad
+\kappa>0,
+$$
+
+the denominator must vanish:
+
+$$
+-\frac{1}{a}
++
+\frac{1}{2}r_e(i\kappa)^2
+-
+i(i\kappa)
++
+O(\kappa^4)
+=
+0.
+$$
+
+Thus
 
 $$
 -\frac{1}{a}
@@ -536,23 +715,71 @@ $$
 O(\kappa^4).
 $$
 
-If the bound state is shallow, then its size $1/\kappa$ is much larger than the potential range $R$. In that case
+This equation says that the bound-state decay length and the scattering length are related because they are controlled by the same near-threshold denominator.
+
+Now suppose the bound state is shallow. Its outside tail has size
 
 $$
-\kappa R\ll 1,
+\frac{1}{\kappa}.
 $$
 
-and the effective-range correction is subleading. The leading relation is therefore
+Shallow means that this size is much larger than the microscopic range of the potential:
+
+$$
+\frac{1}{\kappa}\gg R,
+$$
+
+or
+
+$$
+\kappa R\ll 1.
+$$
+
+For an ordinary finite-range potential, the effective range $r_e$ is of the same order as the range $R$:
+
+$$
+r_e\sim R.
+$$
+
+More generally, $r_e$ is a low-energy length scale set by the short-distance potential, unless the system has additional fine tuning or long-range tails. Therefore
+
+$$
+\frac{1}{2}r_e\kappa^2
+\sim
+R\kappa^2
+=
+\kappa(\kappa R).
+$$
+
+Compared with the leading term $\kappa$, the effective-range correction is smaller by the factor
+
+$$
+\kappa R\ll 1.
+$$
+
+The next terms in the effective-range expansion are even smaller. For example, the $k^4$ term has a coefficient with dimensions of length cubed, typically of order $R^3$, so after setting $k=i\kappa$ it contributes on the scale
+
+$$
+R^3\kappa^4
+=
+\kappa(\kappa R)^3.
+$$
+
+Thus, for a shallow bound state, the pole condition reduces at leading order to
 
 $$
 \kappa\simeq \frac{1}{a}.
 $$
 
-A shallow bound state close to threshold therefore requires
+Since $\kappa>0$, this requires
 
 $$
-a>0,
-\qquad
+a>0.
+$$
+
+Therefore a shallow s-wave bound state near threshold implies
+
+$$
 a\gg R,
 $$
 
@@ -566,27 +793,25 @@ E_{\mathrm{bind}}
 \frac{\hbar^2}{2\mu a^2}.
 $$
 
-This derivation is generic. It did not use a square well. It only used the short-range nature of the potential, the one-channel elastic s-wave amplitude, and the fact that a bound state must be a normalizable pole of the analytically continued scattering solution.
-
-There is also a useful coordinate-space way to see the same result. At zero energy and outside the potential,
+The coordinate-space interpretation gives the same result. At zero energy and outside the potential,
 
 $$
 u_0(r)=C(r-a).
 $$
 
-For a shallow bound state, the outside bound-state wave is
+For a shallow bound state, outside the potential,
 
 $$
-u_{\mathrm{bound}}(r)=A e^{-\kappa r}.
+u_B(r)=Ae^{-\kappa r}.
 $$
 
-Because the state is shallow, there is an intermediate region
+Because the state is shallow, there is a wide overlap region
 
 $$
-R\ll r\ll \frac{1}{\kappa},
+R\ll r\ll \frac{1}{\kappa}.
 $$
 
-where the particle is already outside the potential but the exponential tail has not yet decayed much. In this region,
+In this region,
 
 $$
 e^{-\kappa r}
@@ -594,7 +819,7 @@ e^{-\kappa r}
 1-\kappa r+O(\kappa^2r^2).
 $$
 
-Up to an irrelevant normalization,
+Up to normalization,
 
 $$
 1-\kappa r
@@ -602,50 +827,88 @@ $$
 -\kappa\left(r-\frac{1}{\kappa}\right).
 $$
 
-Comparing with the zero-energy outside form $r-a$ gives
+Comparing this with
+
+$$
+u_0(r)\propto r-a
+$$
+
+again gives
 
 $$
 a\simeq \frac{1}{\kappa}.
 $$
 
-This is the same result as the pole derivation, but now it has a direct spatial interpretation: a shallow bound state has a very long tail, and the zero-energy scattering solution extrapolates to a node at approximately the size of that tail.
+This spatial argument is less general than the pole argument, but it is very intuitive: a shallow bound state has a tail extending far outside the potential, and the zero-energy scattering wave extrapolates to a node at roughly the same large distance.
 
-Now consider the opposite sign. If $a<0$ and $|a|\gg R$, the leading low-energy amplitude
+Now consider the case
+
+$$
+a<0,
+\qquad
+|a|\gg R.
+$$
+
+The leading low-energy amplitude is
 
 $$
 f_0(k)
 \simeq
--\frac{a}{1+ika}
+\frac{1}{-1/a-ik}.
 $$
 
-has a pole at
+The denominator vanishes at
 
 $$
-k=\frac{i}{a}
-=
--\frac{i}{|a|}.
+-\frac{1}{a}-ik=0,
 $$
 
-This pole lies on the negative imaginary $k$ axis. The outside factor is then
+so
+
+$$
+k=\frac{i}{a}.
+$$
+
+If $a<0$, this is
+
+$$
+k=-\frac{i}{|a|}.
+$$
+
+This pole is close to threshold, but it lies on the negative imaginary $k$ axis. Set
+
+$$
+k=-i\lambda,
+\qquad
+\lambda=\frac{1}{|a|}>0.
+$$
+
+The outside outgoing-wave factor is then
 
 $$
 e^{ikr}
 =
-e^{+r/|a|},
+e^{+\lambda r}.
 $$
 
-which grows at infinity. Therefore this pole is not a normalizable bound state.
+This grows at infinity. Therefore the pole is not a normalizable bound state.
 
-Nevertheless, it is still a genuine pole of the analytically continued s-wave amplitude. It is called a virtual state, or sometimes an antibound state. A virtual state is not a hidden normalizable state of the Hamiltonian. It is a near-threshold pole on the non-bound side of the analytic continuation. Because it is close to $k=0$, it can strongly affect low-energy scattering even though it is not a physical bound state.
+Nevertheless, it is still a pole of the analytically continued scattering amplitude. It corresponds to a solution that is regular at the origin and satisfies the analytically continued outgoing boundary condition, but it is not square-integrable. This is called a virtual state, or antibound state.
 
-Thus, in the simplest one-channel s-wave situation,
+A virtual state is not a physical bound state hiding somewhere. It is a near-threshold pole on the non-bound side of the analytic continuation. Because it is close to $k=0$, it strongly affects low-energy scattering. That is why a large negative scattering length also signals a near-threshold structure, even though there is no normalizable bound state.
+
+Thus the clean single-channel s-wave picture is:
 
 $$
 a\gg R
 \quad
 \Longleftrightarrow
 \quad
-\text{near-threshold bound-state pole},
+\text{pole at } k=i\kappa,\ \kappa>0
+\quad
+\Longleftrightarrow
+\quad
+\text{shallow bound state},
 $$
 
 whereas
@@ -655,13 +918,14 @@ a\ll -R
 \quad
 \Longleftrightarrow
 \quad
-\text{near-threshold virtual-state pole}.
+\text{pole at } k=-i\lambda,\ \lambda>0
+\quad
+\Longleftrightarrow
+\quad
+\text{near-threshold virtual state}.
 $$
 
-The magnitude $|a|$ tells us that an s-wave pole is close to threshold. The sign tells us on which side of the threshold pole structure the system lies.
-
----
-
+The phrase "bound states are poles of the scattering amplitude" is therefore not a metaphor. It is a precise statement about the analytic continuation of the same boundary-value problem that defines scattering. The amplitude's denominator is the coefficient of the incoming or growing outside solution. A bound state occurs exactly when that coefficient vanishes, leaving a regular solution at the origin and a decaying solution at infinity.
 ## 6. How attraction changes the sign of the scattering length
 
 The previous section explains why a large positive scattering length signals a shallow bound state. It remains to understand how this fits with the intuitive statement that weak attraction often gives negative scattering length, while strong attraction can give positive scattering length.
