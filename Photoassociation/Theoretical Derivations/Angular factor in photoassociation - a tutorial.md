@@ -3,6 +3,8 @@
 A tutorial derivation, with the cesium
 $0_g^-(6s+6p_{3/2})$, $f+f=4+4$, even-$\ell$ channel as a worked example.
 
+>[!mythoughts] Remaining question: where does the homonuclear aspect come in? Will the line be broader by a factor of 2 than the atomic line
+
 ---
 
 ## 1. What quantity are we calculating?
