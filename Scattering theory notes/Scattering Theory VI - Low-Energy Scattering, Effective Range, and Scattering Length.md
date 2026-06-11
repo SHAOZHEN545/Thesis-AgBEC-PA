@@ -1,5 +1,3 @@
-# Scattering Theory VI - Low-Energy Scattering, Effective Range, and Scattering Length
-
 The previous notes developed scattering from a channel-resolved and partial-wave point of view. In that language the fundamental object is not first a phase shift, but a partial-wave block of the scattering matrix,
 
 $$
