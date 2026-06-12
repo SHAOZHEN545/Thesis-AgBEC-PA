@@ -195,9 +195,7 @@ The coefficients $A_a(E';E)$ are continuum amplitudes, while $C_\nu(E)$ are loca
 Projecting the Schrödinger equation with $\langle E',a|$ gives
 
 $$
-(E-E')A_a(E';E)
-=
-\sum_\nu V_{a\nu}(E')C_\nu(E).
+(E-E')A_a(E';E)=\sum_\nu V_{a\nu}(E')C_\nu(E).
 $$
 
 Projecting with $\langle\phi_\mu|$ gives
