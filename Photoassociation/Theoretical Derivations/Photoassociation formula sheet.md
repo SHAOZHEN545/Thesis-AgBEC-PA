@@ -1,4 +1,4 @@
-Approximation framework for estimating line positions, Franck--Condon factors, saturation intensities, and loss rates for ultracold homonuclear alkali-like photoassociation.
+Approximation framework for estimating line positions, Franck--Condon factors, saturation intensities, and loss rates for ultracold homonuclear alkali-like photo-association.
 
 **Target use case:** one PA laser, one excited molecular symmetry/state at a time, near an atomic D-line asymptote. The code should take the long-range coefficient of the selected excited curve, a user-chosen ground-state scattering length, and experimental conditions, then output expected PA line positions and approximate rates.
 
