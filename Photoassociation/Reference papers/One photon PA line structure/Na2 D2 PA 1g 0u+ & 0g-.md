@@ -2,6 +2,8 @@
 
 **L. P. Ratliff, M. E. Wagshul, P. D. Lett, S. L. Rolston, and W. D. Phillips** *Atomic Physics Division, Phys A-167, National Institute of Standards and Technology, Gaithersburg, Maryland 20899* (Received 21 February 1994; accepted 27 May 1994)
 
+DOI: [https://doi.org/10.1063/1.467638](https://doi.org/10.1063/1.467638)
+
 ***
 
 ## Abstract
