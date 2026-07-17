@@ -12,3 +12,7 @@
 # 屏蔽系统缓存
 .DS_Store
 Thumbs.db
+
+# 屏蔽 Claude Code 本地文件夹与个人配置
+.claude/
+CLAUDE.local.md
