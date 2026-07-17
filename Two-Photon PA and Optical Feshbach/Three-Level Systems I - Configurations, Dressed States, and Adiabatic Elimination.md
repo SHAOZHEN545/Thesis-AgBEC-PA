@@ -16,7 +16,7 @@ $$
 
 The two fields are the two photoassociation arms: $L_1$ drives the free–bound leg $|0\rangle\!\leftrightarrow\!|1\rangle$, and $L_2$ drives the bound–bound leg $|2\rangle\!\leftrightarrow\!|1\rangle$. The $|0\rangle\!\leftrightarrow\!|2\rangle$ transition is not directly driven. This is a $\Lambda$ configuration, with the lossy excited state $|1\rangle$ as the shared apex.
 
-![[Lambda system two-photon PA schematic.svg]]
+![[Lambda system two-photon PA schematic.svg|468]]
 
 The guiding picture is simple:
 
