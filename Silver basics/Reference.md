@@ -1,0 +1,1 @@
+1. [New accurate data for the spectrum of neutral silver](https://link.springer.com/article/10.1007/s100530170264)
