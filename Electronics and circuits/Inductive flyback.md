@@ -1,4 +1,4 @@
-This note develops, from first principles, what happens when a switch interrupts the current in an inductive load. The physical setting is a magnetic coil driven from a DC supply through an IGBT, which is exactly the topology used to switch the Feshbach and MOT coils. The questions answered here are: how large is the voltage that appears when the switch opens, which terminal of the switch it appears on, and why the naive Lenz-law argument is so easy to get backwards. Protection networks (freewheeling diodes, varistors, RC and RCD snubbers) are deliberately left out; they are the subject of a companion note, and they cannot be designed sensibly until the unprotected problem is understood.
+This note develops, from first principles, what happens when a switch interrupts the current in an inductive load. The physical setting is a magnetic coil driven from a DC supply through an IGBT, which is exactly the topology used to switch the Feshbach / MOT coils. The questions answered here are: how large is the voltage that appears when the switch opens, which terminal of the switch it appears on, and why the naive Lenz-law argument is so easy to get backwards. Protection networks (freewheeling diodes, varistors, RC and RCD snubbers) are deliberately left out; they are the subject of a companion note, and they cannot be designed sensibly until the unprotected problem is understood.
 
 Consider such a circuit:
 
@@ -6,7 +6,7 @@ Consider such a circuit:
 
 A DC supply drives a current down the top rail, through the inductor $L$, into the collector $C$ of the IGBT $Q1$, out of its emitter $E$, and back along the bottom rail to the supply. Applying a high voltage on the gate drive turns the IGBT on, and current flows around the loop. Dropping the gate voltage to zero turns it off. Everything in this note is about that second event.
 
-Throughout, take the supply negative terminal as the ground reference, and let
+Throughout, take the supply negative terminal as the ground reference, and denote
 
 - $V_s$ = supply rail voltage (the compliance voltage of the coil supply),
 - $I_0$ = steady-state coil current before turn-off,

@@ -6,7 +6,7 @@
    style=""
    version="1.1"
    id="svg20"
-   sodipodi:docname="igbt_inductive_switch_circuit.svg"
+   sodipodi:docname="Simple_IGBT_Inductor.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -43,16 +43,22 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.4846154"
-     inkscape:cx="241.81347"
-     inkscape:cy="267.40933"
+     inkscape:zoom="1.0497816"
+     inkscape:cx="78.111484"
+     inkscape:cy="96.210486"
      inkscape:window-width="1920"
      inkscape:window-height="1006"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg20" />
-  <rect x="0" y="0" width="680" height="520" fill="#ffffff" id="bg1" />
+  <rect
+     x="0"
+     y="0"
+     width="680"
+     height="520"
+     fill="#ffffff"
+     id="bg1" />
   <title
      style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
      id="title1">Inductive switching circuit with IGBT</title>
@@ -229,6 +235,16 @@
      y="274"
      style="color:#0b0b0b;font-weight:400;font-size:14px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#0b0b0b;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
      id="text15">C</text>
+  <text
+     x="495"
+     y="206.09116"
+     style="color:#0b0b0b;font-weight:400;font-size:14px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#0b0b0b;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+     id="text15-8">B</text>
+  <text
+     x="495"
+     y="108.9668"
+     style="color:#0b0b0b;font-weight:400;font-size:14px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#0b0b0b;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+     id="text15-9">A</text>
   <text
      x="495"
      y="365"
