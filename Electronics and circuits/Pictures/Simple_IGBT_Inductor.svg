@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="100%"
+   width="680"
    viewBox="0 0 680 520"
    role="img"
-   style=""
    version="1.1"
    id="svg20"
    sodipodi:docname="Simple_IGBT_Inductor.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   height="520"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +21,8 @@
        refY="0"
        orient="auto-start-reverse"
        inkscape:stockid="Triangle arrow"
-       markerWidth="0.8"
-       markerHeight="0.8"
+       markerWidth="0.80000001"
+       markerHeight="0.80000001"
        viewBox="0 0 1 1"
        inkscape:isstock="true"
        inkscape:collect="always"
@@ -44,8 +44,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.0497816"
-     inkscape:cx="78.111484"
-     inkscape:cy="96.210486"
+     inkscape:cx="333.40268"
+     inkscape:cy="257.19635"
      inkscape:window-width="1920"
      inkscape:window-height="1006"
      inkscape:window-x="-8"
@@ -60,10 +60,8 @@
      fill="#ffffff"
      id="bg1" />
   <title
-     style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
      id="title1">Inductive switching circuit with IGBT</title>
   <desc
-     style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
      id="desc1">A closed-loop schematic showing a DC power supply feeding current through an inductor coil into an IGBT transistor that acts as an on-off switch, with the emitter arrow shown on the transistor symbol and a gate lead for the drive signal.</desc>
   <line
      x1="150"
@@ -72,7 +70,7 @@
      y2="60"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line1" />
   <line
      x1="150"
@@ -81,7 +79,7 @@
      y2="170"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line2" />
   <line
      x1="120"
@@ -90,8 +88,35 @@
      y2="170"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line3" />
+  <line
+     x1="300.60635"
+     y1="496.09586"
+     x2="322.88614"
+     y2="496.09586"
+     stroke="var(--text-primary)"
+     stroke-width="2"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:#0b0b0b;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+     id="line3-2" />
+  <line
+     x1="305.32138"
+     y1="500.1665"
+     x2="318.17111"
+     y2="500.1665"
+     stroke="var(--text-primary)"
+     stroke-width="2"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:#0b0b0b;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+     id="line3-2-5" />
+  <line
+     x1="307.17371"
+     y1="504.38245"
+     x2="316.31879"
+     y2="504.38245"
+     stroke="var(--text-primary)"
+     stroke-width="2"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:#0b0b0b;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+     id="line3-2-5-1" />
   <line
      x1="135"
      y1="190"
@@ -99,7 +124,7 @@
      y2="190"
      stroke="var(--text-primary)"
      stroke-width="6"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:6px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line4" />
   <line
      x1="150"
@@ -108,12 +133,12 @@
      y2="480"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line5" />
   <text
      x="195"
      y="150"
-     style="fill:rgb(82, 81, 78);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:12px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#52514e;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
      id="text5">DC supply</text>
   <text
      x="191.83223"
@@ -132,7 +157,7 @@
      y2="480"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line7" />
   <line
      x1="480"
@@ -141,24 +166,24 @@
      y2="110"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:rgb(0, 0, 0);stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line8" />
   <path
-     d="M480 110 C500 110 500 130 480 130 C500 130 500 150 480 150 C500 150 500 170 480 170 C500 170 500 190 480 190"
+     d="m 480,110 c 20,0 20,20 0,20 20,0 20,20 0,20 20,0 20,20 0,20 20,0 20,20 0,20"
      fill="none"
      stroke="var(--text-primary)"
      stroke-width="2"
-     style="fill:none;stroke:rgb(11, 11, 11);color:rgb(11, 11, 11);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:none;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="path8" />
   <text
      x="520"
      y="148"
-     style="fill:rgb(11, 11, 11);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:500;font-size:14px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#0b0b0b;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
      id="text8">L</text>
   <text
      x="520"
      y="166"
-     style="fill:rgb(82, 81, 78);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:anthropic-sans, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+     style="color:#0b0b0b;font-weight:400;font-size:12px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#52514e;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
      id="text9">Inductor</text>
   <line
      x1="479.99994"
@@ -178,6 +203,15 @@
      stroke-width="2"
      style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke:#0b0b0b;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter"
      id="line15" />
+  <line
+     x1="311.74625"
+     y1="479.05576"
+     x2="311.74625"
+     y2="496.26285"
+     stroke="var(--text-primary)"
+     stroke-width="2"
+     style="color:#0b0b0b;font-weight:400;font-size:16px;font-family:anthropic-sans, '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:#0b0b0b;stroke-width:2.00001px;stroke-linecap:butt;stroke-linejoin:miter"
+     id="line15-8" />
   <line
      x1="480.29907"
      y1="269.97046"
