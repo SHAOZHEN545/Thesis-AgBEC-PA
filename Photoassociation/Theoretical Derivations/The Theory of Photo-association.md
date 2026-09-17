@@ -6,7 +6,7 @@ $$
 V_e(R_C) - V_g(R_C) = \hbar\omega_L.
 $$
 
-The laser can then drive a **free-to-bound** transition: the scattering atom pair is photoassociated into a bound vibrational level $|v\rangle$ of $V_e$, forming a transient excited molecule.
+The laser can then drive a **free-to-bound** transition: the scattering atom pair is photoassociated into a bound rovibrational level $|v,J\rangle$ of $V_e$, forming a transient excited molecule. (Each vibrational level $v$ carries a progression of rotational levels $J$; these are generally resolved in long-range PA spectra, so the target state must be labelled by both.)
 
 The goal: derive the rate of this process, express it in terms of quantities an experimentalist controls (laser intensity, detuning, temperature), and understand when this rate saturates.
 
@@ -16,14 +16,22 @@ The goal: derive the rate of this process, express it in terms of quantities an 
 
 ### 1.1 Born–Oppenheimer factorization
 
-In the Born–Oppenheimer picture, both the initial and final states factor into an electronic part and a nuclear (vibrational/scattering) part:
+In the Born–Oppenheimer picture, both the initial and final states factor into an electronic part, a **radial** nuclear part (vibrational/scattering), an **angular** nuclear part (rotation of the internuclear axis), and a spin/hyperfine part:
 
 $$
-|i\rangle = |\text{elec}_g\rangle \otimes |\chi_{E,\ell}(R)\rangle, \qquad
-|f\rangle = |\text{elec}_e\rangle \otimes |\psi_v(R)\rangle.
+|i\rangle = \mathcal{S}\Big[\,|\text{elec}_g\rangle \otimes |\chi_{E,\ell}(R)\rangle \otimes |\ell\, m_\ell\rangle \otimes |F_1 m_1; F_2 m_2\rangle \,\Big],
+$$
+$$
+|f\rangle = |\text{elec}_e;\Omega\rangle \otimes |\psi_{v,J}(R)\rangle \otimes |J\,M_J\,\Omega\rangle .
 $$
 
-Here $|\chi_{E,\ell}\rangle$ is the radial scattering wave function on $V_g$ at collision energy $E$ and partial wave $\ell$ (energy-normalized: $\langle \chi_{E'}|\chi_E\rangle = \delta(E-E')$), and $|\psi_v\rangle$ is the unit-normalized bound vibrational wave function on $V_e$.
+Here $|\chi_{E,\ell}\rangle$ is the radial scattering wave function on $V_g$ at collision energy $E$ and partial wave $\ell$ (energy-normalized: $\langle \chi_{E'}|\chi_E\rangle = \delta(E-E')$), and $|\psi_{v,J}\rangle$ is the unit-normalized bound radial wave function on $V_e$ for vibrational level $v$ and total angular momentum $J$.
+
+Three points about this writing that are easy to gloss over:
+
+- **Both** states carry an angular factor. The initial angular factor is the spherical harmonic $|\ell m_\ell\rangle = Y_{\ell m_\ell}(\hat R)$; the label $\ell$ on $\chi_{E,\ell}$ by itself is only a reminder of which centrifugal barrier the radial equation contained. In Hund's case (c) the final angular factor is a **Wigner rotation matrix** $|J M_J \Omega\rangle \propto D^{J*}_{M_J\Omega}(\hat R)$, not a spherical harmonic, because the electronic angular momentum projection on the internuclear axis $\Omega$ is in general nonzero.
+- The radial equations are **$\ell$- and $J$-dependent** through the centrifugal terms $\hbar^2\ell(\ell+1)/2\mu R^2$ on $V_g$ and $\hbar^2[J(J+1)-\Omega^2]/2\mu R^2$ on $V_e$. Strictly, therefore, every overlap below is $S(E,\ell;v,J)$, and every excited level is labelled $(v,J)$, not $v$ alone.
+- $\mathcal{S}$ is the nuclear-exchange symmetrization projector for identical nuclei. Exchange acts jointly on the electronic ($g/u$), rotational ($(-1)^\ell$), and nuclear-spin parts, so statements like "$0_g^-$ couples only to even partial waves" **cannot be formulated at all** without the angular labels written explicitly. Together with the E1 parity selection rule — total parity must change, and an $\Omega = 0^\pm$ level has parity $\pm(-1)^J$ — this is what fixes the allowed $\ell \to J$ combinations.
 
 The electric-dipole interaction with the laser field is:
 
@@ -34,29 +42,40 @@ $$
 where $\hat{\vec{d}}$ is the molecular electric dipole operator and $\vec{E}(t) = \vec{\epsilon}\,\mathcal{E}_0\cos(\omega_L t)$ is the laser field with polarization $\vec{\epsilon}$ and amplitude $\mathcal{E}_0$. In the rotating-wave approximation, the coupling matrix element is:
 
 $$
-V_b(E,\ell) = \frac{\mathcal{E}_0}{2}\langle f|\hat{\vec{d}}\cdot\vec{\epsilon}|i\rangle.
+V_{b,\nu}(E,\ell) = \frac{\mathcal{E}_0}{2}\langle f|\hat{\vec{d}}\cdot\vec{\epsilon}|i\rangle,
 $$
 
-### 1.2 Separating electronic and nuclear degrees of freedom
+where $\nu$ is shorthand for the full set of angular/spin quantum numbers on both sides.
 
-Inserting the BO factorization:
+### 1.2 Separating electronic, radial, and angular degrees of freedom
 
-$$
-V_b(E,\ell) = \frac{\mathcal{E}_0}{2} \int_0^\infty \psi_v^*(R)\;\underbrace{\langle\text{elec}_e|\hat{\vec{d}}\cdot\vec{\epsilon}|\text{elec}_g\rangle}_{d_{eg}(R)}\;\chi_{E,\ell}(R)\;dR.
-$$
-
-The function $d_{eg}(R)$ is the **$R$-dependent electronic transition dipole moment**. At large $R$ (where PA typically occurs, $R \gtrsim 40\,a_0$), $d_{eg}(R)$ approaches the **atomic** transition dipole moment $d_{\text{at}}$, because the two atoms are far enough apart that the molecular transition is essentially an atomic one. This motivates the:
-
-> **Condon approximation.** Pull $d_{eg}(R) \approx d_{\text{at}}$ out of the integral.
-
-This gives the key factorization:
+Inserting the factorization of Sec. 1.1, the matrix element splits into an integral over $R$ and an integral over the orientation $\hat R$ (plus sums over spin projections):
 
 $$
-\boxed{V_{b,\nu}(E,\ell) = \frac{\mathcal{E}_0\,d_{\text{at}}}{2}\;\underbrace{\langle \psi_v | \chi_{E,\ell}\rangle}_{S(E,v)\;\text{(Franck--Condon overlap)}}\;\times\;a_\nu,}
+V_{b,\nu}(E,\ell) = \frac{\mathcal{E}_0}{2}
+\int_0^\infty\! dR\;\psi_{v,J}^*(R)\,\chi_{E,\ell}(R)
+\int\! d\hat R\;
+D^{J}_{M_J\Omega}(\hat R)\,
+\underbrace{\langle\text{elec}_e;\Omega|\hat{\vec{d}}\cdot\vec{\epsilon}|\text{elec}_g\rangle}_{d_{eg}(R,\hat R)}\,
+Y_{\ell m_\ell}(\hat R).
+$$
+
+The electronic matrix element $d_{eg}$ depends on $R$ **and** on the orientation $\hat R$: the transition dipole is defined in the body frame, and projecting it onto the lab-frame laser polarization $\vec\epsilon$ brings in a Wigner rotation matrix. So there are two separate simplifications to make, not one.
+
+**(i) The $R$-dependence.** At large $R$ (where PA typically occurs, $R \gtrsim 40\,a_0$), the radial magnitude $d_{eg}(R)$ approaches the **atomic** transition dipole moment $d_{\text{at}}$, because the two atoms are far enough apart that the molecular transition is essentially an atomic one. This motivates the:
+
+> **Condon approximation.** Pull $d_{eg}(R) \approx d_{\text{at}}$ out of the radial integral.
+
+**(ii) The orientation dependence.** The remaining $\hat R$ integral is a pure angular-momentum object — an overlap of two rotation matrices with the rank-1 dipole — and evaluates to a product of Clebsch–Gordan/Wigner coefficients. It carries no dynamics, and it is *not* affected by the Condon approximation.
+
+Together these give the key factorization:
+
+$$
+\boxed{V_{b,\nu}(E,\ell) = \frac{\mathcal{E}_0\,d_{\text{at}}}{2}\;\underbrace{\langle \psi_{v,J} | \chi_{E,\ell}\rangle}_{S(E,\ell;v,J)\;\text{(Franck--Condon overlap)}}\;\times\;a_\nu,}
 \tag{1}
 $$
 
-where $\nu$ labels a specific angular/hyperfine/rotational channel, and $a_\nu$ is the **amplitude-level angular factor** for that channel. It contains all the Clebsch–Gordan and Wigner coefficients from projecting the laser polarization onto the body-frame electronic transition dipole, coupling two specific hyperfine states to a specific molecular Hund's-case-(c) state, and enforcing exchange symmetry for identical nuclei. For a single channel, $a_\nu$ is a product of CG coefficients and is typically a modest fraction of unity. When the experiment does not resolve individual channels, one squares, sums over final quantum numbers, and averages over initial ones; the result is the **line-strength angular factor** $A(g,e,\vec{\epsilon})$ discussed in Step 2.3 and Appendix B.
+where $\nu$ labels a specific angular/hyperfine/rotational channel, i.e. the whole collection $(\ell, m_\ell, F_i, m_i; J, M_J, \Omega)$, and $a_\nu$ is the **amplitude-level angular factor** for that channel — precisely the value of the $\hat R$ integral and spin sums in step (ii) above. It contains all the Clebsch–Gordan and Wigner coefficients from projecting the laser polarization onto the body-frame electronic transition dipole, coupling two specific hyperfine states to a specific molecular Hund's-case-(c) state, and enforcing exchange symmetry for identical nuclei. For a single channel, $a_\nu$ is a product of CG coefficients and is typically a modest fraction of unity. When the experiment does not resolve individual channels, one squares, sums over the *unresolved* final quantum numbers, and averages over initial ones; the result is the **line-strength angular factor** $A(g,e,\vec{\epsilon})$ discussed in Step 2.3 and Appendix B. Which quantum numbers may legitimately be summed — in particular whether $J$ may be — is the subject of the warning in Step 2.3.
 
 **Why this differs from the two-level Rabi model**: the coupling matrix element is the *atomic Rabi frequency* (which is $\Omega_{\text{at}} = d_{\text{at}}\mathcal{E}_0/\hbar$) times the *nuclear wave function overlap* (the Franck–Condon overlap), times the angular factor $a_\nu$. In the familiar two-level Rabi problem, the two states have perfect spatial overlap — both are the same atom in the same place — and there is one angular channel. Here, the initial and final *nuclear* wave functions live on different potentials and have very different spatial structure, so you pick up a penalty factor: the FC overlap. And there are many angular/hyperfine channels, each with its own coupling strength $a_\nu$.
 
@@ -99,12 +118,12 @@ $$
 [\chi_{E,\ell}(R)] = \frac{1}{\sqrt{\text{energy}\times\text{length}}}.
 $$
 
-The unit-normalized bound state has $[\psi_v(R)] = 1/\sqrt{\text{length}}$.
+The unit-normalized bound radial state has $[\psi_{v,J}(R)] = 1/\sqrt{\text{length}}$. The angular and spin factors are dimensionless and normalized, so they do not enter this counting at all — all of the dimensional content sits in the radial integral, and $a_\nu$ is a pure number.
 
 Therefore the Franck–Condon overlap has dimensions:
 
 $$
-[S] = [\langle\psi_v|\chi_E\rangle] = \frac{1}{\sqrt{\text{length}}}\times\frac{1}{\sqrt{\text{energy}\times\text{length}}}\times\text{length} = \frac{1}{\sqrt{\text{energy}}},
+[S] = [\langle\psi_{v,J}|\chi_{E,\ell}\rangle] = \frac{1}{\sqrt{\text{length}}}\times\frac{1}{\sqrt{\text{energy}\times\text{length}}}\times\text{length} = \frac{1}{\sqrt{\text{energy}}},
 $$
 
 and the **FC factor** $|S|^2$ has dimensions of $1/\text{energy}$.
@@ -166,10 +185,10 @@ Let us verify the dimensions. From Step 1, $[V_b] = \sqrt{\text{energy}}$, so $|
 Substituting Eq. (1) into Eq. (2), for a single angular channel $\nu$:
 
 $$
-\Gamma_{b,\nu}(E,\ell) = \frac{2\pi}{\hbar}\left(\frac{\hbar\Omega_{\text{at}}}{2}\right)^2 |S(E,v)|^2\,|a_\nu|^2 = \frac{\pi\hbar\Omega_{\text{at}}^2}{2}\;|S(E,v)|^2\;|a_\nu|^2.
+\Gamma_{b,\nu}(E,\ell) = \frac{2\pi}{\hbar}\left(\frac{\hbar\Omega_{\text{at}}}{2}\right)^2 |S(E,\ell;v,J)|^2\,|a_\nu|^2 = \frac{\pi\hbar\Omega_{\text{at}}^2}{2}\;|S(E,\ell;v,J)|^2\;|a_\nu|^2.
 $$
 
-When the experiment does not resolve individual channels $\nu$, we sum $|a_\nu|^2$ over final quantum numbers ($J, M_J$) and average over the statistical mixture of initial quantum numbers ($F_t, M_F$), weighted by the bosonic symmetry constraints. This produces the **line-strength angular factor**:
+When the experiment does not resolve individual channels $\nu$, we sum $|a_\nu|^2$ over the unresolved final quantum numbers and average over the statistical mixture of initial quantum numbers ($F_t, M_F$, $m_\ell$), weighted by the bosonic symmetry constraints. This produces the **line-strength angular factor**:
 
 $$
 A(g,e,\vec{\epsilon}) \;\equiv\; \sum_{\text{final}} \overline{|a_\nu|^2}_{\;\text{initial}},
@@ -178,15 +197,22 @@ $$
 and the channel-averaged stimulated width becomes:
 
 $$
-\Gamma_b(E,\ell) = \frac{\pi\hbar\Omega_{\text{at}}^2}{2}\;|S(E,v)|^2\;A(g,e,\vec{\epsilon}).
+\Gamma_b(E,\ell) = \frac{\pi\hbar\Omega_{\text{at}}^2}{2}\;|S(E,\ell;v,J)|^2\;A(g,e,\vec{\epsilon}).
 $$
 
 Using $\Omega_{\text{at}}^2/2 = (\Gamma^2/4)(I/I_{\text{sat}})$:
 
 $$
-\boxed{\Gamma_b(E,\ell) = \frac{\pi\hbar\Gamma^2}{4}\;\frac{I}{I_{\text{sat}}}\;|S(E,v)|^2\;A(g,e,\vec{\epsilon}).}
+\boxed{\Gamma_b(E,\ell) = \frac{\pi\hbar\Gamma^2}{4}\;\frac{I}{I_{\text{sat}}}\;|S(E,\ell;v,J)|^2\;A(g,e,\vec{\epsilon}).}
 \tag{3}
 $$
+
+> [!WARNING] What may and may not be summed over
+> The sum defining $A$ must run **only over quantum numbers the experiment does not resolve**. $M_J$ is essentially always unresolved (absent a field that splits it) and should be summed. **$J$ usually is not.** Each vibrational level $v$ carries a rotational progression with line positions
+> $$
+> h\nu_0(v,J) = h\nu_0(v) + B_v\,J(J+1),
+> $$
+> and for long-range PA levels $B_v$ is typically such that neighbouring rotational lines sit tens of MHz to a few GHz apart — comfortably resolved against a natural width of order $\Gamma_{\rm nat}$. In that case each $(v,J)$ line is a **separate resonance** with its own $A(g,e,\vec\epsilon)$, its own $S(E,\ell;v,J)$, and its own $\nu_0(v,J)$; summing $|a_\nu|^2$ over $J$ would wrongly pile the whole rotational progression into one line. Only sum over $J$ when the rotational structure is genuinely unresolved (e.g. hidden under power or thermal broadening). When quoting a tabulated $A$ from the literature, check which convention it was computed in.
 
 For the cesium $0_g^-(6s+6p_{3/2})$ state with both atoms in $f=4$ and even partial waves, C. Drag et al.[^1] tabulate $A = 125/3888 \approx 0.032$ (see Appendix B for a detailed derivation of this value). The smallness of $A$ reflects the fact that only a fraction of the full atomic dipole coupling survives the angular momentum algebra: the molecular $\Omega = 0$ projection, exchange symmetry, and hyperfine structure all reduce the effective coupling.
 
@@ -230,10 +256,10 @@ Anything else that causes $|b\rangle$ to decay: predissociation (non-adiabatic c
 The overlap integral is:
 
 $$
-S(E,v) = \langle\psi_v|\chi_{E,\ell}\rangle = \int_0^\infty \psi_v(R)\,\chi_{E,\ell}(R)\,dR,
+S(E,\ell;v,J) = \langle\psi_{v,J}|\chi_{E,\ell}\rangle = \int_0^\infty \psi_{v,J}(R)\,\chi_{E,\ell}(R)\,dR,
 $$
 
-and the FC factor is $|S|^2$ (with dimensions $1/\text{energy}$). Computing $S$ requires knowing both wave functions. The bound state $\psi_v(R)$ comes from solving the Schrödinger equation on $V_e(R)$. The scattering state $\chi_{E,\ell}(R)$ comes from solving on $V_g(R)$ with scattering boundary conditions.
+and the FC factor is $|S|^2$ (with dimensions $1/\text{energy}$). Note that this is a purely **radial** integral: the angular integral has already been done and lives in $a_\nu$ (Sec. 1.2). Computing $S$ requires knowing both radial wave functions. The bound state $\psi_{v,J}(R)$ comes from solving the radial Schrödinger equation on $V_e(R) + \hbar^2[J(J+1)-\Omega^2]/2\mu R^2$. The scattering state $\chi_{E,\ell}(R)$ comes from solving on $V_g(R) + \hbar^2\ell(\ell+1)/2\mu R^2$ with scattering boundary conditions.
 
 For quantitative work, you compute these numerically. But the **reflection approximation** gives a closed-form result that captures the essential physics.
 
@@ -242,12 +268,12 @@ For quantitative work, you compute these numerically. But the **reflection appro
 The reflection approximation is summarized by P. S. Julienne's light-field collision treatment[^2] and is written explicitly for long-range photoassociation by H. Wang and W. C. Stwalley.[^4] The generic result is:
 
 $$
-|S(E,v)|^2 = \frac{dE_v}{dv}\;\frac{1}{D_C}\;|\chi_{E,\ell}(R_C)|^2,
+|S(E,\ell;v,J)|^2 = \frac{dE_v}{dv}\;\frac{1}{D_C}\;|\chi_{E,\ell}(R_C)|^2,
 \tag{4}
 $$
 
 where:
-- $R_C \approx R_{v+}$ is the Condon point, approximately the outer classical turning point of $|v\rangle$,
+- $R_C \approx R_{v+}$ is the Condon point, approximately the outer classical turning point of $|v,J\rangle$,
 - $D_C = |d[V_e(R)-V_g(R)]/dR|_{R_C}$ is the difference in slopes of the excited and ground potentials at $R_C$,
 - $dE_v/dv$ is the vibrational level spacing of the excited state.
 
@@ -275,6 +301,9 @@ d_v=\left|\frac{d}{dR}\left[V_e(R)-V_g(R)\right]\right|_{R_{v+}}
 $$
 
 Here the last approximation uses the fact that the excited long-range potential is much steeper than the ground-state van der Waals potential in the relevant PA region.
+
+>[!NOTE] Notation: Wang–Stwalley use one $J$ for both states
+> Wang and Stwalley write $F_{v,J;E,J}$ with the **same** $J$ on the bound and free side. This is a double shortcut: it picks the $\Delta J = 0$ branch, and it treats the entrance-channel centrifugal barrier as if it were the same as the excited-state one. In the general notation of this note their object is $|S(E,\ell{=}J;v,J)|^2$. For the ultracold long-range case this is a mild approximation — at $R \sim R_C$ and small $\ell, J$ the centrifugal terms $\hbar^2\ell(\ell+1)/2\mu R^2$ are tiny compared with $|V_e - V_g|$ and with the vibrational spacing, so $|S|^2$ is nearly independent of which small $\ell, J$ pair you took. The $\ell$ and $J$ dependence that *does* matter enters elsewhere: through $a_\nu$ (which channels are allowed at all), through the Wigner threshold exponent $E^{\ell+1/2}$ (Sec. 4.3), and through the line position $\nu_0(v,J)$.
 
 For the **homonuclear alkali case**, where the excited long-range potential is dominated by the resonant dipole--dipole interaction $-C_3'/R^3$, Wang and Stwalley's explicit result is:
 
@@ -329,7 +358,7 @@ The free-bound Franck--Condon factor and stimulated width from the previous sect
 
 The detailed Fano/Breit--Wigner derivation is best kept in the standalone note *Breit--Wigner Event Rate for Photoassociation*. Here we quote the result in the notation most useful for PA spectroscopy.
 
-For one entrance partial wave $\ell$, the rate coefficient for transfer from the entrance channel into a detection/loss channel $d$ is
+For a single target excited level $(v,J)$, the rate coefficient for transfer from the entrance channel into a detection/loss channel $d$ is
 
 $$
 \boxed{
@@ -338,11 +367,13 @@ K_d(E;\nu_L,I)
 \frac{\pi v_{\rm rel}}{k^2}
 \sum_\ell(2\ell+1)
 \frac{\hbar\Gamma_b(E,\ell;I)\,\hbar\Gamma_d}
-{\left[E+h\nu_L-h\nu_0-S_b(E,I)\right]^2
+{\left[E+h\nu_L-h\nu_0(v,J)-S_b(E,I)\right]^2
 +\left[\hbar\Gamma_{\rm tot}(E,I)/2\right]^2}.
 }
 \tag{5}
 $$
+
+The $\ell$ sum runs only over the partial waves that the exchange-symmetry and parity rules of Sec. 1.1 allow to reach this particular $J$. The degeneracy factor $(2\ell+1)$ is exactly the sum over initial $m_\ell$ of the entrance-channel angular factor $Y_{\ell m_\ell}$ — i.e. it comes from the piece of the initial state that Sec. 1.1 makes explicit. A full spectrum is obtained by adding the contributions of all the $(v,J)$ levels within the scan range, each with its own $\nu_0(v,J)$.
 
 Here
 
@@ -362,7 +393,7 @@ The laser-frequency-dependent detuning in the Breit--Wigner denominator is
 $$
 \Delta_E(E;\nu_L,I)
 =
-E+h\nu_L-h\nu_0-S_b(E,I).
+E+h\nu_L-h\nu_0(v,J)-S_b(E,I).
 $$
 
 The resonance condition is therefore
@@ -375,12 +406,12 @@ In the weak-light-shift limit, $S_b\approx0$, this means that for a fixed PA las
 
 $$
 \boxed{
-E_r(\nu_L)=h\nu_0-h\nu_L.
+E_r(\nu_L)=h\nu_0(v,J)-h\nu_L.
 }
 \tag{5a}
 $$
 
-This is the clean meaning of $E_r$: it is the collision-energy class selected by the PA laser frequency. When the PA laser is scanned, $E_r$ is scanned through the thermal distribution of relative collision energies.
+This is the clean meaning of $E_r$: it is the collision-energy class selected by the PA laser frequency, **relative to one specific rotational line**. When the PA laser is scanned, $E_r$ is scanned through the thermal distribution of relative collision energies — and each rotational line of the progression is swept in turn, so $E_r$ is only single-valued within the neighbourhood of a given $(v,J)$.
 
 The widths are:
 
@@ -398,11 +429,11 @@ $$
 =
 \frac{\pi\hbar\Gamma_{\rm at}^2}{4}
 \frac{I}{I_{\rm sat}}
-A\,|S(E,v)|^2,
+A\,|S(E,\ell;v,J)|^2,
 \tag{5b}
 $$
 
-where $A$ is the angular line-strength factor and $|S(E,v)|^2$ is the energy-normalized free-bound Franck--Condon factor. This is the same object that appears in the C. Drag et al. formula.[^1]
+where $A$ is the angular line-strength factor for this resolved $(v,J)$ line and $|S(E,\ell;v,J)|^2$ is the energy-normalized free-bound Franck--Condon factor. This is the same object that appears in the C. Drag et al. formula.[^1]
 
 ### 5.1 What does $K_d(E;\nu_L,I)$ mean?
 
@@ -554,7 +585,7 @@ $$
 \tag{7}
 $$
 
-For one $s$-wave entrance channel this is
+For one $s$-wave entrance channel ($\ell=0$, so the $\ell$ label on $S$ is dropped from here on) and one target level $(v,J)$ this is
 
 $$
 \boxed{
@@ -564,7 +595,7 @@ $$
 P_T(E)
 \frac{\pi v_{\rm rel}}{k^2}
 \frac{\hbar\Gamma_b(E,I)\,\hbar\Gamma_d}
-{\left[E+h\nu_L-h\nu_0-S_b(E,I)\right]^2
+{\left[E+h\nu_L-h\nu_0(v,J)-S_b(E,I)\right]^2
 +\left[\hbar\Gamma_{\rm tot}(E,I)/2\right]^2}
 \,dE.
 }
@@ -574,7 +605,7 @@ $$
 This is the master formula for a PA frequency scan. As $\nu_L$ is scanned, the resonant collision energy
 
 $$
-E_r(\nu_L)\approx h\nu_0-h\nu_L
+E_r(\nu_L)\approx h\nu_0(v,J)-h\nu_L
 $$
 
 moves through the thermal distribution. The measured PA spectrum is a convolution of:
@@ -583,7 +614,8 @@ moves through the thermal distribution. The measured PA spectrum is a convolutio
 2. the thermal relative-energy distribution;
 3. the Wigner-threshold energy dependence of $\Gamma_b(E)$;
 4. the laser-induced light shift $S_b(E,I)$;
-5. the intensity-dependent linewidth $\Gamma_{\rm tot}(E,I)$.
+5. the intensity-dependent linewidth $\Gamma_{\rm tot}(E,I)$;
+6. the superposition of all $(v,J)$ lines in the scan range, each an independent copy of Eq. (7a) with its own $\nu_0(v,J)$, $A$, and $S$.
 
 This is why a realistic PA scan is more complicated than simply evaluating a single FC factor.
 
@@ -606,7 +638,7 @@ $$
 and the Lorentzian selects
 
 $$
-E=E_r=h\nu_0-h\nu_L.
+E=E_r=h\nu_0(v,J)-h\nu_L.
 $$
 
 Using
@@ -645,7 +677,7 @@ The stimulated width is
 $$
 \Gamma_b(E_r,I)
 =
-2\pi\hbar\,A\,K^2\,S^2(E_r,v),
+2\pi\hbar\,A\,K^2\,S^2(E_r;v,J),
 $$
 
 where $K=\Omega_{\rm at}/2$ is the half atomic Rabi frequency and
@@ -671,7 +703,7 @@ A\left(\frac{3}{2\pi}\right)^{3/2}
 \frac{h}{2}
 \,n_{\rm at}\lambda_{\rm th}^3
 \,e^{-E_r/k_BT}
-\,K^2S^2(E_r,v).
+\,K^2S^2(E_r;v,J).
 }
 \tag{7b}
 $$
@@ -684,7 +716,7 @@ R_{\rm PA}^{\rm weak}
 =
 n_{\rm at}\;
 \frac{8\pi^3\hbar^2}{\sqrt{2\pi\mu}\,(k_BT)^{3/2}}
-\;A\,K^2S^2(E_r,v)\;e^{-E_r/k_BT},
+\;A\,K^2S^2(E_r;v,J)\;e^{-E_r/k_BT},
 }
 \tag{7c}
 $$
@@ -695,7 +727,7 @@ $$
 \boxed{
 R_{\rm PA}^{\rm weak}
 \propto
-n_{\rm at}\,A\,I\,S^2(E_r,v)\,T^{-3/2}\,e^{-E_r/k_BT}.
+n_{\rm at}\,A\,I\,S^2(E_r;v,J)\,T^{-3/2}\,e^{-E_r/k_BT}.
 }
 $$
 
@@ -706,7 +738,7 @@ This is the C. Drag et al. formula. It is a **weak-field thermal approximation**
 The exact theory keeps $E_r$ as a laser-frequency-dependent variable:
 
 $$
-E_r=h\nu_0-h\nu_L.
+E_r=h\nu_0(v,J)-h\nu_L.
 $$
 
 Setting
@@ -1069,9 +1101,9 @@ where $K_2^{\rm eff}$ includes the spatial integral over the density distributio
 For a rate-code pipeline, the hierarchy should be:
 
 $$
-S^2(E,v)
+S^2(E,\ell;v,J)
 \rightarrow
-\Gamma_b(E,I)
+\Gamma_b(E,\ell;I)
 \rightarrow
 K_d(E;\nu_L,I)
 \rightarrow
@@ -1120,7 +1152,10 @@ Neither factor is a universal replacement for the full integral. The full therma
 | $V_{b,\nu}(E,\ell)$                                    | —                                              | —                                             | $V_b(E,\ell)$                             |
 | $a_\nu$ (amplitude angular factor)                     | —                                              | —                                             | contained in $\mathcal{A}$                |
 | $A(g,e,\vec{\epsilon})$ (line-strength angular factor) | —                                              | $A(g,e,\vec{\epsilon}_{\text{PA}})$ (Table I) | —                                         |
-| $S(E,v) = \langle\psi_v\|\chi_E\rangle$                | $\langle\Psi_e(v)\|\Psi_g^+(E)\rangle$         | $S(\alpha,v)$                                 | $\langle b\|E,\ell\rangle$ (nuclear part) |
+| $S(E,\ell;v,J) = \langle\psi_{v,J}\|\chi_{E,\ell}\rangle$ | $\langle\Psi_e(v)\|\Psi_g^+(E)\rangle$      | $S(\alpha,v)$                                 | $\langle b\|E,\ell\rangle$ (radial part)  |
+| $\ell$ (entrance partial wave)                         | —                                              | contained in $\alpha$                         | $\ell$                                    |
+| $J$ (excited rotational level)                          | $J$ in $F_{v,J;E,J}$ (WS[^4], diagonal in $J$) | —                                             | contained in $b$                          |
+| $\nu_0(v,J)$ (line position)                            | —                                              | —                                             | $\nu_0$                                   |
 | $\Gamma_b$ (energy)                                    | $\gamma_s$ (energy)                            | (implicit in $A\,K^2 S^2$)                    | $\hbar\Gamma_b$ (energy)                  |
 | $\Gamma_{\text{nat}}$ (energy)                         | —                                              | $\hbar\Gamma$ (energy)                        | $\hbar\Gamma_{\text{nat}}$ (energy)       |
 | $I_{\text{sat}}$                                       | —                                              | $I_0$                                         | —                                         |
