@@ -1,4 +1,4 @@
-This note continues the operator-level discussion of scattering theory by unpacking the collective channel label used previously. The earlier note used symbols such as $|\alpha\rangle$, $|\beta\rangle$, $E_\alpha$, and $T_{\beta\alpha}(E)$ to emphasize the asymptotic input-output structure. We now make one common and important specialization: each asymptotic channel contains an ordinary relative coordinate for the separated fragments, together with additional non-spatial channel data.
+This note continues the operator-level discussion of scattering theory by unpacking the collective asymptotic-state label used previously. The earlier note used symbols such as $|\alpha\rangle$, $|\beta\rangle$, $E_\alpha$, and $T_{\beta\alpha}(E)$ to emphasize the asymptotic input-output structure. We now make one common and important specialization: the separated fragments have relative motion described by a coordinate or momentum, together with additional channel data.
 
 The main point is conceptual as much as technical. A coordinate-space wavefunction is not the state itself. It is one representation of an abstract ket. In multichannel scattering, the state has several coordinate-space components, one for each channel. Thus a symbol such as $\psi_a(\mathbf r)$ means
 
@@ -10,7 +10,7 @@ not that the physical state is literally a single scalar function of $\mathbf r$
 
 ---
 
-## 1. From a collective channel label to spatial and non-spatial data
+## 1. From an asymptotic-state label to spatial and channel data
 
 In the previous note, the generalized eigenvectors of the reference Hamiltonian were written schematically as
 
@@ -18,26 +18,26 @@ $$
 H_0|\alpha\rangle=E_\alpha|\alpha\rangle.
 $$
 
-The label $\alpha$ was collective. In a one-channel elastic problem, it may be just a momentum vector $\mathbf k$. In a multichannel problem, it is more naturally decomposed as
+The label $\alpha$ specified a complete reference asymptotic state. In a one-channel elastic problem, it may be just a momentum vector $\mathbf k$. In a simple multichannel problem, it can be resolved into relative momentum and a channel label:
 
 $$
 \alpha=(\mathbf k,a),
 $$
 
-or, in coordinate representation,
+The corresponding coordinate basis is labeled by
 
 $$
-\alpha=(\mathbf r,a).
+|\mathbf r,a\rangle.
 $$
 
-Here $\mathbf r$ is the relative coordinate between the separated fragments in a specified asymptotic arrangement, and $a$ denotes all the non-spatial channel data. The channel label $a$ may include, for example,
+The coordinate basis states are generally not eigenvectors of $H_0$; they provide another representation of the same asymptotic space. Here $\mathbf r$ is the relative coordinate between the separated fragments in a specified asymptotic arrangement, and $a$ denotes the non-spatial channel data. The channel label $a$ may include, for example,
 
 - the internal bound state of each separated fragment;
 - hyperfine, spin, rotational, vibrational, or electronic quantum numbers;
 - an arrangement label specifying which clusters are asymptotically separated;
-- conserved discrete quantum numbers used to block-diagonalize the problem;
-- a threshold energy $\epsilon_a$;
-- possibly a channel-dependent reduced mass $\mu_a$.
+- conserved discrete quantum numbers used to block-diagonalize the problem.
+
+The label $a$ also determines properties such as the threshold energy $\epsilon_a$ and, when the separated fragments differ between channels, the reduced mass $\mu_a$. These are properties of a channel rather than extra labels that must be specified independently.
 
 The important point is that $a$ is not the same thing as $\mathbf r$ or $\mathbf k$. The vector $\mathbf r$ describes relative spatial motion in a chosen asymptotic arrangement. The label $a$ describes which internal or arrangement channel that relative motion belongs to.
 
@@ -762,16 +762,16 @@ This is the representation framework that the single-channel notation suppresses
 
 ## 14. Logical summary
 
-The collective channel label $\alpha$ used in the abstract theory can be resolved as
+The collective asymptotic-state label $\alpha$ used in the abstract theory can be resolved in the momentum basis as
 
 $$
 \alpha=(\mathbf k,a)
 $$
 
-or, in coordinate representation,
+The corresponding coordinate basis uses states labeled by
 
 $$
-\alpha=(\mathbf r,a).
+|\mathbf r,a\rangle.
 $$
 
 The asymptotic Hilbert space is a space of relative motion together with a channel space:
