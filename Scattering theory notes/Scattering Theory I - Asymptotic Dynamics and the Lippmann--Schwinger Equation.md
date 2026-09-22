@@ -3,11 +3,13 @@ This note develops the operator structure behind elementary scattering theory in
 The guiding physical experiment is simple:
 
 $$
-\text{prepare separated fragments in an incoming channel}
-\quad \longrightarrow \quad
-\text{let the exact Hamiltonian act}
-\quad \longrightarrow \quad
-\text{detect separated fragments in an outgoing channel}.
+\begin{gather*}
+\text{prepare separated fragments in an incoming channel} \\
+\downarrow \\
+\text{let the exact Hamiltonian act} \\
+\downarrow \\
+\text{detect separated fragments in an outgoing channel}
+\end{gather*}
 $$
 
 The formalism below is a precise way of removing from this experiment the trivial motion that the fragments would have had even if no scattering interaction were present. What remains is the nontrivial input-output map.
@@ -22,15 +24,17 @@ $$
 H=H_0+V.
 $$
 
-The exact Hamiltonian $H$ generates the true laboratory time evolution. The reference Hamiltonian $H_0$ generates the motion used to define separated asymptotic channels. In the simplest elastic one-particle problem, $H_0$ may be just $\mathbf p^2/2m$. In a multichannel problem, $H_0$ may also include internal Hamiltonians of separated fragments, threshold energies, spin labels, bound states of subsystems, and relative kinetic energies.
+The exact Hamiltonian $H$ generates the true laboratory time evolution. The reference Hamiltonian $H_0$ generates the motion used to define separated asymptotic channels.
 
-Write the generalized channel eigenvectors of $H_0$ as
+In the simplest elastic one-particle problem, $H_0$ may be just $\mathbf p^2/2m$. In a multichannel problem, it also accounts for relative motion between separated fragments and their internal energies; different internal states or fragment arrangements can have different thresholds.
+
+Write the generalized eigenvectors of $H_0$ as
 
 $$
 H_0|\alpha\rangle=E_\alpha|\alpha\rangle .
 $$
 
-The label $\alpha$ is collective. It may be a momentum vector in a single channel, or it may include a channel index, internal quantum numbers, angular momenta, spin projections, and continuous relative momenta. We use the schematic notation
+The label $\alpha$ specifies a complete asymptotic basis state. In a single-channel momentum basis it may be just the momentum $\mathbf k$. In a simple multichannel problem we can instead write $\alpha=(\mathbf k,a)$: $\mathbf k$ specifies relative motion, while $a$ identifies the internal state or arrangement of the separated fragments, possibly including spin quantum numbers. In a partial-wave basis, angular-momentum labels may also enter the channel specification. Thus every propagating incoming or outgoing state has relative motion, but the multichannel index $a$ is distinct from its momentum. At fixed total energy, different open channels can have different momentum magnitudes because their thresholds differ. We use the schematic notation
 
 $$
 1=\int d\alpha\,|\alpha\rangle\langle\alpha|,\qquad
@@ -39,9 +43,9 @@ $$
 
 where $d\alpha$ denotes both sums over discrete labels and integrations over continuous labels. Likewise, $\delta(\beta-\alpha)$ denotes a mixture of Kronecker deltas and Dirac deltas.
 
-The word "channel" refers to this $H_0$ classification. It is an asymptotic notion. During the collision the state is not a free channel state; it is an exact state evolving under $H$. But far before and far after the collision, the separated fragments can be classified by the eigenstates of $H_0$. Thus an incoming channel $\alpha$ means an exact scattering state whose remote-past asymptote is the free channel state $|\alpha\rangle$. An outgoing channel $\beta$ means the corresponding remote-future detection label.
+Terminology varies: here a "channel label" can mean the complete asymptotic label $\alpha$, whereas in channel-resolved multichannel calculations a "channel" usually means $a$, with $\mathbf k$ specifying motion within it. This classification is asymptotic. During the collision the state is not a free channel state; it is an exact state evolving under $H$. Far before and far after the collision, the separated fragments can be classified by the eigenstates of $H_0$. Thus an incoming label $\alpha$ specifies an exact scattering state whose remote-past asymptote is $|\alpha\rangle$. An outgoing label $\beta$ specifies the corresponding remote-future detection state.
 
-This distinction is important in multichannel scattering. A channel is not merely a direction of a plane wave. It is a complete asymptotic arrangement of separated degrees of freedom.
+Part II resolves $\alpha$ explicitly into relative-motion and channel data. This distinction matters because changing momentum within a given $a$ is different from making a transition between channels $a$ and $b$.
 
 ---
 
@@ -385,7 +389,7 @@ The transition operator is the reduced dynamical part of the scattering matrix. 
 
 ## 6. Stationary scattering vectors
 
-The stationary scattering vector associated with an incoming channel $\alpha$ is defined by
+The stationary scattering vector associated with an incoming asymptotic label $\alpha$ is defined by
 
 $$
 |\psi_\alpha^{(+)}\rangle
