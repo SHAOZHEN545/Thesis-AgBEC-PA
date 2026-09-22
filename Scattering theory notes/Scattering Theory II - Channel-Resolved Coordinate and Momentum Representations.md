@@ -18,7 +18,7 @@ $$
 H_0|\alpha\rangle=E_\alpha|\alpha\rangle.
 $$
 
-The label $\alpha$ specified a complete reference asymptotic state. In a one-channel elastic problem, it may be just a momentum vector $\mathbf k$. In a simple multichannel problem, it can be resolved into relative momentum and a channel label:
+The label $\alpha$ specifies a complete reference asymptotic state. In a one-channel elastic problem, it may be just a momentum vector $\mathbf k$. In a simple multichannel problem, it can be resolved into relative momentum and a channel label:
 
 $$
 \alpha=(\mathbf k,a),

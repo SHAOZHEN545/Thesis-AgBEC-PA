@@ -1,4 +1,4 @@
-This note develops the operator structure behind elementary scattering theory in a form that does not rely on a single incident plane wave plus an outgoing scattered wave. The basic objects are reference asymptotic states, asymptotic comparison maps, resolvents, and the transition operator. This is the language one needs before specializing to coordinate-space amplitudes, partial waves, cross sections, or particular multichannel models.
+This note develops the operator structure behind elementary scattering theory in a form that does not rely on a single incident plane wave plus an outgoing scattered wave. The basic objects are reference asymptotic states, asymptotic comparison maps, resolvents, and the transition operator. This is the language one needs before specializing to coordinate-space amplitudes, partial waves, cross sections, or particular scattering models.
 
 The guiding physical experiment is simple:
 
@@ -28,13 +28,13 @@ The exact Hamiltonian $H$ generates the true laboratory time evolution. The refe
 
 In the simplest elastic one-particle problem, $H_0$ may be just $\mathbf p^2/2m$. More generally, it can retain the relative motion and internal dynamics of separated subsystems that persist when the scattering interaction is absent.
 
-Write the generalized reference eigenvectors of $H_0$ as
+Write the generalized eigenvectors of $H_0$ as
 
 $$
 H_0|\alpha\rangle=E_\alpha|\alpha\rangle .
 $$
 
-The label $\alpha$ collects all the quantum numbers needed to specify one reference asymptotic state $|\alpha\rangle$. It may be a momentum vector in the simplest problem, or it may include relative momenta and internal quantum numbers for separated subsystems. The exact contents of $\alpha$ depend on $H_0$ and the chosen basis. We use the schematic notation
+The label $\alpha$ collects all the quantum numbers needed to specify one **reference asymptotic state** $|\alpha\rangle$. It may be a momentum vector in the simplest problem, or it may include relative momenta and internal quantum numbers for separated subsystems. The exact contents of $\alpha$ depend on $H_0$ and the chosen basis. We use the schematic notation
 
 $$
 1=\int d\alpha\,|\alpha\rangle\langle\alpha|,\qquad
@@ -55,7 +55,7 @@ $$
 |g\rangle=\int d\alpha\,g(\alpha)|\alpha\rangle ,
 $$
 
-where the coefficient $g(\alpha)$ is concentrated near the intended incoming asymptotic-state labels. A detector may similarly be represented by an outgoing packet
+where the coefficient $g(\alpha)$ is concentrated near the intended incoming asymptotic labels. A detector may similarly be represented by an outgoing packet
 
 $$
 |h\rangle=\int d\beta\,h(\beta)|\beta\rangle .
@@ -88,7 +88,7 @@ e^{-iH(t_f-t_i)/\hbar}
 e^{-iH_0t_i/\hbar}.
 $$
 
-The interaction picture is useful here because a scattering measurement compares the exact evolution with the reference evolution. The measured probabilities are unchanged: if one wants the Schrödinger-picture state at a laboratory time, one restores the reference phases that were removed. The interaction-picture kernel maps incoming asymptotic-state coefficients to outgoing asymptotic-state coefficients.
+The interaction picture is useful here because a scattering measurement compares the exact evolution with the reference evolution. The measured probabilities are unchanged: if one wants the Schrödinger-picture state at a laboratory time, one restores the reference phases that were removed. The interaction-picture kernel maps coefficients of incoming asymptotic states to coefficients of outgoing asymptotic states.
 
 For ideal asymptotic-state labels define
 
@@ -140,13 +140,14 @@ $$
 V_{\beta\gamma}=\langle\beta|V|\gamma\rangle .
 $$
 
-This equation is the time-dependent starting point. It says that the transition amplitude between asymptotic states is built from insertions of $V$, with reference-evolution phases between them.
+This equation is the time-dependent starting point. It says that the transition amplitude between asymptotic states is built from insertions of $V$, with phases from $H_0$ evolution between them.
 
 ---
 
 ## 3. The asymptotic input-output map
 
 **A scattering experiment does not ask for the detailed state during the collision.** It asks what a packet prepared in the remote past becomes when compared with asymptotic detector states in the remote future. On the scattering subspace one defines
+
 $$
 S_{\beta\alpha}
 =
