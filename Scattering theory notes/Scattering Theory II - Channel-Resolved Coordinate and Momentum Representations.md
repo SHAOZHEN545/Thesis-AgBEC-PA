@@ -24,13 +24,11 @@ $$
 \alpha=(\mathbf k,a),
 $$
 
-The corresponding coordinate basis is labeled by
+or, in coordinate representation,
 
 $$
-|\mathbf r,a\rangle.
+\alpha=(\mathbf r,a).
 $$
-
-Unlike $|\mathbf k,a\rangle$ in the simple free-motion setting, $|\mathbf r,a\rangle$ is generally not an eigenvector of $H_0$; it is another basis in which to represent the same asymptotic state.
 
 Here $\mathbf r$ is the relative coordinate between the separated fragments in a specified asymptotic arrangement, and $a$ denotes all the non-spatial channel data. The channel label $a$ may include, for example,
 
